@@ -7,6 +7,7 @@ import {HeaderCommpent} from './header/header.js';
 import {FormSliderCommpent} from './slider/form-slider.js';
 import {ResultCommpent} from './result/result.js';
 import {InvalidCommpent} from './result/invalid/invalid.js';
+import {ExpiredCommpent} from './result/expired/expired.js';
 
 
 var div_content=document.createElement('div');
@@ -99,6 +100,15 @@ const MenuRouter=()=>(
                   <InvalidCommpent/>
             </div>
           )}/>
+
+          <Route exact path="/expired" render={(match,location)=>(
+            <div className="main">
+                  <HeaderCommpent/>
+                  <ResultCommpent/>
+                  <ExpiredCommpent/>
+            </div>
+          )}/>
+
       </div>
     </HashRouter>
 );
