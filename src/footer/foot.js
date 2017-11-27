@@ -1,4 +1,4 @@
-					import React from 'react';
+import React from 'react';
 import '../static/css/index.css';
 import '../static/css/front.css';
 import banner_1 from '../static/images/banner_1.png';

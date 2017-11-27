@@ -5,6 +5,8 @@ import {HomePage} from './homepage/home.js';
 import {BannerCommpent} from './banner/banner.js';
 import {HeaderCommpent} from './header/header.js';
 import {FormSliderCommpent} from './slider/form-slider.js';
+import {ResultCommpent} from './result/result.js';
+import {InvalidCommpent} from './result/invalid/invalid.js';
 
 
 var div_content=document.createElement('div');
@@ -81,13 +83,23 @@ const App = () => (
 
 const MenuRouter=()=>(
     <HashRouter basename="/">
-        <Route exact path="/"  render={(match,location)=>(
+      <div>
+          <Route exact path="/"  render={(match,location)=>(
+              <div className="main">
+                  <HeaderCommpent/>
+                  <BannerCommpent/>
+                  <FormSliderCommpent/>
+              </div>
+          )} />
+
+          <Route exact path="/invalid" render={(match,location)=>(
             <div className="main">
-                <HeaderCommpent/>
-                <BannerCommpent/>
-                <FormSliderCommpent/>
+                  <HeaderCommpent/>
+                  <ResultCommpent/>
+                  <InvalidCommpent/>
             </div>
-        )} />
+          )}/>
+      </div>
     </HashRouter>
 );
 
