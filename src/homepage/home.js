@@ -1,11 +1,21 @@
+import React from 'react';
 import '../static/css/home.css';
 
+class HomePage extends React.Component {
 
-export default function print() {
+      constructor(props) {
+        super(props);
+      }
 
-    let doc_div= document.createElement('div');
-    doc_div.className='cb1';
-    doc_div.innerHTML='这是homepage!!!!!!!!!!!';
-  document.body.appendChild(doc_div);
-   console.log('home^^^^^^^^^^^');
- };
+
+      render(){
+        return (
+          <div className="cb1">
+              989898989889989
+          </div>
+        );
+      }
+
+}
+
+export {HomePage}

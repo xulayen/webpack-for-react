@@ -28,7 +28,7 @@
       }),
       new ExtractTextPlugin({
         filename:  (getPath) => {
-            return getPath('./static/css/[name].[chunkhash].css'); //设置样式路劲
+            return getPath('static/css/[name].[chunkhash].css'); //设置样式路劲
         },
         allChunks: true
       })
@@ -40,11 +40,15 @@
           //     use: ['style-loader', 'css-loader']
           // },
           {
+            test: /\.js$/,
+            use: 'babel-loader?presets=es2015'// 'jsx-loader',
+          },
+          {
             test: /\.css$/,                                                     //生成外链样式
             use: ExtractTextPlugin.extract({
               fallback: "style-loader",
               use: ["css-loader"],
-              publicPath:'../../'
+              publicPath:'/'
             })
           },
           {
@@ -54,9 +58,15 @@
                 loader: 'url-loader',
                 options: {
                   limit: 8192,
-                  name:'[name].[hash].[ext]'
+                  name:'static/images/[name].[hash].[ext]'
                 }
               }
+            ]
+          },
+          {
+            test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
+            use: [
+              'file-loader'
             ]
           }
           // {
