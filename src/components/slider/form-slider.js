@@ -17,7 +17,8 @@ class FormSliderCommpent extends React.Component {
 		super(props);
 		this.state={
 			countryList:countryList(),
-			languageList:languageList()
+			languageList:languageList(),
+			txt_code:''
 		}
     }
 
@@ -30,7 +31,7 @@ class FormSliderCommpent extends React.Component {
 		selectOption();
 
 
-		this.submit();
+		this.submit(this);
 
 
 		
@@ -41,21 +42,32 @@ class FormSliderCommpent extends React.Component {
 	
 	}
 
-	submit(){
+	submit(_self){
 		//按钮回调函数
 		var _lock = true; //解锁
 		//提交按钮回调函数
 		Global.submitCallback = function (eve) {
 			(function () {
 				if (_lock) {
-					alert('OK');
-					$.post('/accode',{"accode":"7777777777777777"},function(e){
+					console.log(_self.state.txt_code);
+					$.post('/fw',{"accode":_self.state.txt_code},function(e){
 						console.log(e);
 					})
 				}
 			})();
 		};
 	}
+
+	handleData(e) {
+		var _self=this;
+		var eleId = e.target.id;
+		if (eleId == 'txtCode') {
+            _self.setState({
+                txt_code: e.target.value
+            })
+
+        }
+    }
 	
 
 
@@ -113,7 +125,7 @@ class FormSliderCommpent extends React.Component {
 							<p style={{fontWeight:"bold"}} className="limitWidth">PLEASE UNCOVER LABEL to find
 							   16 digit Anti-Counterfeit Code
 							</p>
-							<input type="text" name="inpt" className="inpt notnull" placeholder="Scan QR code to skip manual input" nullmsg="Digital security cannot be empty" regex="/^\d{16}$/" logicmsg="Error! Please enter a valid digital. [please re input]"  maxLength="16" id="inpt"/>
+							<input type="text" id="txtCode" name="inpt" onChange={this.handleData.bind(this)} className="inpt notnull" placeholder="Scan QR code to skip manual input" nullmsg="Digital security cannot be empty" regex="/^\d{16}$/" logicmsg="Error! Please enter a valid digital. [please re input]"  maxLength="16"/>
 							<p className="err_tip">ERROR! You have entered an incorrect code.(Please try again)</p>
 							<div className="gif">
 								<img src={lable} />

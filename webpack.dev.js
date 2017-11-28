@@ -8,9 +8,14 @@
      contentBase: path.join(__dirname, "dist"),
      host:'127.0.0.1',
      proxy:{
-       "/fwcode":{
-         target:'http://127.0.0.1:8011/fw',
-         changeOrigin:false,
+       "/fw":{
+         target:'http://127.0.0.1:8011/',
+         changeOrigin:true,
+         secure:false
+       },
+       "/tobaidu":{
+         target:'http://www.baidu.com',
+         changeOrigin:true,
          secure:false
        }
      }
