@@ -3,14 +3,10 @@ import '../../static/css/index.css';
 import '../../static/css/front.css';
 import {FooterCommpent} from '../footer/foot.js';
 import $ from 'jquery';
+import CN from '../../static/images/china.png';
 import lable from '../../static/images/animation_2.gif';
-import CN from '../../static/images/China.png';
-import IQ from '../../static/images/Iraq.png';
-import ID from '../../static/images/Indonesia.png';
-import RU from '../../static/images/Russian.png';
-import KZ from '../../static/images/SaudiaArabia.png';
-import UK from '../../static/images/uk.png';
 import {sliderInit,selectOption,countryList,languageList} from './sliderAndSelect.js';
+import Global from '../../static/script/red.js';
 
 
 
@@ -32,17 +28,40 @@ class FormSliderCommpent extends React.Component {
     componentDidMount() {
 		sliderInit();
 		selectOption();
-    }
+
+
+		this.submit();
+
+
+		
+	}
+	
 
     componentWillUnmount() {
+	
+	}
 
+	submit(){
+		//按钮回调函数
+		var _lock = true; //解锁
+		//提交按钮回调函数
+		Global.submitCallback = function (eve) {
+			(function () {
+				if (_lock) {
+					alert('OK');
+					$.post('/accode',{"accode":"7777777777777777"},function(e){
+						console.log(e);
+					})
+				}
+			})();
+		};
 	}
 	
 
 
     render(){
         return (
-			<form className="container" method="post">
+			<form className="container form" method="post">
 				<div className="cn_main">
 					<h2 className="title">WELCOME</h2>
 					<div className="cnt">
@@ -94,7 +113,7 @@ class FormSliderCommpent extends React.Component {
 							<p style={{fontWeight:"bold"}} className="limitWidth">PLEASE UNCOVER LABEL to find
 							   16 digit Anti-Counterfeit Code
 							</p>
-							<input type="text" name="inpt" placeholder="Scan the QR code to skip manual input" className="inpt" maxLength="16" id="inpt"/>
+							<input type="text" name="inpt" className="inpt notnull" placeholder="Scan QR code to skip manual input" nullmsg="Digital security cannot be empty" regex="/^\d{16}$/" logicmsg="Error! Please enter a valid digital. [please re input]"  maxLength="16" id="inpt"/>
 							<p className="err_tip">ERROR! You have entered an incorrect code.(Please try again)</p>
 							<div className="gif">
 								<img src={lable} />
@@ -108,15 +127,15 @@ class FormSliderCommpent extends React.Component {
 							<div className="slide_cnt index-below-action">
 								<div id="slider" className="slider left">
 					                <div id="pageSlide">
-					                    <input id="captcha" className="valid" type="hidden" validmsg="请向右滑动。" value="0"/>
+					                    <input id="captcha" className="valid" type="hidden" validmsg="Please move the slider" value="0"/>
 					                    <span id="label" className="label"></span>
-					                    <span id="lableTip" hasslider="Thank you!" noslider="SLIDE to confirm you are human!">SLIDE to confirm you are human!</span>
+					                    <span id="lableTip" hasslider="Thank you!" noslider="Slide to confirm you are human!">Slide to confirm you are human!</span>
 					                </div>
 					            </div>
 							</div>
 						</div>
 						<div className="cnt1_right">
-							<input type="button" value="Submit" className="sub"/>
+							<input type="button" value="Submit" className="check  sub"/>
 						</div>
 						<div className="clear"></div>
 					</div>

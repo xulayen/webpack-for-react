@@ -15,3 +15,9 @@ npm run start
 ``` bash
 npm run build
 ```
+
+## 启动后端服务
+
+``` bash
+npm run server
+```

@@ -1,4 +1,3 @@
-/// <reference path="jquery-1.4.1-vsdoc.js"/*tpa=http://www.ac.shell.com/static/js/vendor/jquery-1.4.1-vsdoc.js*/ />
 ///检测表单中的不能为空（.notnull）的验证
 /*
  时间：2012-6-6
@@ -42,6 +41,7 @@
 ///event.srcElement：引发事件的目标对象，常用于onclick事件。
 ///event.fromElement：引发事件的对象源，常用于onmouseout和onmouseover事件。
 ///event.toElement：引发事件后，鼠标移动到的目标源，常用于onmouseout和onmouseover事件。
+import $ from 'jquery';
 function Global() {
     var _self = this;
 }
@@ -202,3 +202,6 @@ $(document).ready(function () {
         return b;
     }
 });
+
+
+module.exports=Global;

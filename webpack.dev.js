@@ -6,6 +6,13 @@
    devtool: 'inline-source-map',
    devServer: {
      contentBase: path.join(__dirname, "dist"),
-     host:'127.0.0.1'
+     host:'127.0.0.1',
+     proxy:{
+       "/fwcode":{
+         target:'http://127.0.0.1:8011/fw',
+         changeOrigin:false,
+         secure:false
+       }
+     }
    }
  });
