@@ -182,21 +182,24 @@ Slider.prototype.Move = function () {
         $(".slider.left").css(style);
     }
     $(".label").css("left", _self.index + "px");
-    if (_self.index == (_self.max - num)) {
-        //停止
-        _self.swipestart = false;
-        _self.IsOk = true; //解锁
-        $("#captcha").val(1);
-        $("#lableTip").text(document.getElementById("lableTip").attributes["hasslider"].value);
-        _self.SliderCallBack.call(this, [1])
-        //2015年3月4日 11:31:16注释
-        //document.getElementById("btnSubmit").disabled = false;k
-    } else {
-        _self.IsOk = false; //未解锁
-        $("#captcha").val(0);
-        $("#lableTip").text(document.getElementById("lableTip").attributes["noslider"].value);
-        //2015年3月4日 11:31:24注释
-        //document.getElementById("btnSubmit").disabled = true;
+
+    if($("#captcha") && $("#lableTip")){
+        if (_self.index == (_self.max - num)) {
+            //停止
+            _self.swipestart = false;
+            _self.IsOk = true; //解锁
+            $("#captcha").val(1);
+            $("#lableTip").text(document.getElementById("lableTip").attributes["hasslider"].value);
+            _self.SliderCallBack.call(this, [1])
+            //2015年3月4日 11:31:16注释
+            //document.getElementById("btnSubmit").disabled = false;k
+        } else {
+            _self.IsOk = false; //未解锁
+            $("#captcha").val(0);
+            $("#lableTip").text(document.getElementById("lableTip").attributes["noslider"].value);
+            //2015年3月4日 11:31:24注释
+            //document.getElementById("btnSubmit").disabled = true;
+        }
     }
 }
 

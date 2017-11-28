@@ -1,9 +1,9 @@
 import React from 'react';
-import '../static/css/index.css';
-import '../static/css/front.css';
-import first from '../static/images/oil_1.png';
-import many from '../static/images/oil_2.png';
-import invalid from '../static/images/oil_3.png';
+import '../../static/css/index.css';
+import '../../static/css/front.css';
+import first from '../../static/images/oil_1.png';
+import many from '../../static/images/oil_2.png';
+import invalid from '../../static/images/oil_3.png';
 
 class ResultCommpent extends React.Component {
 

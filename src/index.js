@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter,HashRouter, Route, Link} from 'react-router-dom';
-import {HomePage} from './homepage/home.js';
-import {BannerCommpent} from './banner/banner.js';
-import {HeaderCommpent} from './header/header.js';
-import {FormSliderCommpent} from './slider/form-slider.js';
-import {ResultCommpent} from './result/result.js';
-import {InvalidCommpent} from './result/invalid/invalid.js';
-import {ExpiredCommpent} from './result/expired/expired.js';
+import {BannerCommpent} from './components/banner/banner.js';
+import {HeaderCommpent} from './components/header/header.js';
+import {FormSliderCommpent} from './components/slider/form-slider.js';
+import {ResultCommpent} from './components/result/result.js';
+import {InvalidCommpent} from './components/result/invalid/invalid.js';
+import {ExpiredCommpent} from './components/result/expired/expired.js';
+import {VerifiedCommpent} from './components/result/verified/verified.js';
+import {FeedBackCommpent} from './components/feedback/feedback.js';
+import {ContactUsCommpent} from './components/contactus/contactus.js';
 
 
 var div_content=document.createElement('div');
@@ -85,29 +87,53 @@ const App = () => (
 const MenuRouter=()=>(
     <HashRouter basename="/">
       <div>
-          <Route exact path="/"  render={(match,location)=>(
-              <div className="main">
-                  <HeaderCommpent/>
-                  <BannerCommpent/>
-                  <FormSliderCommpent/>
-              </div>
-          )} />
-
-          <Route exact path="/invalid" render={(match,location)=>(
+        <Route exact path="/"  render={(match,location)=>(
             <div className="main">
-                  <HeaderCommpent/>
-                  <ResultCommpent/>
-                  <InvalidCommpent/>
+                <HeaderCommpent/>
+                <BannerCommpent/>
+                <FormSliderCommpent/>
             </div>
-          )}/>
+        )} />
 
-          <Route exact path="/expired" render={(match,location)=>(
+        <Route exact path="/verified" render={(match,location)=>(
             <div className="main">
-                  <HeaderCommpent/>
-                  <ResultCommpent/>
-                  <ExpiredCommpent/>
+                <HeaderCommpent/>
+                <ResultCommpent/>
+                <VerifiedCommpent/>
             </div>
-          )}/>
+        )}/>
+
+        <Route exact path="/invalid" render={(match,location)=>(
+            <div className="main">
+                <HeaderCommpent/>
+                <ResultCommpent/>
+                <InvalidCommpent/>
+            </div>
+        )}/>
+
+        <Route exact path="/expired" render={(match,location)=>(
+            <div className="main">
+                <HeaderCommpent/>
+                <ResultCommpent/>
+                <ExpiredCommpent/>
+            </div>
+        )}/>
+
+        <Route exact path="/feedback" render={(match,location)=>(
+            <div className="main">
+                <HeaderCommpent/>
+                <BannerCommpent/>
+                <FeedBackCommpent/>
+            </div>
+        )}/>
+
+        <Route exact path="/contact" render={(match,location)=>(
+            <div className="main">
+                <HeaderCommpent/>
+                <BannerCommpent/>
+                <ContactUsCommpent/>
+            </div>
+        )}/>
 
       </div>
     </HashRouter>

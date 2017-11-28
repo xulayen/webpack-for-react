@@ -1,48 +1,44 @@
 import React from 'react';
-import '../static/css/index.css';
-import '../static/css/front.css';
+import '../../static/css/index.css';
+import '../../static/css/front.css';
 import {FooterCommpent} from '../footer/foot.js';
-import lable from '../static/images/animation_2.gif';
-import china from '../static/images/China.png';
-import Iran from '../static/images/Iran.png';
-import Iraq from '../static/images/Iraq.png';
-import Indonesia from '../static/images/Indonesia.png';
-import Russian from '../static/images/Russian.png';
-import SaudiaArabia from '../static/images/SaudiaArabia.png';
-import UK from '../static/images/China.png';
 import $ from 'jquery';
-import Slider from '../static/script/Slider.js';
+import lable from '../../static/images/animation_2.gif';
+import CN from '../../static/images/China.png';
+import IQ from '../../static/images/Iraq.png';
+import ID from '../../static/images/Indonesia.png';
+import RU from '../../static/images/Russian.png';
+import KZ from '../../static/images/SaudiaArabia.png';
+import UK from '../../static/images/uk.png';
+import {sliderInit,selectOption,countryList,languageList} from './sliderAndSelect.js';
+
+
 
 
 class FormSliderCommpent extends React.Component {
 
     constructor(props) {
-        super(props);
+		super(props);
+		this.state={
+			countryList:countryList(),
+			languageList:languageList()
+		}
     }
 
     componentWillMount() {
-
+		countryList();
     }
 
     componentDidMount() {
-        var slider1 = new Slider();
-        slider1.Init();
-        slider1.SliderCallBack = function (c) {
-            var image = new Image();
-            image.src = "Ajax/security.ashx?token=" + $("#TOKEN").val();
-        }
-
-        console.log(slider1)
-        ///屏幕大小发生改变时触发
-        $(window).resize(function () {
-            slider1.HanderIn();
-            slider1.HanderOut();
-        });
+		sliderInit();
+		selectOption();
     }
 
     componentWillUnmount() {
 
-    }
+	}
+	
+
 
     render(){
         return (
@@ -62,9 +58,8 @@ class FormSliderCommpent extends React.Component {
 								</p>
 								<div className="select_country">
 									<div className="country_left" >
-			
 										<div className="select_left" id="_country"></div>
-										<p className="country_img"><img src={china} /></p>
+										<p className="country_img"><img src={CN} /></p>
 										<p className="country" id="count">China</p>
 										<input type="hidden" value="" id="currentCountry"/>
 									</div>
@@ -77,24 +72,19 @@ class FormSliderCommpent extends React.Component {
 							</div>
 							<div className="countryContainer none">
 								<ul className="select_flag" id="flags">
-									<li><img src={china} />China</li>
-									<li><img src={Iran} />Iran</li>
-									<li><img src={Indonesia}  />Indonesia</li>
-									<li><img src={Iraq} />Iraq</li>
-									<li><img src={Russian} />Russia</li>
-									<li><img src={SaudiaArabia}  />SaudiaArabia</li>
-									<li><img src={UK} />uk</li>
+									{this.state.countryList.map((ele)=>
+										<li key={ele.$.key}>
+											<img src={ele.countryImg} />
+											{ele.country}
+										</li>
+									)}
 								</ul>
 							</div>
 							<div className="countryContainer1 none">
 								<ul id="_select" className="_select">
-									<li>China</li>
-									<li>Iran</li>
-									<li>Indonesia</li>
-									<li>Iraq</li>
-									<li>Russia</li>
-									<li>SaudiaArabia</li>
-									<li>uk</li>
+									{this.state.languageList.map((ele)=>
+										<li className={ele.$.value} key={ele.$.value}>{ele.$.text}</li>
+									)}
 								</ul>
 							</div>
 						</div>
@@ -120,7 +110,7 @@ class FormSliderCommpent extends React.Component {
 					                <div id="pageSlide">
 					                    <input id="captcha" className="valid" type="hidden" validmsg="请向右滑动。" value="0"/>
 					                    <span id="label" className="label"></span>
-					                    <span id="lableTip" hasslider="Thank you！" noslider="SLIDE to confirm you are human！">SLIDE to confirm you are human</span>
+					                    <span id="lableTip" hasslider="Thank you!" noslider="SLIDE to confirm you are human!">SLIDE to confirm you are human!</span>
 					                </div>
 					            </div>
 							</div>

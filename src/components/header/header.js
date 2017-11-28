@@ -1,7 +1,7 @@
 import React from 'react';
-import '../static/css/index.css';
-import '../static/css/front.css';
-import '../static/css/slick.css';
+import '../../static/css/index.css';
+import '../../static/css/front.css';
+import '../../static/css/slick.css';
 
 class HeaderCommpent extends React.Component {
 
@@ -13,7 +13,7 @@ class HeaderCommpent extends React.Component {
         return (
 		<nav>
 			<div className="nav">
-				<div className="logo">壳牌防伪查询系统</div>
+				<div className="logo">Shell Anti-Counterfeit System</div>
 	            <div id="btn" className="btn">
 	                <span></span>
 	                <span></span>
@@ -21,7 +21,7 @@ class HeaderCommpent extends React.Component {
 	            </div>
 	            <div id="navbar" className="navbar">
 	                <ul className="layer_clcik">
-	                    <li><a href="#">了解标签特征</a></li>
+	                    <li><a href="#">Understand label features</a></li>
 	                </ul>
 	            </div>  
 			</div>

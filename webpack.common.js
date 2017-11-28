@@ -6,15 +6,14 @@
  module.exports = {
    entry: {
     app: './src/index.js',
-    vendor:[
-      'lodash',
-      'jquery_wechat_sdk'
-    ]
+    vendor:[]
    },
    plugins: [
       new CleanWebpackPlugin(['dist']),
       new HtmlWebpackPlugin({
-        title: 'Production'
+        title: 'Shell Anti-Counterfeit System',
+        viewport:'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no',
+        template:'./src/template/index.html'
       }),
       new webpack.HashedModuleIdsPlugin(),
       new webpack.optimize.CommonsChunkPlugin({
@@ -66,7 +65,23 @@
           {
             test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
             use: [
-              'file-loader'
+              {
+                loader: 'file-loader',
+                options: {
+                  name:'static/font/[name].[hash].[ext]'
+                }
+              }
+            ]
+          },
+          {
+            test: /\.xml$/,
+            use: [
+              {
+                loader: 'xml-loader',
+                options: {
+                  name:'static/data/[name].[hash].xml'
+                }
+              }
             ]
           }
           // {

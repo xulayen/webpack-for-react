@@ -1,0 +1,2715 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configList>
+    <!-- 
+    本地配置信息
+    属性key：当前的区域/国家
+    属性visited:当前节点是否启用 true:启用，false：禁用
+    -->
+    <items>
+
+        <item key="ZA" visited="false">
+            <!-- 
+    language节点：当前语言
+    -->
+            <language>
+                English
+            </language>
+            <!--
+      country节点：当前国家/区域
+    -->
+            <country>
+                South Africa
+            </country>
+
+            <!--
+               countryImg节点：当前国家图片 
+            -->
+            <countryImg>
+                ZA.png
+            </countryImg>
+
+            <!--
+        label节点：当前label显示的图片,以label.aspx页面为相对路径
+      -->
+            <label gif="labelgif/ZA_label.gif" mobilegif="labelgif/ZA_m_label.gif" open="animation_1.gif">
+                static/images/lbl_digitcode.jpg
+            </label>
+
+
+
+            <!--
+      节点feedBack：feedback信息
+      属性flag：是否启用feedback,flag="true"启用，flag="false"未启用
+    -->
+            <feedBack flag="true">
+                <!--
+        formEmail节点：邮件发送方
+      -->
+                <fromEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>woshixuleijava@163.com</address>
+                    <!--
+          password节点：邮件密码
+        -->
+                    <password>XuLayen@998563</password>
+                    <!--
+          smtp节点：smtp服务器
+        -->
+                    <smtp>smtp.163.com</smtp>
+                    <!--
+            port节点：端口
+          -->
+                    <port>25</port>
+                </fromEmail>
+                <!--
+       toEmail节点：邮件接收方
+      -->
+                <toEmail>
+                    <!--
+          address节点：邮件地址，多个以逗号（","）隔开
+        -->
+                    <address>shellac@yesno.com.cn</address>
+                    <!--
+          link节点：接受邮箱地址链接地址
+        -->
+                    <link>张先生</link>
+                    <!--接受邮箱显示人姓名-->
+                    <username>张女士</username>
+                </toEmail>
+                <!--
+        tel节点：当前区域/国家显示的电话
+      -->
+                <tel>
+                    021-26095599
+                </tel>
+                <!--
+        text节点：feedback成功之后显示的文本
+      -->
+                <SuccessFeedbacktext>
+                    Thank you for submitting your feedback.
+                </SuccessFeedbacktext>
+
+                <!--
+        text节点：feedback失败之后显示的文本
+      -->
+                <FailFeedbacktext>
+                    sorry!The network is busy!
+                </FailFeedbacktext>
+            </feedBack>
+            <!--
+      contactUs节点：联系我们
+      属性flag：是否启用contactUs,flag="true"启用，flag="false"未启用
+    -->
+            <contactUs flag="false">
+                <!--
+        text节点：显示的文本
+      -->
+                <text>
+                    UK
+                </text>
+                <!--
+        tel节点：显示的电话
+      -->
+                <tel tip="Tel:">
+                    021-2609 5599
+                </tel>
+                <!--
+        email节点：显示的邮箱地址
+      -->
+                <email tip="Email:">
+                    shellac@yesno.com.cn
+                </email>
+                <!--
+          address节点：显示的地址
+        -->
+                <address>
+                    这是地址1111111
+                </address>
+                <!--
+        link节点：联系人
+      -->
+                <link>
+                    张先生
+                </link>
+            </contactUs>
+
+            <!--
+        脚步链接(T&C、Privacy Policy)
+      -->
+            <footLink>
+                <!--T&C-->
+                <tearmAndCondition>
+                    <links>
+                        <!--English-->
+                        <link lan="EN" default="true">
+                            http://www.shell.com/zaf/about-our-website/terms-conditions.html
+                        </link>
+                    </links>
+                </tearmAndCondition>
+
+                <!--Privacy Policy-->
+                <privacy>
+                    <links>
+                        <!--English-->
+                        <link lan="EN" default="true">
+                            http://www.shell.com/zaf/about-our-website/privacy-policy.html
+                        </link>
+                    </links>
+                </privacy>
+            </footLink>
+
+            <!--
+                营销活动
+            -->
+            <promotion flag="true">
+                <token>
+                    86c070a075ba4160adcf278f3d13fc18
+                </token>
+                <url>
+                    https://www.baidu.com/?code={0}&amp;sign={1}
+                </url>
+                <begin>
+                    2017-4-17 17:04:59
+                </begin>
+
+                <end>
+                    2018-4-17 17:04:59
+                </end>
+            </promotion>
+
+        </item>
+
+        <item key="CN" visited="true">
+            <!--
+    language节点：当前语言
+    -->
+            <language>
+                中文
+            </language>
+            <!--
+      country节点：当前国家/区域
+    -->
+            <country>
+                中国
+            </country>
+
+            <!--
+               countryImg节点：当前国家图片 
+            -->
+            <countryImg>
+                http://www.ac.shell.com/uat/static/images/countryImg/china.png
+            </countryImg>
+
+            <!--
+        label节点：当前label显示的图片以label.aspx页面为相对路径
+      -->
+            <label gif="labelgif/CN_label.gif" mobilegif="labelgif/CN_m_label.gif" open="animation_1.gif">
+                static/images/lbl_digitcode.jpg
+            </label>
+
+            <!--
+      节点feedBack：feedback信息
+      属性flag：是否启用feedback,flag="true"启用，flag="false"未启用
+    -->
+            <feedBack flag="true">
+                <!--
+        formEmail节点：邮件发送方
+      -->
+                <fromEmail>
+                    <!-- 
+          address节点：邮件地址
+         -->
+                    <address>shellac@yesno.com.cn</address>
+                    <!-- 
+          password节点：邮件密码
+         -->
+                    <password>CCN@4B259B_YesN0</password>
+                    <!-- 
+          smtp节点：smtp服务器
+         -->
+                    <smtp>smtp.exmail.qq.com</smtp>
+                    <!-- 
+            port节点：端口
+           -->
+                    <port>25</port>
+                </fromEmail>
+                <!--
+       toEmail节点：邮件接收方
+      -->
+                <toEmail>
+                    <!--
+
+          address节点：邮件地址，多个以逗号（","）隔开service.list@yesno.com.cn
+        
+-->
+                    <address>SCHINA-GCLSMAC-Support@shell.com</address>
+                    <!-- 
+          link节点：接受邮箱地址链接地址
+         -->
+                    <link>服务部</link>
+                    <!-- 接受邮箱显示人姓名 -->
+                    <username>服务部</username>
+                </toEmail>
+                <!--
+        tel节点：当前区域/国家显示的电话
+      -->
+                <tel>
+                    +86-21-26095599
+                </tel>
+                <!--
+        text节点：feedback成功之后显示的文本
+      -->
+                <SuccessFeedbacktext>
+                    谢谢您的反馈！
+                </SuccessFeedbacktext>
+
+                <!--
+        text节点：feedback失败之后显示的文本
+      -->
+                <FailFeedbacktext>
+                    对不起！网络繁忙！
+                </FailFeedbacktext>
+            </feedBack>
+            <!--
+      contactUs节点：联系我们
+      属性flag：是否启用contactUs,flag="true"启用，flag="false"未启用
+    -->
+            <contactUs flag="true">
+                <!--
+        text节点：显示的文本
+      -->
+                <text>
+                    中国
+                </text>
+                <!--
+        tel节点：显示的电话
+      -->
+                <tel tip="电话：">
+                    +86-21-26095599
+                </tel>
+                <!--
+        email节点：显示的邮箱地址
+      -->
+                <email tip="邮箱：">
+                    shellac@yesno.com.cn
+                </email>
+                <!--
+          address节点：显示的地址
+        -->
+                <address>
+                    这是地址1111111
+                </address>
+                <!--
+        link节点：联系人
+      -->
+                <link>
+                    徐磊
+                </link>
+            </contactUs>
+
+            <!--
+        脚步链接(T&C、Privacy Policy)
+      -->
+            <footLink>
+                <!--T&C-->
+                <tearmAndCondition>
+                    <links>
+                        <!--Chinese-->
+                        <link lan="ZH">
+                            http://www.shell.com.cn/zh/about-our-website/terms.html
+                        </link>
+                        <!--English-->
+                        <link lan="EN" default="true">
+                            <!--http://www.shell.com.cn/en/aboutshell/about-our-website/terms-conditions.html-->
+                            http://www.shell.com.cn/chn-royaldutchshell/en_cn/terms-of-use.html
+                        </link>
+                    </links>
+                </tearmAndCondition>
+
+                <!--Privacy Policy-->
+                <privacy>
+                    <links>
+                        <!--Chinese-->
+                        <link lan="ZH" >
+                            http://www.shell.com.cn/zh/about-our-website/privacy-policy.html
+                        </link>
+                        <!--English-->
+                        <link lan="EN" default="true">
+                            <!--http://www.shell.com.cn/en/aboutshell/about-our-website/privacy-policy.html-->
+                            http://www.shell.com.cn/chn-royaldutchshell/en_cn/privacy.html
+                        </link>
+                    </links>
+                </privacy>
+            </footLink>
+
+            <!--
+                营销活动
+            -->
+            <promotion flag="true">
+                <token>
+                    86c070a075ba4160adcf278f3d13fc18
+                </token>
+                <url>
+                    https://www.baidu.com/?code={0}&amp;sign={1}
+                </url>
+                <begin>
+                    2017-4-17 17:04:59
+                </begin>
+
+                <end>
+                    2018-4-17 17:04:59
+                </end>
+            </promotion>
+        </item>
+
+        <item key="RU" visited="true">
+            <!--
+    language节点：当前语言
+    -->
+            <language>
+                俄文
+            </language>
+            <!--
+      country节点：当前国家/区域
+    -->
+            <country>
+                Россия
+            </country>
+
+            <!--
+               countryImg节点：当前国家图片 
+            -->
+            <countryImg>
+                http://www.ac.shell.com/uat/static/images/countryImg/Russian.png
+            </countryImg>
+
+            <!--
+        label节点：当前label显示的图片以label.aspx页面为相对路径
+      -->
+            <label gif="labelgif/RU_label.gif" mobilegif="labelgif/RU_m_label.gif" open="animation_ru.gif">
+                static/images/label/Russia_label.png
+            </label>
+
+            <!--
+      节点feedBack：feedback信息
+      属性flag：是否启用feedback,flag="true"启用，flag="false"未启用
+    -->
+            <feedBack flag="false">
+                <!--
+        formEmail节点：邮件发送方
+      -->
+                <fromEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>woshixuleijava@163.com</address>
+                    <!--
+          password节点：邮件密码
+        -->
+                    <password>XuLayen@998563</password>
+                    <!--
+          smtp节点：smtp服务器
+        -->
+                    <smtp>smtp.163.com</smtp>
+                    <!--
+            port节点：端口
+          -->
+                    <port>25</port>
+                </fromEmail>
+                <!--
+       toEmail节点：邮件接收方
+      -->
+                <toEmail>
+                    <!--
+          address节点：邮件地址，多个以逗号（","）隔开
+        -->
+                    <address>shellac@yesno.com.cn</address>
+                    <!--
+          link节点：接受邮箱地址链接地址
+        -->
+                    <link>徐磊</link>
+                    <!--接受邮箱显示人姓名-->
+                    <username>徐磊</username>
+                </toEmail>
+                <!--
+        tel节点：当前区域/国家显示的电话
+      -->
+                <tel>
+                    +7 499 923 2101
+                </tel>
+                <!--
+        text节点：feedback成功之后显示的文本
+      -->
+                <SuccessFeedbacktext>
+                    谢谢您的反馈！
+                </SuccessFeedbacktext>
+
+                <!--
+        text节点：feedback失败之后显示的文本
+      -->
+                <FailFeedbacktext>
+                    对不起！网络繁忙！
+                </FailFeedbacktext>
+            </feedBack>
+            <!--
+      contactUs节点：联系我们
+      属性flag：是否启用contactUs,flag="true"启用，flag="false"未启用
+    -->
+            <contactUs flag="true">
+                <!--
+        text节点：显示的文本
+      -->
+                <text>
+                    俄罗斯
+                </text>
+                <!--
+        tel节点：显示的电话
+      -->
+                <tel tip="Тел.:">
+                    +7 499 923 2101
+                </tel>
+                <!--
+        email节点：显示的邮箱地址
+      -->
+                <email tip="Email:">
+                    zapros-b2c-ru@shell.com
+                </email>
+                <!--
+          address节点：显示的地址
+        -->
+                <address>
+                    这是地址1111111
+                </address>
+                <!--
+        link节点：联系人
+      -->
+                <link>
+                    徐磊
+                </link>
+            </contactUs>
+
+            <!--
+        脚步链接(T&C、Privacy Policy)
+      -->
+            <footLink>
+                <!--T&C-->
+                <tearmAndCondition>
+                    <links>
+                        <!--Russian-->
+                        <link lan="RU" default="true">
+                            http://www.shell.com.ru/about-our-website/terms-conditions.html
+                        </link>
+                    </links>
+                </tearmAndCondition>
+
+                <!--Privacy Policy-->
+                <privacy>
+                    <links>
+                        <!--Russian-->
+                        <link lan="RU" default="true">
+                            http://www.shell.com.ru/about-our-website/privacy-policy.html
+                        </link>
+                    </links>
+                </privacy>
+            </footLink>
+
+            <!--
+                营销活动
+            -->
+            <promotion flag="true">
+                <token>
+                    86c070a075ba4160adcf278f3d13fc18
+                </token>
+                <url>
+                    https://www.baidu.com/?code={0}&amp;sign={1}
+                </url>
+                <begin>
+                    2017-4-17 17:04:59
+                </begin>
+
+                <end>
+                    2018-4-17 17:04:59
+                </end>
+            </promotion>
+        </item>
+
+        <item key="ID" visited="true">
+            <!--
+    language节点：当前语言
+    -->
+            <language>
+                印度尼西亚文
+            </language>
+            <!--
+      country节点：当前国家/区域
+    -->
+            <country>
+                Indonesia
+            </country>
+
+            <!--
+               countryImg节点：当前国家图片 
+            -->
+            <countryImg>
+                http://www.ac.shell.com/uat/static/images/countryImg/Indonesia.png
+            </countryImg>
+
+            <!--
+        label节点：当前label显示的图片以label.aspx页面为相对路径
+      -->
+            <label gif="labelgif/ID_label.gif" mobilegif="labelgif/ID_m_label.gif" open="animation_1.gif">
+                static/images/label/Indonesia_label.jpg
+            </label>
+
+            <!--
+      节点feedBack：feedback信息
+      属性flag：是否启用feedback,flag="true"启用，flag="false"未启用
+    -->
+            <feedBack flag="true">
+                <!--
+        formEmail节点：邮件发送方
+      -->
+                <fromEmail>
+                    <!-- 
+          address节点：邮件地址
+         -->
+                    <address>shellac@yesno.com.cn</address>
+                    <!-- 
+          password节点：邮件密码
+         -->
+                    <password>CCN@4B259B_YesN0</password>
+                    <!-- 
+          smtp节点：smtp服务器
+         -->
+                    <smtp>smtp.exmail.qq.com</smtp>
+                    <!-- 
+            port节点：端口
+           -->
+                    <port>25</port>
+                </fromEmail>
+                <!--
+       toEmail节点：邮件接收方
+      -->
+                <toEmail>
+                    <!-- 
+          address节点：邮件地址，多个以逗号（","）隔开 
+         -->
+                    <address>infoumum-id@shell.com</address>
+                    <!-- 
+          link节点：接受邮箱地址链接地址
+         -->
+                    <link>徐磊</link>
+                    <!-- 接受邮箱显示人姓名 -->
+                    <username>徐磊</username>
+                </toEmail>
+                <!--
+        tel节点：当前区域/国家显示的电话
+      -->
+                <tel>
+                    0804 1 801050
+                </tel>
+                <!--
+        text节点：feedback成功之后显示的文本
+      -->
+                <SuccessFeedbacktext>
+                    谢谢您的反馈！
+                </SuccessFeedbacktext>
+
+                <!--
+        text节点：feedback失败之后显示的文本
+      -->
+                <FailFeedbacktext>
+                    对不起！网络繁忙！
+                </FailFeedbacktext>
+            </feedBack>
+            <!--
+      contactUs节点：联系我们
+      属性flag：是否启用contactUs,flag="true"启用，flag="false"未启用
+    -->
+            <contactUs flag="true">
+                <!--
+        text节点：显示的文本
+      -->
+                <text>
+                    印度尼西亚
+                </text>
+                <!--
+        tel节点：显示的电话
+      -->
+                <tel tip="Telp:">
+                    0804 1 801050
+                </tel>
+                <!--
+        email节点：显示的邮箱地址
+      -->
+                <email tip="Email:">
+                    infoumum-id@shell.com
+                </email>
+                <!--
+          address节点：显示的地址
+        -->
+                <address>
+
+                </address>
+                <!--
+        link节点：联系人
+      -->
+                <link>
+
+                </link>
+            </contactUs>
+
+            <!--
+        脚步链接(T&C、Privacy Policy)
+      -->
+            <footLink>
+                <!--T&C-->
+                <tearmAndCondition>
+                    <links>
+                        <!--Indonesia language-->
+                        <link lan="ID">
+                            http://www.shell.co.id/id/aboutshell/about-our-website/terms-conditions.html
+                        </link>
+                    </links>
+                </tearmAndCondition>
+
+                <!--Privacy Policy-->
+                <privacy>
+                    <links>
+                        <!--Indonesia language-->
+                        <link lan="ID" >
+                            http://www.shell.co.id/id/aboutshell/about-our-website/privacy-policy.html
+                        </link>
+                        <!--English-->
+                        <link lan="EN" default="true">
+                            http://www.shell.co.id/en/aboutshell/about-our-website/privacy-policy.html
+                        </link>
+                    </links>
+                </privacy>
+            </footLink>
+
+            <!--
+                营销活动
+            -->
+            <promotion flag="true">
+                <token>
+                    86c070a075ba4160adcf278f3d13fc18
+                </token>
+                <url>
+                    https://www.baidu.com/?code={0}&amp;sign={1}
+                </url>
+                <begin>
+                    2017-4-17 17:04:59
+                </begin>
+
+                <end>
+                    2018-4-17 17:04:59
+                </end>
+            </promotion>
+        </item>
+
+        <item key="AR" visited="false">
+            <!--
+    language节点：当前语言
+    -->
+            <language>
+                西班牙文
+            </language>
+            <!--
+      country节点：当前国家/区域
+    -->
+            <country>
+                Argentina
+            </country>
+
+            <!--
+               countryImg节点：当前国家图片 
+            -->
+            <countryImg>
+                AR.png
+            </countryImg>
+
+            <!--
+        label节点：当前label显示的图片以label.aspx页面为相对路径
+      -->
+            <label gif="CN_gif.gif" mobilegif="CN_m_gif.gif" open="animation_1.gif">
+
+            </label>
+
+            <!--
+      节点feedBack：feedback信息
+      属性flag：是否启用feedback,flag="true"启用，flag="false"未启用
+    -->
+            <feedBack flag="true">
+                <!--
+        formEmail节点：邮件发送方
+      -->
+                <fromEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>woshixuleijava@163.com</address>
+                    <!--
+          password节点：邮件密码
+        -->
+                    <password>XuLayen@998563</password>
+                    <!--
+          smtp节点：smtp服务器
+        -->
+                    <smtp>smtp.163.com</smtp>
+                    <!--
+            port节点：端口
+          -->
+                    <port>25</port>
+                </fromEmail>
+                <!--
+       toEmail节点：邮件接收方
+      -->
+                <toEmail>
+                    <!--
+          address节点：邮件地址，多个以逗号（","）隔开
+        -->
+                    <address>shellac@yesno.com.cn</address>
+                    <!--
+          link节点：接受邮箱地址链接地址
+        -->
+                    <link>徐磊</link>
+                    <!--接受邮箱显示人姓名-->
+                    <username>徐磊</username>
+                </toEmail>
+                <!--
+        tel节点：当前区域/国家显示的电话
+      -->
+                <tel>
+                    021-26095599
+                </tel>
+                <!--
+        text节点：feedback成功之后显示的文本
+      -->
+                <SuccessFeedbacktext>
+                    谢谢您的反馈！
+                </SuccessFeedbacktext>
+
+                <!--
+        text节点：feedback失败之后显示的文本
+      -->
+                <FailFeedbacktext>
+                    对不起！网络繁忙！
+                </FailFeedbacktext>
+            </feedBack>
+            <!--
+      contactUs节点：联系我们
+      属性flag：是否启用contactUs,flag="true"启用，flag="false"未启用
+    -->
+            <contactUs flag="false">
+                <!--
+        text节点：显示的文本
+      -->
+                <text>
+                    阿根廷
+                </text>
+                <!--
+        tel节点：显示的电话
+      -->
+                <tel tip="Teléfono:">
+                    021-2609 5599
+                </tel>
+                <!--
+        email节点：显示的邮箱地址
+      -->
+                <email tip="CONTÁCTENOS:">
+                    shellac@yesno.com.cn
+                </email>
+                <!--
+          address节点：显示的地址
+        -->
+                <address>
+                    这是地址1111111
+                </address>
+                <!--
+        link节点：联系人
+      -->
+                <link>
+                    徐磊
+                </link>
+            </contactUs>
+
+            <!--
+        脚步链接(T&C、Privacy Policy)
+      -->
+            <footLink>
+                <!--T&C-->
+                <tearmAndCondition>
+                    <links>
+                        <!--Spanish-->
+                        <link lan="ES" default="true">
+                            http://www.shell.com.ar/about-our-website/terms-conditions.html
+                        </link>
+                    </links>
+                </tearmAndCondition>
+
+                <!--Privacy Policy-->
+                <privacy>
+                    <links>
+                        <!--Spanish-->
+                        <link lan="ES" default="true">
+                            http://www.shell.com.ar/about-our-website/privacy-policy.html
+                        </link>
+                    </links>
+                </privacy>
+            </footLink>
+
+            <!--
+                营销活动
+            -->
+            <promotion flag="true">
+                <token>
+                    86c070a075ba4160adcf278f3d13fc18
+                </token>
+                <url>
+                    https://www.baidu.com/?code={0}&amp;sign={1}
+                </url>
+                <begin>
+                    2017-4-17 17:04:59
+                </begin>
+
+                <end>
+                    2018-4-17 17:04:59
+                </end>
+            </promotion>
+        </item>
+
+        <item key="CO" visited="false">
+            <!--
+    language节点：当前语言
+    -->
+            <language>
+                Spanish
+            </language>
+            <!--
+      country节点：当前国家/区域
+    -->
+            <country>
+                Colombia
+            </country>
+
+            <!--
+               countryImg节点：当前国家图片 
+            -->
+            <countryImg>
+                CO.png
+            </countryImg>
+
+            <!--
+        label节点：当前label显示的图片以label.aspx页面为相对路径
+      -->
+            <label gif="CN_gif.gif" mobilegif="CN_m_gif.gif" open="animation_1.gif">
+
+            </label>
+
+            <!--
+      节点feedBack：feedback信息
+      属性flag：是否启用feedback,flag="true"启用，flag="false"未启用
+    -->
+            <feedBack flag="true">
+                <!--
+        formEmail节点：邮件发送方
+      -->
+                <fromEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>woshixuleijava@163.com</address>
+                    <!--
+          password节点：邮件密码
+        -->
+                    <password>XuLayen@998563</password>
+                    <!--
+          smtp节点：smtp服务器
+        -->
+                    <smtp>smtp.163.com</smtp>
+                    <!--
+            port节点：端口
+          -->
+                    <port>25</port>
+                </fromEmail>
+                <!--
+       toEmail节点：邮件接收方
+      -->
+                <toEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>shellac@yesno.com.cn</address>
+                    <!--
+          link节点：接受邮箱地址链接地址
+        -->
+                    <link>徐磊</link>
+                    <!--接受邮箱显示人姓名-->
+                    <username>徐磊</username>
+                </toEmail>
+                <!--
+        tel节点：当前区域/国家显示的电话
+      -->
+                <tel>
+                    021-26095599
+                </tel>
+                <!--
+        text节点：feedback成功之后显示的文本
+      -->
+                <SuccessFeedbacktext>
+                    Gracias por enviar sus comentarios.
+                </SuccessFeedbacktext>
+
+                <!--
+        text节点：feedback失败之后显示的文本
+      -->
+                <FailFeedbacktext>
+                    对不起！网络繁忙！
+                </FailFeedbacktext>
+            </feedBack>
+            <!--
+      contactUs节点：联系我们
+      属性flag：是否启用contactUs,flag="true"启用，flag="false"未启用
+    -->
+            <contactUs flag="false">
+                <!--
+        text节点：显示的文本
+      -->
+                <text>
+                    哥伦比亚
+                </text>
+                <!--
+        tel节点：显示的电话
+      -->
+                <tel tip="Tel.: ">
+                    021-2609 5599
+                </tel>
+                <!--
+        email节点：显示的邮箱地址
+      -->
+                <email tip="Correo electrónico:">
+                    shellac@yesno.com.cn
+                </email>
+                <!--
+          address节点：显示的地址
+        -->
+                <address>
+                    这是地址1111111
+                </address>
+                <!--
+        link节点：联系人
+      -->
+                <link>
+                    徐磊
+                </link>
+            </contactUs>
+
+            <!--
+        脚步链接(T&C、Privacy Policy)
+      -->
+            <footLink>
+                <!--T&C-->
+                <tearmAndCondition>
+                    <links>
+                        <!--Spanish-->
+                        <link lan="ES" default="true">
+                            http://www.shell.com.co/about-our-website/terms-conditions.html
+                        </link>
+                    </links>
+                </tearmAndCondition>
+
+                <!--Privacy Policy-->
+                <privacy>
+                    <links>
+                        <!--Spanish-->
+                        <link lan="ES" default="true">
+                            http://www.shell.com.co/about-our-website/privacy-policy.html
+                        </link>
+                    </links>
+                </privacy>
+            </footLink>
+
+            <!--
+                营销活动
+            -->
+            <promotion flag="true">
+                <token>
+                    86c070a075ba4160adcf278f3d13fc18
+                </token>
+                <url>
+                    https://www.baidu.com/?code={0}&amp;sign={1}
+                </url>
+                <begin>
+                    2017-4-17 17:04:59
+                </begin>
+
+                <end>
+                    2018-4-17 17:04:59
+                </end>
+            </promotion>
+        </item>
+
+        <item key="BR" visited="false">
+            <!--
+    language节点：当前语言
+    -->
+            <language>
+                Spanish
+            </language>
+            <!--
+      country节点：当前国家/区域
+    -->
+            <country>
+                Brasil
+            </country>
+
+            <!--
+               countryImg节点：当前国家图片 
+            -->
+            <countryImg>
+                BR.png
+            </countryImg>
+
+            <!--
+        label节点：当前label显示的图片以label.aspx页面为相对路径
+      -->
+            <label gif="CN_gif.gif" mobilegif="CN_m_gif.gif" open="animation_1.gif">
+
+            </label>
+
+            <!--
+      节点feedBack：feedback信息
+      属性flag：是否启用feedback,flag="true"启用，flag="false"未启用
+    -->
+            <feedBack flag="true">
+                <!--
+        formEmail节点：邮件发送方
+      -->
+                <fromEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>woshixuleijava@163.com</address>
+                    <!--
+          password节点：邮件密码
+        -->
+                    <password>XuLayen@998563</password>
+                    <!--
+          smtp节点：smtp服务器
+        -->
+                    <smtp>smtp.163.com</smtp>
+                    <!--
+            port节点：端口
+          -->
+                    <port>25</port>
+                </fromEmail>
+                <!--
+       toEmail节点：邮件接收方
+      -->
+                <toEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>shellac@yesno.com.cn</address>
+                    <!--
+          link节点：接受邮箱地址链接地址
+        -->
+                    <link>徐磊</link>
+                    <!--接受邮箱显示人姓名-->
+                    <username>徐磊</username>
+                </toEmail>
+                <!--
+        tel节点：当前区域/国家显示的电话
+      -->
+                <tel>
+                    021-26095599
+                </tel>
+                <!--
+        text节点：feedback成功之后显示的文本
+      -->
+                <SuccessFeedbacktext>
+                    Gracias por enviar sus comentarios.
+                </SuccessFeedbacktext>
+
+                <!--
+        text节点：feedback失败之后显示的文本
+      -->
+                <FailFeedbacktext>
+                    对不起！网络繁忙！
+                </FailFeedbacktext>
+            </feedBack>
+            <!--
+      contactUs节点：联系我们
+      属性flag：是否启用contactUs,flag="true"启用，flag="false"未启用
+    -->
+            <contactUs flag="false">
+                <!--
+        text节点：显示的文本
+      -->
+                <text>
+                    巴西
+                </text>
+                <!--
+        tel节点：显示的电话
+      -->
+                <tel tip="Tel:">
+                    021-2609 5599
+                </tel>
+                <!--
+        email节点：显示的邮箱地址
+      -->
+                <email tip="E-mail:">
+                    shellac@yesno.com.cn
+                </email>
+                <!--
+          address节点：显示的地址
+        -->
+                <address>
+                    这是地址1111111
+                </address>
+                <!--
+        link节点：联系人
+      -->
+                <link>
+                    徐磊
+                </link>
+            </contactUs>
+
+            <!--
+        脚步链接(T&C、Privacy Policy)
+      -->
+            <footLink>
+                <!--T&C-->
+                <tearmAndCondition>
+                    <links>
+                        <!--Portuguese-->
+                        <link lan="PT" default="true">
+                            http://www.shell.com/bra/about-our-website/terms-conditions.html
+                        </link>
+                    </links>
+                </tearmAndCondition>
+
+                <!--Privacy Policy-->
+                <privacy>
+                    <links>
+                        <!--Portuguese-->
+                        <link lan="PT" default="true">
+                            http://www.shell.com/bra/about-our-website/privacy-policy.html
+                        </link>
+                    </links>
+                </privacy>
+            </footLink>
+
+            <!--
+                营销活动
+            -->
+            <promotion flag="true">
+                <token>
+                    86c070a075ba4160adcf278f3d13fc18
+                </token>
+                <url>
+                    https://www.baidu.com/?code={0}&amp;sign={1}
+                </url>
+                <begin>
+                    2017-4-17 17:04:59
+                </begin>
+
+                <end>
+                    2018-4-17 17:04:59
+                </end>
+            </promotion>
+        </item>
+
+        <item key="TH" visited="false">
+            <!--
+    language节点：当前语言
+    -->
+            <language>
+                泰语
+            </language>
+            <!--
+      country节点：当前国家/区域
+    -->
+            <country>
+                ไทย
+            </country>
+
+            <!--
+               countryImg节点：当前国家图片 
+            -->
+            <countryImg>
+                TH.png
+            </countryImg>
+
+            <!--
+        label节点：当前label显示的图片以label.aspx页面为相对路径
+      -->
+            <label gif="CN_gif.gif" mobilegif="CN_m_gif.gif" open="animation_1.gif">
+
+            </label>
+
+            <!--
+      节点feedBack：feedback信息
+      属性flag：是否启用feedback,flag="true"启用，flag="false"未启用
+    -->
+            <feedBack flag="true">
+                <!--
+        formEmail节点：邮件发送方
+      -->
+                <fromEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>woshixuleijava@163.com</address>
+                    <!--
+          password节点：邮件密码
+        -->
+                    <password>XuLayen@998563</password>
+                    <!--
+          smtp节点：smtp服务器
+        -->
+                    <smtp>smtp.163.com</smtp>
+                    <!--
+            port节点：端口
+          -->
+                    <port>25</port>
+                </fromEmail>
+                <!--
+       toEmail节点：邮件接收方
+      -->
+                <toEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>shellac@yesno.com.cn</address>
+                    <!--
+          link节点：接受邮箱地址链接地址
+        -->
+                    <link>徐磊</link>
+                    <!--接受邮箱显示人姓名-->
+                    <username>徐磊</username>
+                </toEmail>
+                <!--
+        tel节点：当前区域/国家显示的电话
+      -->
+                <tel>
+                    021-26095599
+                </tel>
+                <!--
+        text节点：feedback成功之后显示的文本
+      -->
+                <SuccessFeedbacktext>
+                    Gracias por enviar sus comentarios.
+                </SuccessFeedbacktext>
+
+                <!--
+        text节点：feedback失败之后显示的文本
+      -->
+                <FailFeedbacktext>
+                    对不起！网络繁忙！
+                </FailFeedbacktext>
+            </feedBack>
+            <!--
+      contactUs节点：联系我们
+      属性flag：是否启用contactUs,flag="true"启用，flag="false"未启用
+    -->
+            <contactUs flag="false">
+                <!--
+        text节点：显示的文本
+      -->
+                <text>
+                    泰国
+                </text>
+                <!--
+        tel节点：显示的电话
+      -->
+                <tel tip="โทรศัพท์:">
+                    021-2609 5599
+                </tel>
+                <!--
+        email节点：显示的邮箱地址
+      -->
+                <email tip="อีเมล์:">
+                    shellac@yesno.com.cn
+                </email>
+                <!--
+          address节点：显示的地址
+        -->
+                <address>
+                    这是地址1111111
+                </address>
+                <!--
+        link节点：联系人
+      -->
+                <link>
+                    徐磊
+                </link>
+            </contactUs>
+
+            <!--
+        脚步链接(T&C、Privacy Policy)
+      -->
+            <footLink>
+                <!--T&C-->
+                <tearmAndCondition>
+                    <links>
+                        <!--English-->
+                        <link lan="EN" default="true">
+                            http://www.shell.co.th/en/about-our-website/terms-conditions.html
+                        </link>
+                        <!--Thailand language-->
+                        <link lan="TH">
+                            http://www.shell.co.th/th/about-our-website/terms-conditions.html
+                        </link>
+                    </links>
+                </tearmAndCondition>
+
+                <!--Privacy Policy-->
+                <privacy>
+                    <links>
+                        <!--Thailand language-->
+                        <link lan="TH" >
+                            http://www.shell.co.th/th/about-our-website/privacy-policy.html
+                        </link>
+                        <!--English-->
+                        <link lan="EN" default="true">
+                            http://www.shell.co.th/en/about-our-website/privacy-policy.html
+                        </link>
+                    </links>
+                </privacy>
+            </footLink>
+
+            <!--
+                营销活动
+            -->
+            <promotion flag="true">
+                <token>
+                    86c070a075ba4160adcf278f3d13fc18
+                </token>
+                <url>
+                    https://www.baidu.com/?code={0}&amp;sign={1}
+                </url>
+                <begin>
+                    2017-4-17 17:04:59
+                </begin>
+
+                <end>
+                    2018-4-17 17:04:59
+                </end>
+            </promotion>
+        </item>
+
+        <item key="VN" visited="false">
+            <!--
+    language节点：当前语言
+    -->
+            <language>
+                越南语
+            </language>
+            <!--
+      country节点：当前国家/区域
+    -->
+            <country>
+                Vietnam
+            </country>
+
+            <!--
+               countryImg节点：当前国家图片 
+            -->
+            <countryImg>
+                VN.png
+            </countryImg>
+
+            <!--
+        label节点：当前label显示的图片以label.aspx页面为相对路径
+      -->
+            <label gif="CN_gif.gif" mobilegif="CN_m_gif.gif" open="animation_1.gif">
+
+            </label>
+
+            <!--
+      节点feedBack：feedback信息
+      属性flag：是否启用feedback,flag="true"启用，flag="false"未启用
+    -->
+            <feedBack flag="true">
+                <!--
+        formEmail节点：邮件发送方
+      -->
+                <fromEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>woshixuleijava@163.com</address>
+                    <!--
+          password节点：邮件密码
+        -->
+                    <password>XuLayen@998563</password>
+                    <!--
+          smtp节点：smtp服务器
+        -->
+                    <smtp>smtp.163.com</smtp>
+                    <!--
+            port节点：端口
+          -->
+                    <port>25</port>
+                </fromEmail>
+                <!--
+       toEmail节点：邮件接收方
+      -->
+                <toEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>shellac@yesno.com.cn</address>
+                    <!--
+          link节点：接受邮箱地址链接地址
+        -->
+                    <link>徐磊</link>
+                    <!--接受邮箱显示人姓名-->
+                    <username>徐磊</username>
+                </toEmail>
+                <!--
+        tel节点：当前区域/国家显示的电话
+      -->
+                <tel>
+                    021-26095599
+                </tel>
+                <!--
+        text节点：feedback成功之后显示的文本
+      -->
+                <SuccessFeedbacktext>
+                    Gracias por enviar sus comentarios.
+                </SuccessFeedbacktext>
+
+                <!--
+        text节点：feedback失败之后显示的文本
+      -->
+                <FailFeedbacktext>
+                    对不起！网络繁忙！
+                </FailFeedbacktext>
+            </feedBack>
+            <!--
+      contactUs节点：联系我们
+      属性flag：是否启用contactUs,flag="true"启用，flag="false"未启用
+    -->
+            <contactUs flag="false">
+                <!--
+        text节点：显示的文本
+      -->
+                <text>
+                    越南
+                </text>
+                <!--
+        tel节点：显示的电话
+      -->
+                <tel tip="Điện thoại:">
+                    021-2609 5599
+                </tel>
+                <!--
+        email节点：显示的邮箱地址
+      -->
+                <email tip="Email:">
+                    shellac@yesno.com.cn
+                </email>
+                <!--
+          address节点：显示的地址
+        -->
+                <address>
+                    这是地址1111111
+                </address>
+                <!--
+        link节点：联系人
+      -->
+                <link>
+                    徐磊
+                </link>
+            </contactUs>
+
+            <!--
+        脚步链接(T&C、Privacy Policy)
+      -->
+            <footLink>
+                <!--T&C-->
+                <tearmAndCondition>
+                    <links>
+                        <!--Vietnamese-->
+                        <link lan="VI">
+                            http://www.shell.com.vn/about-our-website/terms-conditions.html
+                        </link>
+                    </links>
+                </tearmAndCondition>
+
+                <!--Privacy Policy-->
+                <privacy>
+                    <links>
+                        <!--Vietnamese-->
+                        <link lan="VI">
+                            http://www.shell.com.vn/about-our-website/privacy-policy.html
+                        </link>
+                    </links>
+                </privacy>
+            </footLink>
+
+            <!--
+                营销活动
+            -->
+            <promotion flag="true">
+                <token>
+                    86c070a075ba4160adcf278f3d13fc18
+                </token>
+                <url>
+                    https://www.baidu.com/?code={0}&amp;sign={1}
+                </url>
+                <begin>
+                    2017-4-17 17:04:59
+                </begin>
+
+                <end>
+                    2018-4-17 17:04:59
+                </end>
+            </promotion>
+        </item>
+
+        <item key="PK" visited="false">
+            <!--
+    language节点：当前语言
+    -->
+            <language>
+                Urdu
+            </language>
+            <!--
+      country节点：当前国家/区域
+    -->
+            <country>
+                پاکستان
+            </country>
+
+            <!--
+               countryImg节点：当前国家图片 
+            -->
+            <countryImg>
+                PK.png
+            </countryImg>
+
+            <!--
+        label节点：当前label显示的图片以label.aspx页面为相对路径 
+      -->
+            <label gif="CN_gif.gif" mobilegif="CN_m_gif.gif" open="animation_1.gif">
+
+            </label>
+
+            <!--
+      节点feedBack：feedback信息
+      属性flag：是否启用feedback,flag="true"启用，flag="false"未启用
+    -->
+            <feedBack flag="false">
+                <!--
+        formEmail节点：邮件发送方
+      -->
+                <fromEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>woshixuleijava@163.com</address>
+                    <!--
+          password节点：邮件密码
+        -->
+                    <password>XuLayen@998563</password>
+                    <!--
+          smtp节点：smtp服务器
+        -->
+                    <smtp>smtp.163.com</smtp>
+                    <!--
+            port节点：端口
+          -->
+                    <port>25</port>
+                </fromEmail>
+                <!--
+       toEmail节点：邮件接收方
+      -->
+                <toEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>shellac@yesno.com.cn</address>
+                    <!--
+          link节点：接受邮箱地址链接地址
+        -->
+                    <link>徐磊</link>
+                    <!--接受邮箱显示人姓名-->
+                    <username>徐磊</username>
+                </toEmail>
+                <!--
+        tel节点：当前区域/国家显示的电话
+      -->
+                <tel>
+                    021-26095599
+                </tel>
+                <!--
+        text节点：feedback成功之后显示的文本
+      -->
+                <SuccessFeedbacktext>
+                    Gracias por enviar sus comentarios.
+                </SuccessFeedbacktext>
+
+                <!--
+        text节点：feedback失败之后显示的文本
+      -->
+                <FailFeedbacktext>
+                    对不起！网络繁忙！
+                </FailFeedbacktext>
+            </feedBack>
+            <!--
+      contactUs节点：联系我们
+      属性flag：是否启用contactUs,flag="true"启用，flag="false"未启用
+    -->
+            <contactUs flag="false">
+                <!--
+        text节点：显示的文本
+      -->
+                <text>
+                    巴基斯坦
+                </text>
+                <!--
+        tel节点：显示的电话
+      -->
+                <tel tip="ٹیلیفون">
+                    021-2609 5599
+                </tel>
+                <!--
+        email节点：显示的邮箱地址
+      -->
+                <email tip="ای میل ایڈریس">
+                    shellac@yesno.com.cn
+                </email>
+                <!--
+          address节点：显示的地址
+        -->
+                <address>
+                    这是地址1111111
+                </address>
+                <!--
+        link节点：联系人
+      -->
+                <link>
+                    徐磊
+                </link>
+            </contactUs>
+
+            <!--
+        脚步链接(T&C、Privacy Policy)
+      -->
+            <footLink>
+                <!--T&C-->
+                <tearmAndCondition>
+                    <links>
+                        <!--English-->
+                        <link lan="EN" default="true">
+                            http://www.shell.com.pk/about-our-website/terms-conditions.html
+                        </link>
+                    </links>
+                </tearmAndCondition>
+
+                <!--Privacy Policy-->
+                <privacy>
+                    <links>
+                        <!--English-->
+                        <link lan="EN" default="true">
+                            http://www.shell.com.pk/about-our-website/privacy-policy.html
+                        </link>
+                    </links>
+                </privacy>
+            </footLink>
+
+            <!--
+                营销活动
+            -->
+            <promotion flag="true">
+                <token>
+                    86c070a075ba4160adcf278f3d13fc18
+                </token>
+                <url>
+                    https://www.baidu.com/?code={0}&amp;sign={1}
+                </url>
+                <begin>
+                    2017-4-17 17:04:59
+                </begin>
+
+                <end>
+                    2018-4-17 17:04:59
+                </end>
+            </promotion>
+        </item>
+
+        <item key="MY" visited="false">
+            <!--
+    language节点：当前语言
+    -->
+            <language>
+                马来语
+            </language>
+            <!--
+      country节点：当前国家/区域
+    -->
+            <country>
+                Malaysia
+            </country>
+
+            <!--
+               countryImg节点：当前国家图片 
+            -->
+            <countryImg>
+                MY.png
+            </countryImg>
+
+            <!--
+        label节点：当前label显示的图片以label.aspx页面为相对路径
+      -->
+            <label gif="CN_gif.gif" mobilegif="CN_m_gif.gif" open="animation_1.gif">
+
+            </label>
+
+            <!--
+      节点feedBack：feedback信息
+      属性flag：是否启用feedback,flag="true"启用，flag="false"未启用
+    -->
+            <feedBack flag="true">
+                <!--
+        formEmail节点：邮件发送方
+      -->
+                <fromEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>woshixuleijava@163.com</address>
+                    <!--
+          password节点：邮件密码
+        -->
+                    <password>XuLayen@998563</password>
+                    <!--
+          smtp节点：smtp服务器
+        -->
+                    <smtp>smtp.163.com</smtp>
+                    <!--
+            port节点：端口
+          -->
+                    <port>25</port>
+                </fromEmail>
+                <!--
+       toEmail节点：邮件接收方
+      -->
+                <toEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>shellac@yesno.com.cn</address>
+                    <!--
+          link节点：接受邮箱地址链接地址
+        -->
+                    <link>徐磊</link>
+                    <!--接受邮箱显示人姓名-->
+                    <username>徐磊</username>
+                </toEmail>
+                <!--
+        tel节点：当前区域/国家显示的电话
+      -->
+                <tel>
+                    021-26095599
+                </tel>
+                <!--
+        text节点：feedback成功之后显示的文本
+      -->
+                <SuccessFeedbacktext>
+                    Gracias por enviar sus comentarios.
+                </SuccessFeedbacktext>
+
+                <!--
+        text节点：feedback失败之后显示的文本
+      -->
+                <FailFeedbacktext>
+                    对不起！网络繁忙！
+                </FailFeedbacktext>
+            </feedBack>
+            <!--
+      contactUs节点：联系我们
+      属性flag：是否启用contactUs,flag="true"启用，flag="false"未启用
+    -->
+            <contactUs flag="false">
+                <!--
+        text节点：显示的文本
+      -->
+                <text>
+                    马来西亚
+                </text>
+                <!--
+        tel节点：显示的电话
+      -->
+                <tel tip="Telefon:">
+                    021-2609 5599
+                </tel>
+                <!--
+        email节点：显示的邮箱地址
+      -->
+                <email tip="E-mel:">
+                    shellac@yesno.com.cn
+                </email>
+                <!--
+          address节点：显示的地址
+        -->
+                <address>
+                    这是地址1111111
+                </address>
+                <!--
+        link节点：联系人
+      -->
+                <link>
+                    徐磊
+                </link>
+            </contactUs>
+
+            <!--
+        脚步链接(T&C、Privacy Policy)
+      -->
+            <footLink>
+                <!--T&C-->
+                <tearmAndCondition>
+                    <links>
+                        <!--English-->
+                        <link lan="EN" default="true">
+                            http://www.shell.com.my/aboutshell/about-our-website/terms-conditions.html
+                        </link>
+                    </links>
+                </tearmAndCondition>
+
+                <!--Privacy Policy-->
+                <privacy>
+                    <links>
+                        <!--English-->
+                        <link lan="EN" default="true">
+                            http://www.shell.com.my/aboutshell/about-our-website/privacy-policy.html
+                        </link>
+                    </links>
+                </privacy>
+            </footLink>
+
+            <!--
+                营销活动
+            -->
+            <promotion flag="true">
+                <token>
+                    86c070a075ba4160adcf278f3d13fc18
+                </token>
+                <url>
+                    https://www.baidu.com/?code={0}&amp;sign={1}
+                </url>
+                <begin>
+                    2017-4-17 17:04:59
+                </begin>
+
+                <end>
+                    2018-4-17 17:04:59
+                </end>
+            </promotion>
+        </item>
+
+        <item key="TR" visited="false">
+            <!--
+    language节点：当前语言
+    -->
+            <language>
+                土耳其
+            </language>
+            <!--
+      country节点：当前国家/区域
+    -->
+            <country>
+                Türkiye
+            </country>
+
+            <!--
+               countryImg节点：当前国家图片 
+            -->
+            <countryImg>
+                TR.png
+            </countryImg>
+
+            <!--
+        label节点：当前label显示的图片以label.aspx页面为相对路径
+      -->
+            <label gif="CN_gif.gif" mobilegif="CN_m_gif.gif" open="animation_1.gif">
+
+            </label>
+
+            <!--
+      节点feedBack：feedback信息
+      属性flag：是否启用feedback,flag="true"启用，flag="false"未启用
+    -->
+            <feedBack flag="true">
+                <!--
+        formEmail节点：邮件发送方
+      -->
+                <fromEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>woshixuleijava@163.com</address>
+                    <!--
+          password节点：邮件密码
+        -->
+                    <password>XuLayen@998563</password>
+                    <!--
+          smtp节点：smtp服务器
+        -->
+                    <smtp>smtp.163.com</smtp>
+                    <!--
+            port节点：端口
+          -->
+                    <port>25</port>
+                </fromEmail>
+                <!--
+       toEmail节点：邮件接收方
+      -->
+                <toEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>shellac@yesno.com.cn</address>
+                    <!--
+          link节点：接受邮箱地址链接地址
+        -->
+                    <link>徐磊</link>
+                    <!--接受邮箱显示人姓名-->
+                    <username>徐磊</username>
+                </toEmail>
+                <!--
+        tel节点：当前区域/国家显示的电话
+      -->
+                <tel>
+                    021-2609 5599
+                </tel>
+                <!--
+        text节点：feedback成功之后显示的文本
+      -->
+                <SuccessFeedbacktext>
+                    Gracias por enviar sus comentarios.
+                </SuccessFeedbacktext>
+
+                <!--
+        text节点：feedback失败之后显示的文本
+      -->
+                <FailFeedbacktext>
+                    对不起！网络繁忙！
+                </FailFeedbacktext>
+            </feedBack>
+            <!--
+      contactUs节点：联系我们
+      属性flag：是否启用contactUs,flag="true"启用，flag="false"未启用
+    -->
+            <contactUs flag="false">
+                <!--
+        text节点：显示的文本
+      -->
+                <text>
+                    土耳其
+                </text>
+                <!--
+        tel节点：显示的电话
+      -->
+                <tel tip="Tel:">
+                    021-2609 5599
+                </tel>
+                <!--
+        email节点：显示的邮箱地址
+      -->
+                <email tip="E-posta: ">
+                    shellac@yesno.com.cn
+                </email>
+                <!--
+          address节点：显示的地址
+        -->
+                <address>
+                    这是地址1111111
+                </address>
+                <!--
+        link节点：联系人
+      -->
+                <link>
+                    徐磊
+                </link>
+            </contactUs>
+
+            <!--
+        脚步链接(T&C、Privacy Policy)
+      -->
+            <footLink>
+                <!--T&C-->
+                <tearmAndCondition>
+                    <links>
+                        <!--Turkish-->
+                        <link lan="TR" default="true">
+                            http://www.shell.com.tr/aboutshell/about-our-website/terms-conditions.html
+                        </link>
+                    </links>
+                </tearmAndCondition>
+
+                <!--Privacy Policy-->
+                <privacy>
+                    <links>
+                        <!--Turkish-->
+                        <link lan="TR" default="true">
+                            http://www.shell.com.tr/aboutshell/about-our-website/privacy-policy.html
+                        </link>
+                    </links>
+                </privacy>
+            </footLink>
+
+            <!--
+                营销活动
+            -->
+            <promotion flag="true">
+                <token>
+                    86c070a075ba4160adcf278f3d13fc18
+                </token>
+                <url>
+                    https://www.baidu.com/?code={0}&amp;sign={1}
+                </url>
+                <begin>
+                    2017-4-17 17:04:59
+                </begin>
+
+                <end>
+                    2018-4-17 17:04:59
+                </end>
+            </promotion>
+        </item>
+
+        <item key="SA" visited="false">
+            <!--
+    language节点：当前语言
+    -->
+            <language>
+                阿拉伯语
+            </language>
+            <!--
+      country节点：当前国家/区域
+    -->
+            <country>
+                عربي
+            </country>
+
+            <!--
+               countryImg节点：当前国家图片 
+            -->
+            <countryImg>
+                SA.png
+            </countryImg>
+
+            <!--
+        label节点：当前label显示的图片以label.aspx页面为相对路径
+      -->
+            <label gif="SA_gif.gif" mobilegif="SA_m_gif.gif" open="animation_1.gif">
+
+            </label>
+
+            <!--
+      节点feedBack：feedback信息
+      属性flag：是否启用feedback,flag="true"启用，flag="false"未启用
+    -->
+            <feedBack flag="true">
+                <!--
+        formEmail节点：邮件发送方
+      -->
+                <fromEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>woshixuleijava@163.com</address>
+                    <!--
+          password节点：邮件密码
+        -->
+                    <password>XuLayen@998563</password>
+                    <!--
+          smtp节点：smtp服务器
+        -->
+                    <smtp>smtp.163.com</smtp>
+                    <!--
+            port节点：端口
+          -->
+                    <port>25</port>
+                </fromEmail>
+                <!--
+       toEmail节点：邮件接收方
+      -->
+                <toEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>shellac@yesno.com.cn</address>
+                    <!--
+          link节点：接受邮箱地址链接地址
+        -->
+                    <link>徐磊</link>
+                    <!--接受邮箱显示人姓名-->
+                    <username>徐磊</username>
+                </toEmail>
+                <!--
+        tel节点：当前区域/国家显示的电话
+      -->
+                <tel>
+                    021-2609 5599
+                </tel>
+                <!--
+        text节点：feedback成功之后显示的文本
+      -->
+                <SuccessFeedbacktext>
+                    Gracias por enviar sus comentarios.
+                </SuccessFeedbacktext>
+
+                <!--
+        text节点：feedback失败之后显示的文本
+      -->
+                <FailFeedbacktext>
+                    对不起！网络繁忙！
+                </FailFeedbacktext>
+            </feedBack>
+            <!--
+      contactUs节点：联系我们
+      属性flag：是否启用contactUs,flag="true"启用，flag="false"未启用
+    -->
+            <contactUs flag="false">
+                <!--
+        text节点：显示的文本
+      -->
+                <text>
+                    阿拉伯
+                </text>
+                <!--
+        tel节点：显示的电话
+      -->
+                <tel tip="Tel:">
+                    021-2609 5599
+                </tel>
+                <!--
+        email节点：显示的邮箱地址
+      -->
+                <email tip="E-posta: ">
+                    shellac@yesno.com.cn
+                </email>
+                <!--
+          address节点：显示的地址
+        -->
+                <address>
+                    这是地址1111111
+                </address>
+                <!--
+        link节点：联系人
+      -->
+                <link>
+                    徐磊
+                </link>
+            </contactUs>
+
+            <!--
+        脚步链接(T&C、Privacy Policy)
+      -->
+            <footLink>
+                <!--T&C-->
+                <tearmAndCondition>
+                    <links>
+                        <!--Arab http://www.shell.com.tr/about-our-website/terms-conditions.html-->
+                        <link lan="AR" default="true">
+
+                        </link>
+                    </links>
+                </tearmAndCondition>
+
+                <!--Privacy Policy-->
+                <privacy>
+                    <links>
+                        <!--Arab http://www.shell.com.vn/about-our-website/privacy-policy.html-->
+                        <link lan="AR" default="true">
+
+                        </link>
+                    </links>
+                </privacy>
+            </footLink>
+
+            <!--
+                营销活动
+            -->
+            <promotion flag="true">
+                <token>
+                    86c070a075ba4160adcf278f3d13fc18
+                </token>
+                <url>
+                    https://www.baidu.com/?code={0}&amp;sign={1}
+                </url>
+                <begin>
+                    2017-4-17 17:04:59
+                </begin>
+
+                <end>
+                    2018-4-17 17:04:59
+                </end>
+            </promotion>
+        </item>
+
+        <item key="IQ" visited="true">
+            <!--
+			language节点：当前语言
+			-->
+            <language>
+                阿拉伯语
+            </language>
+            <!--
+			  country节点：当前国家/区域
+			-->
+            <country>
+                العراق
+            </country>
+
+            <!--
+               countryImg节点：当前国家图片 
+            -->
+            <countryImg>
+                http://www.ac.shell.com/uat/static/images/countryImg/Iraq.png
+            </countryImg>
+
+            <!--
+				label节点：当前label显示的图片以label.aspx页面为相对路径
+			 -->
+            <label gif="labelgif/IQ_label.gif" mobilegif="labelgif/IQ_m_label.gif" open="animation_1.gif">
+                static/images/label/ar-sa_label.jpg
+            </label>
+
+            <!--
+			  节点feedBack：feedback信息
+			  属性flag：是否启用feedback,flag="true"启用，flag="false"未启用
+			-->
+            <feedBack flag="true">
+                <!--
+        formEmail节点：邮件发送方
+      -->
+                <fromEmail>
+                    <!-- 
+          address节点：邮件地址
+         -->
+                    <address>shellac@yesno.com.cn</address>
+                    <!-- 
+          password节点：邮件密码
+         -->
+                    <password>CCN@4B259B_YesN0</password>
+                    <!-- 
+          smtp节点：smtp服务器 
+         -->
+                    <smtp>smtp.exmail.qq.com</smtp>
+                    <!-- 
+            port节点：端口
+           -->
+                    <port>25</port>
+                </fromEmail>
+                <!--
+       toEmail节点：邮件接收方
+      -->
+                <toEmail>
+                    <!-- 
+          address节点：邮件地址 info@khudairigroup.com
+         -->
+                    <address>info@khudairigroup.com</address>
+                    <!-- 
+          link节点：接受邮箱地址链接地址
+         -->
+                    <link>Khudairi Group</link>
+                    <!-- 接受邮箱显示人姓名 -->
+                    <username>Khudairi Group</username>
+                </toEmail>
+                <!--
+        tel节点：当前区域/国家显示的电话
+      -->
+                <tel>
+                    009647707958893
+                </tel>
+                <!--
+        text节点：feedback成功之后显示的文本
+      -->
+                <SuccessFeedbacktext>
+                    Gracias por enviar sus comentarios.
+                </SuccessFeedbacktext>
+
+                <!--
+        text节点：feedback失败之后显示的文本
+      -->
+                <FailFeedbacktext>
+                    对不起！网络繁忙！
+                </FailFeedbacktext>
+            </feedBack>
+            <!--
+			  contactUs节点：联系我们
+			  属性flag：是否启用contactUs,flag="true"启用，flag="false"未启用
+			-->
+            <contactUs flag="true">
+                <!--
+				text节点：显示的文本
+			-->
+                <text>
+                    العراق
+                </text>
+                <!--
+					tel节点：显示的电话
+				  -->
+                <tel tip="Tel:">
+                    009647707958893
+                </tel>
+                <!--
+					email节点：显示的邮箱地址
+				  -->
+                <email tip="E-posta: ">
+                    info@khudairigroup.com
+                </email>
+                <!--
+				  address节点：显示的地址
+				-->
+                <address>
+
+                </address>
+                <!--
+					link节点：联系人
+				  -->
+                <link>
+
+                </link>
+            </contactUs>
+
+            <!--
+				脚步链接(T&C、Privacy Policy)
+			  -->
+            <footLink>
+                <!--T&C-->
+                <tearmAndCondition>
+                    <links>
+                        <!--Arab http://www.shell.com.tr/about-our-website/terms-conditions.html-->
+                        <link lan="AR" default="true">
+                            http://www.shell.iq/en_iq/terms-of-use.html
+                        </link>
+                    </links>
+                </tearmAndCondition>
+
+                <!--Privacy Policy-->
+                <privacy>
+                    <links>
+                        <!--Arab http://www.shell.com.vn/about-our-website/privacy-policy.html-->
+                        <link lan="AR" default="true">
+                            http://www.shell.iq/en_iq/privacy.html
+                        </link>
+                    </links>
+                </privacy>
+            </footLink>
+
+            <!--
+                营销活动
+            -->
+            <promotion flag="true">
+                <token>
+                    86c070a075ba4160adcf278f3d13fc18
+                </token>
+                <url>
+                    https://www.baidu.com/?code={0}&amp;sign={1}
+                </url>
+                <begin>
+                    2017-4-17 17:04:59
+                </begin>
+
+                <end>
+                    2018-4-17 17:04:59
+                </end>
+            </promotion>
+        </item>
+
+        <item key="KZ" visited="true">
+            <!--
+    language节点：当前语言
+    -->
+            <language>
+                俄文
+            </language>
+            <!--
+      country节点：当前国家/区域
+    -->
+            <country>
+                Казахстан
+            </country>
+
+            <!--
+               countryImg节点：当前国家图片 
+            -->
+            <countryImg>
+                http://www.ac.shell.com/uat/static/images/countryImg/SaudiaArabia.png
+            </countryImg>
+
+            <!--
+        label节点：当前label显示的图片以label.aspx页面为相对路径
+      -->
+            <label gif="labelgif/KZ_label.gif" mobilegif="labelgif/KZ_m_label.gif" open="animation_1.gif">
+                static/images/label/Russia_label.png
+            </label>
+
+            <!--
+      节点feedBack：feedback信息
+      属性flag：是否启用feedback,flag="true"启用，flag="false"未启用
+    -->
+            <feedBack flag="false">
+                <!--
+        formEmail节点：邮件发送方
+      -->
+                <fromEmail>
+                    <!--
+          address节点：邮件地址
+        -->
+                    <address>woshixuleijava@163.com</address>
+                    <!--
+          password节点：邮件密码
+        -->
+                    <password>XuLayen@998563</password>
+                    <!--
+          smtp节点：smtp服务器
+        -->
+                    <smtp>smtp.163.com</smtp>
+                    <!--
+            port节点：端口
+          -->
+                    <port>25</port>
+                </fromEmail>
+                <!--
+       toEmail节点：邮件接收方
+      -->
+                <toEmail>
+                    <!--
+          address节点：邮件地址，多个以逗号（","）隔开
+        -->
+                    <address>shellac@yesno.com.cn</address>
+                    <!--
+          link节点：接受邮箱地址链接地址
+        -->
+                    <link>徐磊</link>
+                    <!--接受邮箱显示人姓名-->
+                    <username>徐磊</username>
+                </toEmail>
+                <!--
+        tel节点：当前区域/国家显示的电话
+      -->
+                <tel>
+                    +7 499 923 2101
+                </tel>
+                <!--
+        text节点：feedback成功之后显示的文本
+      -->
+                <SuccessFeedbacktext>
+                    谢谢您的反馈！
+                </SuccessFeedbacktext>
+
+                <!--
+        text节点：feedback失败之后显示的文本
+      -->
+                <FailFeedbacktext>
+                    对不起！网络繁忙！
+                </FailFeedbacktext>
+            </feedBack>
+            <!--
+      contactUs节点：联系我们
+      属性flag：是否启用contactUs,flag="true"启用，flag="false"未启用
+    -->
+            <contactUs flag="true">
+                <!--
+        text节点：显示的文本
+      -->
+                <text>
+                    俄罗斯
+                </text>
+                <!--
+        tel节点：显示的电话
+      -->
+                <tel tip="Тел.:">
+                    +7 727 345 44 44
+                </tel>
+                <!--
+        email节点：显示的邮箱地址
+      -->
+                <email tip="Email:">
+                    shell@turkuaz.kz
+                </email>
+                <!--
+          address节点：显示的地址
+        -->
+                <address>
+                    这是地址1111111
+                </address>
+                <!--
+        link节点：联系人
+      -->
+                <link>
+                    徐磊
+                </link>
+            </contactUs>
+
+            <!--
+        脚步链接(T&C、Privacy Policy)
+      -->
+            <footLink>
+                <!--T&C-->
+                <tearmAndCondition>
+                    <links>
+                        <!--Kazakstan-->
+                        <link lan="KZ" default="true">
+                            http://www.shell.com.kz/ru_kz/terms-of-use.html
+                        </link>
+                    </links>
+                </tearmAndCondition>
+
+                <!--Privacy Policy-->
+                <privacy>
+                    <links>
+                        <!--Kazakstan-->
+                        <link lan="KZ" default="true">
+                            http://www.shell.com.kz/ru_kz/privacy.html
+                        </link>
+                    </links>
+                </privacy>
+            </footLink>
+
+            <!--
+                营销活动
+            -->
+            <promotion flag="true">
+                <token>
+                    86c070a075ba4160adcf278f3d13fc18
+                </token>
+                <url>
+                    https://www.baidu.com/?code={0}&amp;sign={1}
+                </url>
+                <begin>
+                    2017-4-17 17:04:59
+                </begin>
+
+                <end>
+                    2018-4-17 17:04:59
+                </end>
+            </promotion>
+        </item>
+    </items>
+
+    <!--
+    languages节点： 
+    当前语言选择列表，默认顺序即是显示的顺序 
+    
+    language子节点：
+    当前语言，
+    value属性：隐藏的value值，text属性：显示的文本
+  -->
+    <languages>
+        <!--南非/英语 ZA-->
+        <language value="en-us|en-za" text="English" state="1"></language>
+        <!--中国/中文 中国-->
+        <language value="zh-cn" text="中文（简体）" state="1"></language>
+        <!--俄罗斯/俄语 Pоссия-->
+        <language value="ru|ru-ru" text="Pусский" state="1"></language>
+        <!--阿根廷/西班牙语 Argentina-->
+        <language value="es-ar" text="Español(Argentina)" state="0"></language>
+        <!--哥伦比亚/西班牙语 Colombia-->
+        <language value="es-co" text="Español(Colombia)" state="0"></language>
+        <!--巴西/葡萄牙语 Brasil-->
+        <language value="pt-br" text="Português" state="0"></language>
+        <!--泰国/泰语 ไทย-->
+        <language value="th|th-th" text="ภาษาไทย" state="0"></language>
+        <!--印度尼西亚/印度尼西亚语 Indonesia-->
+        <language value="id|id-id" text="Bahasa Indonesia" state="1"></language>
+        <!--越南/越南语 Vietnam-->
+        <language value="vi-vn" text="Vietnamese" state="0"></language>
+        <!--巴基斯坦/乌尔都语 اردو زبان-->
+        <language value="ur-pk" text="اردو" state="0"></language>
+        <!--马来西亚/马来语 Malaysia-->
+        <language value="ms-my" text="Bahasa Malaysia" state="0"></language>
+        <!--土耳其/土耳其语 Türkiye-->
+        <language value="tr|tr-tr" text="Türk dili" state="0"></language>
+        <!--阿拉伯/阿拉伯语 عربي-->
+        <language value="ar-sa" text="العربية" state="1"></language>
+    </languages>
+
+    <!--
+    banner节点
+        img
+            src：banner图片地址
+            alt:说明
+            onLayer:是否可以点击
+    -->
+    <banner>
+        <img src="banner_1.png" alt="">
+            <click href="#" layer="">
+                banner1
+            </click>
+        </img>
+        <img src="banner_2.png" alt="">
+            <click href="#" layer="">
+                banner2
+            </click>
+        </img>
+        <img src="banner_3.png" alt="">
+            <click href="#" layer="">
+                banner3
+            </click>
+        </img>
+        <img src="banner_4.png" alt="">
+            <click href="#" layer="">
+                banner4
+            </click>
+        </img>
+        <img src="banner_5.png" alt="">
+            <click href="#" layer="">
+                banner5
+            </click>
+        </img>
+
+        <!---第六个banner图随着国家走-->
+        <!--中国-->
+        <img src="CN_banner.png" key="CN" alt="">
+            <click href="#" layer="CN_gif.gif" mobilelayer="CN_m_gif.gif">
+                banner6
+            </click>
+        </img>
+        <!--南非-->
+        <img src="ZA_banner.png" key="ZA" alt="">
+            <click href="#" layer="ZA_gif.gif" mobilelayer="ZA_m_gif.gif">
+                banner6
+            </click>
+        </img>
+        <!--俄罗斯-->
+        <img src="RU_banner.png" key="RU" alt="">
+            <click href="#" layer="RU_gif.gif" mobilelayer="RU_m_gif.gif">
+                banner6
+            </click>
+        </img>
+        <!--印度尼西亚-->
+        <img src="ID_banner.png" key="ID" alt="">
+            <click href="#" layer="ID_gif.gif" mobilelayer="ID_m_gif.gif">
+                banner6
+            </click>
+        </img>
+        <!--阿拉伯-->
+        <img src="IQ_banner.png" key="IQ" alt="">
+            <click href="#" layer="IQ_gif.gif" mobilelayer="IQ_m_gif.gif">
+                banner6
+            </click>
+        </img>
+
+        <!--哈萨克斯坦-->
+        <img src="KZ_banner.png" key="KZ" alt="">
+            <click href="#" layer="KZ_gif.gif" mobilelayer="KZ_m_gif.gif">
+                banner6
+            </click>
+        </img>
+
+    </banner>
+</configList>
+

@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../static/css/index.css';
-import '../../static/css/front.css';
+import '../../../static/css/index.css';
+import '../../../static/css/front.css';
 import {FooterCommpent} from '../../footer/foot.js';
 
 class InvalidCommpent extends React.Component {
@@ -50,7 +50,7 @@ class InvalidCommpent extends React.Component {
                 
                 <div className="cnt1_right">
 					<div className="check_label">
-						<p className="sub1 sub3" onclick="location.href='index.aspx'">Try again</p>
+						<p className="sub1 sub3">Try again</p>
 					</div>
 				</div>
                 <div className="clear">

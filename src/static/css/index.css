@@ -557,6 +557,7 @@ select::-ms-expand { display: none; }
 	padding-left:20px;
 	height:80px;
 	line-height:80px;
+	cursor:pointer;
 }
 .replayNo{
 	width:49.7%;
@@ -569,6 +570,7 @@ select::-ms-expand { display: none; }
 	padding-right:20px;
 	height:80px;
 	line-height:80px;
+	cursor:pointer;
 }
 
 /*feedback*/

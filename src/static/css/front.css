@@ -34,7 +34,7 @@ a{
 ul,ol{
     list-style:none;
 }
-input[type="text"],input[type="button"],input[type="tel"],input[type="email"],input[type="submit"],input[type="reset"],button {
+input[type="button"],input[type="submit"],input[type="reset"],button {
    -webkit-appearance: none;
     border-radius: 0;
     border: none;

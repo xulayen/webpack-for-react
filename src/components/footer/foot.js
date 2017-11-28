@@ -1,15 +1,16 @@
 import React from 'react';
-import '../static/css/index.css';
-import '../static/css/front.css';
-import banner_1 from '../static/images/banner_1.png';
-import banner_2 from '../static/images/banner_2.png';
-import banner_3 from '../static/images/banner_3.png';
-import banner_4 from '../static/images/banner_4.png';
-import banner_5 from '../static/images/banner_5.png';
-import banner_6 from '../static/images/banner_6.png';
+import {BrowserRouter,HashRouter, Route, Link} from 'react-router-dom';
+import '../../static/css/index.css';
+import '../../static/css/front.css';
+import banner_1 from '../../static/images/banner_1.png';
+import banner_2 from '../../static/images/banner_2.png';
+import banner_3 from '../../static/images/banner_3.png';
+import banner_4 from '../../static/images/banner_4.png';
+import banner_5 from '../../static/images/banner_5.png';
+import banner_6 from '../../static/images/banner_6.png';
 import Swiper from 'swiper';
 import $ from 'jquery';
-import '../static/script/slick.min.js';
+import '../../static/script/slick.min.js';
 
 class FooterCommpent extends React.Component {
 
@@ -33,7 +34,7 @@ class FooterCommpent extends React.Component {
         return (
             <div>
                 <p className="contact">
-                    <a href="contact.html">Contact us |</a> 
+                    <Link to="/contact">Contact us |</Link>
                     <a href="#">Privacy Policy | </a>
                     <a href="#">Terms & Conditions</a>
                 </p>
