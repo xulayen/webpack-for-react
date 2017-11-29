@@ -27,7 +27,6 @@ class FormSliderCommpent extends React.Component {
 
     componentWillMount() {
 		countryList();
-
     }
 
     componentDidMount() {

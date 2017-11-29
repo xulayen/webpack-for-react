@@ -7,6 +7,7 @@ import $ from 'jquery';
 
 class DtsSelectCommpent extends React.Component {
 
+
     constructor(props) {
 		super(props);
 	}
@@ -16,7 +17,7 @@ class DtsSelectCommpent extends React.Component {
 	}
 
 	componentDidMount() {
-		this.selectOption();
+		//this.selectOption();
 	}
 
 	componentWillUnmount() {
@@ -33,7 +34,7 @@ class DtsSelectCommpent extends React.Component {
 
 	render(){
 		return (
-			<div className="cnt1_right r_space">
+			<div className="cnt1_right r_space" className={!this.props.isShowSelectOption?"none":""}>
 					
 					<div className="cor_replay">
 						<p>

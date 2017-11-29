@@ -10,6 +10,10 @@ class VerifiedCommpent extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state={
+            dts:null,
+            isShowSelectOption:false
+        };
     }
 
     componentWillMount() {
@@ -17,9 +21,21 @@ class VerifiedCommpent extends React.Component {
         let _lenth=this.props.items.reply.split('|').length;
         let last=_dtsArray[_lenth-1];
         let _dts=JSON.parse(last.replace(/{/g,'{"').replace(/,/g,'","').replace(/:/g,'":"').replace(/}/g,'"}'));
-        this.setState({
+        
+        
+
+		let hasPropVal=false;
+		for(let d in _dts){
+			if(_dts[d]){
+				hasPropVal=true;
+				break;
+			}
+		}
+		this.setState({
+            isShowSelectOption:hasPropVal,
             dts:_dts
-        })
+        });
+
     }
 
     componentDidMount() {
@@ -65,7 +81,7 @@ class VerifiedCommpent extends React.Component {
                         </p>
                     </div>
                 </div>
-                <DtsSelectCommpent/>
+                <DtsSelectCommpent isShowSelectOption={this.state.isShowSelectOption}/>
                 <div className="clear">
                 </div>
             </div>

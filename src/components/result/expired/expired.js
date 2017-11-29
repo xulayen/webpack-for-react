@@ -10,7 +10,8 @@ class ExpiredCommpent extends React.Component {
     constructor(props) {
         super(props);
         this.state={
-            dts:null
+            dts:null,
+            isShowSelectOption:false
         };
     }
 
@@ -19,9 +20,19 @@ class ExpiredCommpent extends React.Component {
         let _lenth=this.props.items.reply.split('|').length;
         let last=_dtsArray[_lenth-1];
         let _dts=JSON.parse(last.replace(/{/g,'{"').replace(/,/g,'","').replace(/:/g,'":"').replace(/}/g,'"}'));
-        this.setState({
+
+
+		let hasPropVal=false;
+		for(let d in _dts){
+			if(_dts[d]){
+				hasPropVal=true;
+				break;
+			}
+		}
+		this.setState({
+            isShowSelectOption:hasPropVal,
             dts:_dts
-        })
+        });
     }
 
     componentDidMount() {
@@ -37,14 +48,14 @@ class ExpiredCommpent extends React.Component {
           <div className="cn_main">
             <div className="cnt ctt">
                 
-                <div className="invalid1 none">
+                <div className="invalid1" className={this.state.isShowSelectOption?"none":""}>
                     <p>
                         {this.props.items.reply.split('|')[0]}
                     </p>
                 </div>
                 
                 <div className="cnt1_left">
-                    <div className="result_message">
+                    <div className="result_message" className={!this.state.isShowSelectOption?"none":""}>
                         <div className="message_left">
                              <p>
                                 
@@ -77,7 +88,7 @@ class ExpiredCommpent extends React.Component {
                     </div>
                 </div>
                
-                <DtsSelectCommpent/>
+                <DtsSelectCommpent isShowSelectOption={this.state.isShowSelectOption}/>
                 <div className="clear">
                 </div>
             </div>
