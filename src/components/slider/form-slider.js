@@ -10,6 +10,7 @@ import {sliderInit,selectOption,countryList,languageList} from './sliderAndSelec
 import Global from '../../static/script/red.js';
 import functionUtil from '../../static/script/functionUtil.js';
 import ButtonActions from '../../actions/SubmitActions.js';
+import loading from '../../static/images/gif/loading.gif';
 
 class FormSliderCommpent extends React.Component {
 
@@ -19,23 +20,20 @@ class FormSliderCommpent extends React.Component {
 			countryList:countryList(),
 			languageList:languageList(),
 			txt_code:'',
-			pathto:''
+			pathto:'',
+			loading:false
 		}
     }
 
     componentWillMount() {
 		countryList();
+
     }
 
     componentDidMount() {
 		sliderInit();
 		selectOption();
-
-
 		this.submit(this);
-
-
-		
 	}
 	
 
@@ -44,15 +42,20 @@ class FormSliderCommpent extends React.Component {
 	}
 
 	submit(_self){
+		Global.Init();
 		//按钮回调函数
 		var _lock = true; //解锁
 		//提交按钮回调函数
 		Global.submitCallback = function (eve) {
-			debugger;
 			(function () {
 				if (_lock) {
 					_lock = false; //加锁
 					console.log(_self.state.txt_code);
+					
+					_self.setState({
+						loading:true
+					});
+
 					$.post('/fw',{"accode":_self.state.txt_code},function(data){
 						console.log(data);
 						_lock = true; //解锁
@@ -96,13 +99,10 @@ class FormSliderCommpent extends React.Component {
                         }
 
 
-						var value={
-									id: '1233',             
-									name:'xl'
-						}
+						
 		//				HashRouter.hashHistory.push('/invalid');
 						ButtonActions.submitFwCode(reply,data.systemState,code,_pathto);
-						_self.setState({redirect: true,pathto:_pathto});  
+						_self.setState({redirect: true,pathto:_pathto,loading:false});  
 					})
 				}
 			})();
@@ -128,6 +128,12 @@ class FormSliderCommpent extends React.Component {
 		} 
         return (
 			<form className="container form" method="get">
+				<div id="loading-mask" className={!this.state.loading?"none":"loading-mask"}>
+				</div>
+				<div id="loading" className={!this.state.loading?"none":"loading"}>
+					<img src={loading}/>
+				</div>
+
 				<div className="cn_main">
 					<h2 className="title">WELCOME</h2>
 					<div className="cnt">

@@ -48,7 +48,7 @@ class ResultCommpent extends React.Component {
           <div className="banner">
             <div className="ban-slide">
                 <div className="inner">
-                    <h2 className="red_title">
+                    <h2 className={this.props.items.pathto!=='/verified'?"red_title":""}>
                         {this.state.Total_result}</h2>
                     <p>
                          {this.props.items.reply.split('|')[0]} 

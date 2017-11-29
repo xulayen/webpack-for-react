@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter,HashRouter, Route, Link} from 'react-router-dom';
 import '../../../static/css/index.css';
 import '../../../static/css/front.css';
 import {FooterCommpent} from '../../footer/foot.js';
@@ -33,15 +34,13 @@ class InvalidCommpent extends React.Component {
                 <div className="cnt1_left">
                     <div className="result_label">
                         <p className="layer_clcik ">
-                            
-                            <a href="#">
+                            <a>
                                 Understand label features
                             </a>
                         </p>
                         
                         <p>
-                            
-                            Feedback
+                          <Link to="/feedback">Feedback</Link>
                         </p>
                         
                     </div>
@@ -49,7 +48,9 @@ class InvalidCommpent extends React.Component {
                 
                 <div className="cnt1_right">
 					<div className="check_label">
-						<p className="sub1 sub3">Try again</p>
+						<p className="sub1 sub3">
+                            <Link to="/">Try again</Link>
+                        </p>
 					</div>
 				</div>
                 <div className="clear">

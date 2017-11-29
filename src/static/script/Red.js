@@ -49,8 +49,7 @@ function Global() {
 Global.submitCallback = null;
 //用于.confirm按钮的回调
 Global.confirmCallback = null;
-
-$(document).ready(function () {
+function tt() {
     //form body
     $("body").find(".form").each(function () {
         var form = this;
@@ -201,7 +200,10 @@ $(document).ready(function () {
         });
         return b;
     }
-});
+}
+
+Global.Init=tt;
+Global.Init();
 
 
 module.exports=Global;
