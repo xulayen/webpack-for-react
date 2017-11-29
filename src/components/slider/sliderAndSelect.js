@@ -11,8 +11,7 @@ function sliderInit(){
 	var slider1 = new Slider();
 	slider1.Init();
 	slider1.SliderCallBack = function (c) {
-		var image = new Image();
-		image.src = "Ajax/security.ashx?token=" + $("#TOKEN").val();
+		
 	}
 
 	console.log(slider1)

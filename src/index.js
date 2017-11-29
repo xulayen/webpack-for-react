@@ -5,9 +5,13 @@ import {BannerCommpent} from './components/banner/banner.js';
 import {HeaderCommpent} from './components/header/header.js';
 import {FormSliderCommpent} from './components/slider/form-slider.js';
 import {ResultCommpent} from './components/result/result.js';
+import {ResultController} from './components/result/resultController.js';
 import {InvalidCommpent} from './components/result/invalid/invalid.js';
+import {InvalidController} from './components/result/invalid/invalidController.js';
 import {ExpiredCommpent} from './components/result/expired/expired.js';
+import {ExpiredController} from './components/result/expired/expiredController.js';
 import {VerifiedCommpent} from './components/result/verified/verified.js';
+import {VerifiedController} from './components/result/verified/verifiedController.js';
 import {FeedBackCommpent} from './components/feedback/feedback.js';
 import {ContactUsCommpent} from './components/contactus/contactus.js';
 
@@ -98,24 +102,24 @@ const MenuRouter=()=>(
         <Route exact path="/verified" render={(match,location)=>(
             <div className="main">
                 <HeaderCommpent/>
-                <ResultCommpent/>
-                <VerifiedCommpent/>
+                <ResultController/>
+                <VerifiedController/>
             </div>
         )}/>
 
         <Route exact path="/invalid" render={(match,location)=>(
             <div className="main">
                 <HeaderCommpent/>
-                <ResultCommpent/>
-                <InvalidCommpent/>
+                <ResultController/>
+                <InvalidController/>
             </div>
         )}/>
 
         <Route exact path="/expired" render={(match,location)=>(
             <div className="main">
                 <HeaderCommpent/>
-                <ResultCommpent/>
-                <ExpiredCommpent/>
+                <ResultController/>
+                <ExpiredController/>
             </div>
         )}/>
 
@@ -132,6 +136,13 @@ const MenuRouter=()=>(
                 <HeaderCommpent/>
                 <BannerCommpent/>
                 <ContactUsCommpent/>
+            </div>
+        )}/>
+
+
+        <Route exact path="/gogo" render={(match,location)=>(
+            <div className="main">
+                <ResultController/>
             </div>
         )}/>
 

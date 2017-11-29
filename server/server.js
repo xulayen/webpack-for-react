@@ -5,10 +5,11 @@ var soap = require('soap');
 var sha1 = require('sha1');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
+
 var app=express();
 var Until=require('./until.js');
-var Config=require('./config.js');
-
+var Config=require('./config/config.js');
+console.log(Config.url)
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(logger('dev'));
@@ -46,8 +47,5 @@ app.post('/fw', function(req, res,next) {
             return next();
         });
     });
-
-
-    //这个地方填写dist/index.html的路径
 })
 

@@ -26,9 +26,8 @@ class InvalidCommpent extends React.Component {
           <div className="cn_main">
             <div className="cnt ctt">
                 <div className="invalid1">
-					
                     <p>
-                                This code does not exist.Please recheck the label to see if you entered the code correctly and try again.
+                        {this.props.items.reply.split('|')[0]}
                     </p>
 				</div>
                 <div className="cnt1_left">

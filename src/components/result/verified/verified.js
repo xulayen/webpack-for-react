@@ -13,7 +13,13 @@ class VerifiedCommpent extends React.Component {
     }
 
     componentWillMount() {
-
+        let _dtsArray=this.props.items.reply.split('|');
+        let _lenth=this.props.items.reply.split('|').length;
+        let last=_dtsArray[_lenth-1];
+        let _dts=JSON.parse(last.replace(/{/g,'{"').replace(/,/g,'","').replace(/:/g,'":"').replace(/}/g,'"}'));
+        this.setState({
+            dts:_dts
+        })
     }
 
     componentDidMount() {
@@ -34,7 +40,7 @@ class VerifiedCommpent extends React.Component {
                             
                             <span>
                                 Pack size:</span> <span>
-                                    18L
+                                    {this.state.dts.PackSize}
                                 </span>
                             
                         </p>
@@ -42,7 +48,7 @@ class VerifiedCommpent extends React.Component {
                             
                             <span>
                                 Product name:</span> <span>
-                                    Rim R5 NG
+                                    {this.state.dts.ProductName}
                                 </span>
                             
                         </p>
@@ -53,7 +59,7 @@ class VerifiedCommpent extends React.Component {
                             
                             <span>
                                 Batch number:</span> <span>
-                                    11012998C60320170208
+                                    {this.state.dts.BatchNumber}
                                 </span>
                             
                         </p>

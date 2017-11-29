@@ -1,4 +1,5 @@
 import React from 'react';
+import {BrowserRouter,HashRouter, Route, Link ,Redirect } from 'react-router-dom';
 import '../../static/css/index.css';
 import '../../static/css/front.css';
 import {FooterCommpent} from '../footer/foot.js';
@@ -7,9 +8,8 @@ import CN from '../../static/images/china.png';
 import lable from '../../static/images/animation_2.gif';
 import {sliderInit,selectOption,countryList,languageList} from './sliderAndSelect.js';
 import Global from '../../static/script/red.js';
-
-
-
+import functionUtil from '../../static/script/functionUtil.js';
+import ButtonActions from '../../actions/SubmitActions.js';
 
 class FormSliderCommpent extends React.Component {
 
@@ -18,7 +18,8 @@ class FormSliderCommpent extends React.Component {
 		this.state={
 			countryList:countryList(),
 			languageList:languageList(),
-			txt_code:''
+			txt_code:'',
+			pathto:''
 		}
     }
 
@@ -47,11 +48,61 @@ class FormSliderCommpent extends React.Component {
 		var _lock = true; //解锁
 		//提交按钮回调函数
 		Global.submitCallback = function (eve) {
+			debugger;
 			(function () {
 				if (_lock) {
+					_lock = false; //加锁
 					console.log(_self.state.txt_code);
-					$.post('/fw',{"accode":_self.state.txt_code},function(e){
-						console.log(e);
+					$.post('/fw',{"accode":_self.state.txt_code},function(data){
+						console.log(data);
+						_lock = true; //解锁
+						var code = _self.state.txt_code;
+						var _pathto='/invalid';
+						var systemState=data.systemState;
+						var reply = data.reply; //配置的答复
+                        switch (systemState) {
+                            //首次查询                                                                                                                                                                                                                                                                                                                         
+                            case "10020401": //新平台
+                            case "001": //老平台
+								_pathto="/verified";
+                                break;
+                            //复查                                                                                                                                                                                                                                                                                                                         
+                            case "10020402": //新平台
+                            case "002": //老平台
+								_pathto="/verified";
+                                break;
+                            //超次查询:                                                                                                                                                                                                                                                                                                                         
+                            case "10020301": //新平台
+                            case "003": //老平台
+                                //开始
+								_pathto="/expired";
+                                break;
+                            //系统异常、eap网络繁忙                                                               
+                            case "00000102":
+                            case "008":
+                            case "004":
+                            case "007":
+                            case "006":
+                            case "101":
+							case "102":
+							
+                                break;                                                                                                                                                                                                                                                                                                                        
+							case "00002":
+								alert('Sorry, the network is busy, please try again later!');
+                                break;
+							default:
+								_pathto="/invalid";
+                                break;
+                        }
+
+
+						var value={
+									id: '1233',             
+									name:'xl'
+						}
+		//				HashRouter.hashHistory.push('/invalid');
+						ButtonActions.submitFwCode(reply,data.systemState,code,_pathto);
+						_self.setState({redirect: true,pathto:_pathto});  
 					})
 				}
 			})();
@@ -72,8 +123,11 @@ class FormSliderCommpent extends React.Component {
 
 
     render(){
+		if (this.state.redirect) {  
+			return <Redirect push to={this.state.pathto} />; 
+		} 
         return (
-			<form className="container form" method="post">
+			<form className="container form" method="get">
 				<div className="cn_main">
 					<h2 className="title">WELCOME</h2>
 					<div className="cnt">

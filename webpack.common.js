@@ -83,6 +83,14 @@
                 }
               }
             ]
+          },
+          {
+               test: /\.jsx$/,
+               use:[
+                 {
+                   loader:'jsx-loader'
+                 }
+               ]
           }
           // {
           //   test: require.resolve('./src/index.js'),

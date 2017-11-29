@@ -6,6 +6,10 @@
    devtool: 'inline-source-map',
    devServer: {
      contentBase: path.join(__dirname, "dist"),
+    watchOptions: {
+        aggregateTimeout: 20,
+        poll: 1000
+    },
      host:'127.0.0.1',
      proxy:{
        "/fw":{
