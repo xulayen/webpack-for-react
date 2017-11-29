@@ -17,8 +17,8 @@
          changeOrigin:true,
          secure:false
        },
-       "/tobaidu":{
-         target:'http://www.baidu.com',
+       "/SendAcVerifyInfo":{
+         target:'http://127.0.0.1:8011/',
          changeOrigin:true,
          secure:false
        }

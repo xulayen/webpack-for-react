@@ -48,9 +48,11 @@ class InvalidCommpent extends React.Component {
                 
                 <div className="cnt1_right">
 					<div className="check_label">
-						<p className="sub1 sub3">
-                            <Link to="/">Try again</Link>
-                        </p>
+                        <Link to="/">
+                            <p className="sub1 sub3">
+                                Try again
+                            </p>
+                        </Link>
 					</div>
 				</div>
                 <div className="clear">
