@@ -100,7 +100,7 @@ class FormSliderCommpent extends React.Component {
 
 						
 		//				HashRouter.hashHistory.push('/invalid');
-						ButtonActions.submitFwCode(reply,data.systemState,code,_pathto);
+						ButtonActions.submitFwCode(reply,data.systemState,code,_pathto,data.message);
 						_self.setState({redirect: true,pathto:_pathto,loading:false});  
 					})
 				}

@@ -4,6 +4,7 @@ import '../../static/css/front.css';
 import sure from '../../static/images/sure.png';
 import no from '../../static/images/no.png';
 import $ from 'jquery';
+import ListStore from '../../stores/ListStore.js';
 
 class DtsSelectCommpent extends React.Component {
 
@@ -12,49 +13,76 @@ class DtsSelectCommpent extends React.Component {
 		super(props);
 		this.state={
 			selectSure:false,
-			selectNo:false
+			selectNo:false,
+			Items:ListStore.getAll(),
+			Code_Guid:localStorage.getItem('Code-Guid'),
+			hasSelectedYes:(localStorage.getItem('Code-Guid')==='1')?true:false
 		};
 	}
 	
 	componentWillMount() {
-
+		if(this.state.Code_Guid!=''){
+			if(this.state.hasSelectedYes){
+				this.showYes();
+			}else{
+				this.showNo();
+			}
+		}
 	}
 
 	componentDidMount() {
-		//this.selectOption();
-		 var dtdFeed=null;
-		
-
-
 
 	}
 
 	componentWillUnmount() {
-	
+		localStorage.setItem('Code-Guid','');
 	}
 
-	selectOption(queryid,feedback){
+	selectOption(feedback){
 		console.log('selectOption');
-		$.post('/SendAcVerifyInfo',{"accode":"1111111111111111","queryid":queryid,"feedback":feedback},function(data){
+		var accode=this.state.Items.accode.replace(/\s+/g, "");
+		$.post('/SendAcVerifyInfo',{"accode":accode,"queryid":this.state.Items.queryid,"feedback":feedback},function(data){
 			console.log(data);
 		});
 	}
 
-	selectSure(){
+	selectSure(e){
+		if(this.state.Code_Guid==''){
+			this.showYes();
+			localStorage.setItem('Code-Guid','1');
+			this.selectOption("1");
+
+			this.setState({
+				Code_Guid:localStorage.getItem('Code-Guid')
+			})
+		}
+	}
+
+	selectNo(e){
+		if(this.state.Code_Guid==''){
+			this.showNo();
+			localStorage.setItem('Code-Guid','0');
+			this.selectOption("0");
+			this.setState({
+				Code_Guid:localStorage.getItem('Code-Guid')
+			})
+		}
+	}
+
+	showYes(){
 		this.setState({
 			selectSure:true,
 			selectNo:false
 		});
-		this.selectOption("111111111111111111111111","1");
 	}
 
-	selectNo(){
+	showNo(){
 		this.setState({
 			selectNo:true,
 			selectSure:false
-		})
-		this.selectOption("111111111111111111111111","0");
+		});
 	}
+
 
 	render(){
 		return (

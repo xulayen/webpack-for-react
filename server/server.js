@@ -63,7 +63,7 @@ app.post('/SendAcVerifyInfo',function(req, res,next){
         acCode: accode,
         queryID: queryid,
         feedBack: feedback,
-        sign: sha1(accode+Config.token),
+        sign: sha1(accode+Config.token).toUpperCase(),
         reply: "",
         systemState: ""
     };

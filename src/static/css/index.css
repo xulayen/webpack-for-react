@@ -18,6 +18,9 @@ body{
     text-align: center;
     overflow:hidden;
 }
+._width{
+    width:100%;
+}
 /**/
 .banner{
 	position:relative;
@@ -43,7 +46,7 @@ body{
 	left:4%;
 }
 .inner p{
-	font-size:16px;
+	font-size:18px;
 }
 .inner p span{
 	display:block;
@@ -217,6 +220,7 @@ nav {
 	text-align:center;
 	position:absolute;
 	z-index:-9;
+	background:#f6c712 url(../images/arrow_right1.png) no-repeat center center;
 }
 .select_left .iconfont{
 	color:#fff;
@@ -225,16 +229,17 @@ nav {
 }
 #_language{
 	right:0;
+	background:#f6c712 url(../images/arrow_left1.png) no-repeat center center;
 }
 #_country{
 	left:0;
 }
-#_language:before{
+/*#_language:before{
 	content:"<"
 }
 #_country:before{
 	content:">"
-}
+}*/
 #_language:before,#_country:before {
     font-size: 32px;
     font-style: normal;
@@ -329,6 +334,7 @@ select::-ms-expand { display: none; }
 }
 .t_url{
 	overflow:hidden;
+	margin-bottom:10px;
 }
 .t_url span:nth-of-type(1){
 	float:left;
@@ -362,7 +368,7 @@ select::-ms-expand { display: none; }
 	position:relative;
 }
 .ctt{
-	height:255px;
+	min-height:255px;
 }
 .result_label,.check_label{
 	overflow:hidden;
@@ -397,12 +403,12 @@ select::-ms-expand { display: none; }
 	cursor:pointer;
 }
 ._label{
-	width:100%;
+	width: 100% !important;
 }
 
 .message_left,.message_right{
 	display:inline-block;
-	font-size:16px
+	font-size:15px
 }
 .message_right{
 	padding-left:15px
@@ -514,7 +520,7 @@ select::-ms-expand { display: none; }
 	height:42px;
 }
 .cor_replay>p{
-	font-size:19px;
+	font-size:18px;
 	font-weight:bold;
 }
 .check_replay{
@@ -531,16 +537,20 @@ select::-ms-expand { display: none; }
 .resultYes img,.resultNo img{
 	position:absolute;
 	left:0;
-	top:7px;
 	width:40px;
+	top:50%;
+	margin-top:-16px;
 }
 .resultNo img{
 	width:33px;
+	margin-top:-16px;
 }
 .resultYes p,.resultNo p{
 	font-weight:bold;
 	font-size:18px;
 	padding-left:58px;
+	min-height:30px;
+	margin-bottom:55px;
 }
 .resultNo p span{
 	display:inline !important;
@@ -552,9 +562,8 @@ select::-ms-expand { display: none; }
 	background:#9C9C9C;
 	color:#FEFEFE;
 	font-weight:bold;
-	font-size:30px;
-	text-align:left;
-	padding-left:20px;
+	font-size:28px;
+	text-align:center;
 	height:80px;
 	line-height:80px;
 	cursor:pointer;
@@ -565,12 +574,11 @@ select::-ms-expand { display: none; }
 	background:#9C9C9C;
 	color:#DADAD9;
 	font-weight:bold;
-	font-size:30px;
-	text-align:right;
-	padding-right:20px;
+	font-size:28px;
+	text-align:center;
 	height:80px;
 	line-height:80px;
-	cursor:pointer;
+    cursor:pointer;
 }
 
 /*feedback*/
@@ -717,6 +725,37 @@ label{
 	right:0;
 	cursor:pointer;
 }
+/*label*/
+.label_title{
+	font-size: 18px;
+    color: #dd1d20;
+    font-weight: bold;
+}
+.left_title{
+	font-weight: bold;
+    padding-bottom: 10px;
+    color: #dd1d20;
+    padding-top:10px;
+}
+.label_left dt,.label_left dd span{
+	color: #dd1d20;
+}
+.label_left dt{
+	font-weight:bolder;
+}
+.label_left dd{
+	line-height:20px;
+	margin-bottom:50px;
+}
+.mobile-title{
+	font-size: 18px;
+    color: #dd1d20;
+    font-weight: bold;
+    text-align:center;
+    padding:5px 0 15px;
+}
+
+
 /*pc端*/
 /*@media screen and (min-width:1024px) and (max-width:1249px){*/
 @media screen and (min-width:1024px){
@@ -779,10 +818,10 @@ label{
 		display:block;
 		border:1px solid #dadada!important;
 		width:72%;
-		height:43px;
+		height:41px;
 		margin-top:24px;
 		text-align:center;
-		font-size:16px;
+		font-size:14px;
 		color:#595656;
 	}
 	.gif{
@@ -908,12 +947,13 @@ label{
 	.inpt{
 		display:block;
 		border:1px solid #dadada!important;
-		width:100%;
-		height:43px;
+		width:94.5%;
+		height:35px!important;
 		margin-top:43px;
 		text-align:center;
 		color:#b3b2b2;
-		font-size:17px
+		font-size:14px;
+		overflow:hidden;
 	}
 	
 	.gif{
@@ -1050,7 +1090,8 @@ label{
 		font-size:14px;
 	}
 	.ban-slide{
-		height:172px;
+		height:auto;
+		min-height:172px;
 	}
 	.swiper-button-next,.swiper-button-prev{
 		opacity:0;
@@ -1113,25 +1154,28 @@ label{
 		padding-left:0;
 		text-align:center;
 		padding-right:0;
+		font-size:26px;
 	}
 	.resultYes p, .resultNo p {
 	    font-size: 16px;
 	    padding-left:48px;
 	    line-height:1.3em;
+	    margin-bottom:5px;
 	}
 	.resultYes img{
 	    width:35px;
+	    margin-top:-14px;
 	}
 	.resultNo img{
 		width:30px;
-		top:5px;
+		margin-top:-18px;
 	}
 	.cor_replay>p:nth-of-type(1){
 		display:none;
 	}
 	.cor_replay>p:nth-of-type(2){
 		display:block;
-		font-size:18px;
+		font-size:17px;
 	}
 	.limitWidth{
 		width:68%;
@@ -1286,6 +1330,7 @@ label{
 	}
 	.ctt{
 		height:auto;
+		min-height:200px;
 	}
 	.contact{
 		margin-top:5px;
@@ -1432,6 +1477,15 @@ label{
 	.invalid1 span{
 		display:block;
 	}
+	.label_left dd{
+		margin-bottom:15px;
+	}
+	.label_left,.label_title,.left_title{
+		display:none;
+	}
+	.mobile-title{
+		display:block;
+	}
 }
 
 /*iphone5*/
@@ -1505,7 +1559,10 @@ label{
 	    font-size: 15px!important;
 	}
 	.replaySure, .replayNo {
-	    width: 80px;
+	    width: 76px;
+	    font-size: 24px;
+        height: 76px;
+        line-height: 76px !important;
 	}
 	.resultYes p, .resultNo p {
 	    font-size: 15px;
