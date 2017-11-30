@@ -34,9 +34,11 @@ class UnderBarCommpent extends React.Component {
                     </div>
                     <div className="cnt1_right">
                         <div className="check_label">
-                        <p className="sub1">
-                            <Link to="/">Check another product</Link>
-                        </p>
+                        <Link to="/">
+                            <p className="sub1">
+                                Check another product
+                            </p>
+                        </Link>
                         <p className="sub2 "><a href="https://www.baidu.com/?code=6675697746308516&amp;sign=3ef79e5008bf877b89b80f6463044c8b">Promotional Activity Link</a></p>
                     </div>
                 </div>

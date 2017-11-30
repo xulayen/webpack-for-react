@@ -48,14 +48,14 @@ class ExpiredCommpent extends React.Component {
           <div className="cn_main">
             <div className="cnt ctt">
                 
-                <div className="invalid1" className={this.state.isShowSelectOption?"none":""}>
+                <div className={this.state.isShowSelectOption?"none":"invalid1"}>
                     <p>
                         {this.props.items.reply.split('|')[0]}
                     </p>
                 </div>
                 
                 <div className="cnt1_left">
-                    <div className="result_message" className={!this.state.isShowSelectOption?"none":""}>
+                    <div className={!this.state.isShowSelectOption?"none":"result_message"}>
                         <div className="message_left">
                              <p>
                                 

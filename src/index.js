@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter,HashRouter, Route, Link} from 'react-router-dom';
+import {BrowserRouter,HashRouter, Route, Link,Redirect} from 'react-router-dom';
 import {BannerCommpent} from './components/banner/banner.js';
 import {HeaderCommpent} from './components/header/header.js';
 import {FormSliderCommpent} from './components/slider/form-slider.js';
@@ -14,6 +14,7 @@ import {VerifiedCommpent} from './components/result/verified/verified.js';
 import {VerifiedController} from './components/result/verified/verifiedController.js';
 import {FeedBackCommpent} from './components/feedback/feedback.js';
 import {ContactUsCommpent} from './components/contactus/contactus.js';
+import {PageVerifyCommpent} from './components/PageVerification/pageVerify.js';
 
 
 var div_content=document.createElement('div');
@@ -91,6 +92,11 @@ const App = () => (
 const MenuRouter=()=>(
     <HashRouter basename="/">
       <div>
+
+        {/* <Route render={(match,location)=>(
+            <PageVerifyCommpent/>
+        )}/> */}
+
         <Route exact path="/"  render={(match,location)=>(
             <div className="main">
                 <HeaderCommpent/>
@@ -101,6 +107,7 @@ const MenuRouter=()=>(
 
         <Route exact path="/verified" render={(match,location)=>(
             <div className="main">
+                <PageVerifyCommpent/>
                 <HeaderCommpent/>
                 <ResultController/>
                 <VerifiedController/>
@@ -109,6 +116,7 @@ const MenuRouter=()=>(
 
         <Route exact path="/invalid" render={(match,location)=>(
             <div className="main">
+                <PageVerifyCommpent/>
                 <HeaderCommpent/>
                 <ResultController/>
                 <InvalidController/>
@@ -117,6 +125,7 @@ const MenuRouter=()=>(
 
         <Route exact path="/expired" render={(match,location)=>(
             <div className="main">
+                <PageVerifyCommpent/>
                 <HeaderCommpent/>
                 <ResultController/>
                 <ExpiredController/>
@@ -125,6 +134,7 @@ const MenuRouter=()=>(
 
         <Route exact path="/feedback" render={(match,location)=>(
             <div className="main">
+                <PageVerifyCommpent/>
                 <HeaderCommpent/>
                 <BannerCommpent/>
                 <FeedBackCommpent/>
@@ -133,16 +143,10 @@ const MenuRouter=()=>(
 
         <Route exact path="/contact" render={(match,location)=>(
             <div className="main">
+                <PageVerifyCommpent/>
                 <HeaderCommpent/>
                 <BannerCommpent/>
                 <ContactUsCommpent/>
-            </div>
-        )}/>
-
-
-        <Route exact path="/gogo" render={(match,location)=>(
-            <div className="main">
-                <ResultController/>
             </div>
         )}/>
 

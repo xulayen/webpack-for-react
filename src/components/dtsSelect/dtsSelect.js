@@ -10,6 +10,10 @@ class DtsSelectCommpent extends React.Component {
 
     constructor(props) {
 		super(props);
+		this.state={
+			selectSure:false,
+			selectNo:false
+		};
 	}
 	
 	componentWillMount() {
@@ -18,23 +22,43 @@ class DtsSelectCommpent extends React.Component {
 
 	componentDidMount() {
 		//this.selectOption();
+		 var dtdFeed=null;
+		
+
+
+
 	}
 
 	componentWillUnmount() {
 	
 	}
 
-	selectOption(){
+	selectOption(queryid,feedback){
 		console.log('selectOption');
-		$.post('/SendAcVerifyInfo',{"accode":"111111111","queryid":"11111","feedback":"1"},function(data){
+		$.post('/SendAcVerifyInfo',{"accode":"1111111111111111","queryid":queryid,"feedback":feedback},function(data){
 			console.log(data);
 		});
 	}
 
+	selectSure(){
+		this.setState({
+			selectSure:true,
+			selectNo:false
+		});
+		this.selectOption("111111111111111111111111","1");
+	}
+
+	selectNo(){
+		this.setState({
+			selectNo:true,
+			selectSure:false
+		})
+		this.selectOption("111111111111111111111111","0");
+	}
 
 	render(){
 		return (
-			<div className="cnt1_right r_space" className={!this.props.isShowSelectOption?"none":""}>
+			<div className={!this.props.isShowSelectOption?"none":"cnt1_right r_space"}>
 					
 					<div className="cor_replay">
 						<p>
@@ -42,20 +66,21 @@ class DtsSelectCommpent extends React.Component {
 						<p className="none">
 							Does the above match your purchse?</p>
 						<div className="check_replay">
-							<p className="replaySure">
+							<p className="replaySure" onClick={this.selectSure.bind(this)} style={this.state.selectSure?{"background": "rgb(130, 188, 0)","color": "rgb(255, 255, 255)"}:{}}>
 								YES</p>
-							<p className="replayNo">
+							<p className="replayNo"  onClick={this.selectNo.bind(this)} style={this.state.selectNo?{"background": "rgb(226, 35, 26)","color": "rgb(255, 255, 255)"}:{}}>
 								NO</p>
 						</div>
-						<div className="resultYes" style={{visibility:"hidden"}}>
+						<div className={this.state.selectSure?"resultYes visible":"none"}>
 							<img src={sure}/>
 							<p>
 								Thank you for purchasing a genuine Shell Lubricants product</p>
 						</div>
-						<div className="resultNo none">
+						<div className={this.state.selectNo?"resultNo show":"none"}>
 							<img src={no}/>
 							<p>
-								<span>Code info is incorrect</span>Please call customer service.</p>
+								<span>Product information is not correct, please be aware of inferior counterfeit product</span>
+								</p>
 						</div>
 					</div>
 					

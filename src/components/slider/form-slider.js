@@ -185,7 +185,7 @@ class FormSliderCommpent extends React.Component {
 							   16 digit Anti-Counterfeit Code
 							</p>
 							<input type="text" id="txtCode" name="inpt" onChange={this.handleData.bind(this)} className="inpt notnull" placeholder="Scan QR code to skip manual input" nullmsg="Digital security cannot be empty" regex="/^\d{16}$/" logicmsg="Error! Please enter a valid digital. [please re input]"  maxLength="16"/>
-							<p className="err_tip">ERROR! You have entered an incorrect code.(Please try again)</p>
+							<p className="err_tip"></p>
 							<div className="gif">
 								<img src={lable} />
 							</div>

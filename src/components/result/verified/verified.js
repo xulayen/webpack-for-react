@@ -50,8 +50,16 @@ class VerifiedCommpent extends React.Component {
         return (
           <div className="cn_main">
             <div className="cnt ctt">
+
+            <div className={this.state.isShowSelectOption?"none":"invalid1"}>
+                <p>
+                    {this.props.items.reply.split('|')[0]}
+                </p>
+            </div>
+
+
                 <div className="cnt1_left">
-                    <div className="result_message">
+                    <div className={!this.state.isShowSelectOption?"none":"result_message"}>
                         <p className="messageP">
                             
                             <span>

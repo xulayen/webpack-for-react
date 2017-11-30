@@ -56,7 +56,7 @@
               {
                 loader: 'url-loader',
                 options: {
-                  limit: 8192,
+                  limit: 1,
                   name:'static/images/[name].[hash].[ext]'
                 }
               }

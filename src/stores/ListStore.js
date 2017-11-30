@@ -2,7 +2,7 @@ var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
 
 var ListStore = assign({}, EventEmitter.prototype, {
-  items: {reply:"-1",systemcode:"0000",accode:"0000000000000000"},
+  items: {reply:"-1",systemcode:"0000",accode:"0000000000000000",pathto:""},
 
   getAll: function () {
     var _result=localStorage.getItem("SubmitResult");

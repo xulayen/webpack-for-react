@@ -1,5 +1,6 @@
 import React from 'react';
-import {BrowserRouter,HashRouter, Route, Link} from 'react-router-dom';
+import {BrowserRouter,HashRouter, Route, Link,Redirect} from 'react-router-dom';
+import ListStore from'../../stores/ListStore.js';
 import '../../static/css/index.css';
 import '../../static/css/front.css';
 import '../../static/css/slick.css';
@@ -7,8 +8,21 @@ import '../../static/css/slick.css';
 class HeaderCommpent extends React.Component {
 
       constructor(props) {
-        super(props);
-      }
+		super(props);
+	  }
+	
+
+	componentWillMount() {
+		
+    }
+
+    componentDidMount() {
+
+    }
+
+    componentWillUnmount() {
+
+    }
 
       render(){
         return (

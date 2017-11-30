@@ -1543,3 +1543,9 @@ label{
     margin: auto;
 	z-index: 20001;
 }
+
+.hidden
+{visibility:hidden;}
+.visible{
+	visibility:visible;
+}
