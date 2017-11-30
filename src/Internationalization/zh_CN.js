@@ -1,5 +1,32 @@
 const zh_CN = {
-    title:"壳牌防伪查询系统",
-    superHello:"你好，{ someone } !"
+    title:'壳牌防伪查询系统',
+    btnLabel:'了解标签特征',
+    contactUs:'联系我们 |',
+    privacyPolicy:'隐私政策 | ',
+    termCondition:'条款与条件',
+    copyRight:'©2017 壳牌 壳牌对此拥有所有相关权利',
+    superHello:'你好，{ someone } !',
+    index:{
+        0x00010207:'防伪码不足16位，请检查并重新输入16位防伪码',
+        0x00010208:'防伪码不能为空，请检查并输入16位防伪码',
+        0x00010209:'请向右滑动。',
+        0x00010210:'',
+        0x00010211:'抱歉，由于网络繁忙，请稍后再试。',
+        0x00020101:'',
+        openLabelNotice:'请揭开标签找到16位防伪码',
+        selectCountry:'选择国家',
+        selectLan:'选择语言',
+        tipCoutryLan:'地区/语言',
+        tipHasSlidered:'谢谢！',
+        tipInputDigitCode:'请输入 16 位防伪码：',
+        tipInputPlaceHolder:'扫描二维码便可免去手动输入',
+        tipNoSlider:'请在此处滑动！',
+        tipRealPeason:'真人确认',
+        tipSelectLanguage:'选择语言',
+        tipSubmit:'继续',
+        tipSubmitting:'正在提交...',
+        welcome:'欢迎',
+        welcomeNotice:'感谢您购买壳牌润滑油产品<br />请使用我们的防伪查询系统验证产品真伪',
+    }
 }
 export default zh_CN;   

@@ -5,8 +5,6 @@ import '../../static/css/index.css';
 import '../../static/css/front.css';
 import '../../static/css/slick.css';
 import {IntlProvider, FormattedMessage} from 'react-intl';
-import zh_CN from '../../Internationalization/zh_CN.js';
-import en_US from '../../Internationalization/en_US.js';
 import intl from 'intl';
 
 class HeaderCommpent extends React.Component {
@@ -47,7 +45,10 @@ class HeaderCommpent extends React.Component {
 	            </div>
 	            <div id="navbar" className="navbar">
 	                <ul className="layer_clcik">
-	                    <li><a>Understand label features</a></li>
+	                    <li><a>
+							{/* Understand label features */}
+							<FormattedMessage id='btnLabel'/>
+						</a></li>
 	                </ul>
 	            </div>  
 			</div>

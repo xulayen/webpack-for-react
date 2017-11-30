@@ -121,15 +121,16 @@ class FormSliderCommpent extends React.Component {
 	
 
 	changeLan(e){
-		debugger;
-		ButtonActions.changeLan('en-US');
+		var lan=e.$.value.split('|')[0];
+		ButtonActions.changeLan(lan);
+		window.location.reload();
 	};
 	
 
 
     render(){
 		if (this.state.redirect) {  
-			return <Redirect push to={this.state.pathto} />; 
+			return <Redirect to={this.state.pathto} />; 
 		} 
         return (
 			<form className="container form" method="get">
@@ -177,9 +178,9 @@ class FormSliderCommpent extends React.Component {
 								</ul>
 							</div>
 							<div className="countryContainer1 none">
-								<ul id="_select" className="_select" onChange={this.changeLan.bind(this)}>
+								<ul id="_select" className="_select">
 									{this.state.languageList.map((ele)=>
-										<li className={ele.$.value} key={ele.$.value}>{ele.$.text}</li>
+										<li onClick={this.changeLan.bind(this,ele)} className={ele.$.value} key={ele.$.value}>{ele.$.text}</li>
 									)}
 								</ul>
 							</div>

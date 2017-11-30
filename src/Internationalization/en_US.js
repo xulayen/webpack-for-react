@@ -1,5 +1,32 @@
 const en_US = {
-    title:"Shell Anti-Counterfeit System",
-    superHello:"Hello, { someone } !"
+    title:'Shell Anti-Counterfeit System',
+    btnLabel:'Understand label features',
+    contactUs:'Contact us |',
+    privacyPolicy:'Privacy Policy | ',
+    termCondition:'Terms & Conditions',
+    copyRight:'© 2014 Shell.All rights reserved.',
+    superHello:'Hello, { someone } !',
+    index:{
+        0x00010207:'Error! Please enter a valid digital. [please re input]',
+        0x00010208:'Digital security cannot be empty',
+        0x00010209:'Please move the slider',
+        0x00010210:'Please choose the language',
+        0x00010211:'Sorry, the network is busy, please try again later!',
+        0x00020101:'Sorry, you have no this access, if have doubt, can consult the 021-26095599',
+        openLabelNotice:'PLEASE UNCOVER LABEL to find 16 digit Anti-Counterfeit Code',
+        selectCountry:'Select Country',
+        selectLan:'Select language',
+        tipCoutryLan:'Country/language',
+        tipHasSlidered:'Thank you!',
+        tipInputDigitCode:'Enter the 16-digit Anti-Counterfeit code:',
+        tipInputPlaceHolder:'Scan QR code to skip manual input',
+        tipNoSlider:'Slide to confirm I am human!',
+        tipRealPeason:'Real person confirmation',
+        tipSelectLanguage:'Select language',
+        tipSubmit:'Continue',
+        tipSubmitting:'Loading...',
+        welcome:'WELCOME',
+        welcomeNotice:'Thank you for purchasing a Shell Lubricants product.<br />Please use our Anti-Counterfeit system to verify its authenticity.',
+    }
 }    
 export default en_US;
