@@ -15,6 +15,9 @@ import {VerifiedController} from './components/result/verified/verifiedControlle
 import {FeedBackCommpent} from './components/feedback/feedback.js';
 import {ContactUsCommpent} from './components/contactus/contactus.js';
 import {PageVerifyCommpent} from './components/PageVerification/pageVerify.js';
+import intl from 'intl';
+import {IntlProvider, FormattedMessage} from 'react-intl';
+import Inter from './Internationalization/Util/Inter.js';
 
 
 var div_content=document.createElement('div');
@@ -90,68 +93,73 @@ const App = () => (
 
 
 const MenuRouter=()=>(
-    <HashRouter basename="/">
-      <div>
+    <IntlProvider 
+    locale={Inter.locale} 
+    messages={Inter.chooseLocale()}
+    >
+        <HashRouter basename="/">
+        <div>
 
-        {/* <Route render={(match,location)=>(
-            <PageVerifyCommpent/>
-        )}/> */}
-
-        <Route exact path="/"  render={(match,location)=>(
-            <div className="main">
-                <HeaderCommpent/>
-                <BannerCommpent/>
-                <FormSliderCommpent/>
-            </div>
-        )} />
-
-        <Route exact path="/verified" render={(match,location)=>(
-            <div className="main">
+            {/* <Route render={(match,location)=>(
                 <PageVerifyCommpent/>
-                <HeaderCommpent/>
-                <ResultController/>
-                <VerifiedController/>
-            </div>
-        )}/>
+            )}/> */}
 
-        <Route exact path="/invalid" render={(match,location)=>(
-            <div className="main">
-                <PageVerifyCommpent/>
-                <HeaderCommpent/>
-                <ResultController/>
-                <InvalidController/>
-            </div>
-        )}/>
+            <Route exact path="/"  render={(match,location)=>(
+                <div className="main">
+                    <HeaderCommpent/>
+                    <BannerCommpent/>
+                    <FormSliderCommpent/>
+                </div>
+            )} />
 
-        <Route exact path="/expired" render={(match,location)=>(
-            <div className="main">
-                <PageVerifyCommpent/>
-                <HeaderCommpent/>
-                <ResultController/>
-                <ExpiredController/>
-            </div>
-        )}/>
+            <Route exact path="/verified" render={(match,location)=>(
+                <div className="main">
+                    <PageVerifyCommpent/>
+                    <HeaderCommpent/>
+                    <ResultController/>
+                    <VerifiedController/>
+                </div>
+            )}/>
 
-        <Route exact path="/feedback" render={(match,location)=>(
-            <div className="main">
-                <PageVerifyCommpent/>
-                <HeaderCommpent/>
-                <BannerCommpent/>
-                <FeedBackCommpent/>
-            </div>
-        )}/>
+            <Route exact path="/invalid" render={(match,location)=>(
+                <div className="main">
+                    <PageVerifyCommpent/>
+                    <HeaderCommpent/>
+                    <ResultController/>
+                    <InvalidController/>
+                </div>
+            )}/>
 
-        <Route exact path="/contact" render={(match,location)=>(
-            <div className="main">
-                <PageVerifyCommpent/>
-                <HeaderCommpent/>
-                <BannerCommpent/>
-                <ContactUsCommpent/>
-            </div>
-        )}/>
+            <Route exact path="/expired" render={(match,location)=>(
+                <div className="main">
+                    <PageVerifyCommpent/>
+                    <HeaderCommpent/>
+                    <ResultController/>
+                    <ExpiredController/>
+                </div>
+            )}/>
 
-      </div>
-    </HashRouter>
+            <Route exact path="/feedback" render={(match,location)=>(
+                <div className="main">
+                    <PageVerifyCommpent/>
+                    <HeaderCommpent/>
+                    <BannerCommpent/>
+                    <FeedBackCommpent/>
+                </div>
+            )}/>
+
+            <Route exact path="/contact" render={(match,location)=>(
+                <div className="main">
+                    <PageVerifyCommpent/>
+                    <HeaderCommpent/>
+                    <BannerCommpent/>
+                    <ContactUsCommpent/>
+                </div>
+            )}/>
+
+        </div>
+        </HashRouter>
+    </IntlProvider>
 );
 
 ReactDOM.render(

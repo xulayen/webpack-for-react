@@ -117,7 +117,13 @@ class FormSliderCommpent extends React.Component {
             })
 
         }
-    }
+	}
+	
+
+	changeLan(e){
+		debugger;
+		ButtonActions.changeLan('en-US');
+	};
 	
 
 
@@ -171,7 +177,7 @@ class FormSliderCommpent extends React.Component {
 								</ul>
 							</div>
 							<div className="countryContainer1 none">
-								<ul id="_select" className="_select">
+								<ul id="_select" className="_select" onChange={this.changeLan.bind(this)}>
 									{this.state.languageList.map((ele)=>
 										<li className={ele.$.value} key={ele.$.value}>{ele.$.text}</li>
 									)}

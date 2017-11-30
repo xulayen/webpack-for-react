@@ -8,6 +8,10 @@ AppDispatcher.register(function (action) {
       ListStore.resetReply(action.reply,action.systemcode,action.accode,action.pathto,action.queryid);
       ListStore.emitChange();
       break;
+    case 'CHANGE_LANGUAGE':
+      ListStore.changeLan(action.lan);
+      ListStore.emitChange();
+      break;
     default:
     // no op
   }

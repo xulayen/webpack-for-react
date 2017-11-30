@@ -4,6 +4,10 @@ import ListStore from'../../stores/ListStore.js';
 import '../../static/css/index.css';
 import '../../static/css/front.css';
 import '../../static/css/slick.css';
+import {IntlProvider, FormattedMessage} from 'react-intl';
+import zh_CN from '../../Internationalization/zh_CN.js';
+import en_US from '../../Internationalization/en_US.js';
+import intl from 'intl';
 
 class HeaderCommpent extends React.Component {
 
@@ -31,7 +35,9 @@ class HeaderCommpent extends React.Component {
 				<Link to="/">
 				<div className="logo">
 					
-					Shell Anti-Counterfeit System
+					{/* Shell Anti-Counterfeit System */}
+					<FormattedMessage id='title'/>
+
 					</div>
 					</Link>
 	            <div id="btn" className="btn">

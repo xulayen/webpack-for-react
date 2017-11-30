@@ -2,11 +2,19 @@ var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
 
 var ListStore = assign({}, EventEmitter.prototype, {
-    items: {reply:"-1",systemcode:"0000",accode:"0000000000000000",pathto:"",queryid:"-1"},
+    items: {reply:"-1",systemcode:"0000",accode:"0000000000000000",pathto:"",queryid:"-1",lan:"zh-CN"},
 
     getAll: function () {
       var _result=localStorage.getItem("SubmitResult");
       return _result?JSON.parse(_result):this.items;
+    },
+
+    getCurrentLan:function(){
+      var _result=localStorage.getItem("CurrentLan");
+      if(!_result){
+        _result=navigator.language;
+      }
+      return _result;
     },
 
     resetReply: function (reply,systemcode,accode,pathto,queryid) {
@@ -16,6 +24,11 @@ var ListStore = assign({}, EventEmitter.prototype, {
       this.items.pathto=pathto;
       this.items.queryid=queryid;
       localStorage.setItem("SubmitResult",JSON.stringify(this.items));
+    },
+
+
+    changeLan:function(lan){
+      localStorage.setItem("CurrentLan",lan);
     },
 
     emitChange: function () {

@@ -12,6 +12,17 @@ var ButtonActions = {
       queryid:queryid
     });
   },
+
+
+  changeLan: function (lan) {
+    AppDispatcher.dispatch({
+      actionType: 'CHANGE_LANGUAGE',
+      lan: lan
+    });
+  },
+
+  
+
 };
 
 module.exports = ButtonActions;
