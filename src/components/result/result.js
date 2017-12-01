@@ -4,6 +4,7 @@ import '../../static/css/front.css';
 import many from '../../static/images/oil_1.png';
 import first from '../../static/images/oil_2.png';
 import invalid from '../../static/images/oil_3.png';
+import {injectIntl,IntlProvider, FormattedMessage} from 'react-intl';
 
 class ResultCommpent extends React.Component {
 
@@ -11,22 +12,22 @@ class ResultCommpent extends React.Component {
         super(props);
         this.state={
             Img_Oil:null,
-            Total_result:''
+            Total_result:{}
         };
     }
 
     componentWillMount() {
-        console.log(this.props.items);
+        const intl = this.props.intl;
         var _img=invalid,_total_result='';
         if(this.props.items.pathto==='/invalid'){
             _img=invalid;
-            _total_result='Code Invalid';
+            _total_result=intl.formatMessage({ id: 'resultTotalInvalid' });
         }else if(this.props.items.pathto==='/verified'){
             _img=first;
-            _total_result='Code Verified';
+            _total_result=intl.formatMessage({ id: 'resultTotalVerified' });
         }else if(this.props.items.pathto==='/expired'){
             _img=many;
-            _total_result='Code Expired';
+            _total_result=intl.formatMessage({ id: 'resultTotalExpired' });
         }
 
         this.setState({
@@ -49,13 +50,18 @@ class ResultCommpent extends React.Component {
             <div className="ban-slide">
                 <div className="inner">
                     <h2 className={this.props.items.pathto!=='/verified'?"red_title":""}>
-                        {this.state.Total_result}</h2>
+                        
+                        {this.state.Total_result}
+
+                    </h2>
                     <p>
                          {this.props.items.reply.split('|')[0]} 
                     </p>
                     <div className="subbtn stt">
                         <p>
-                            Your 16-digit Anti-Counterfeit code:</p>
+                            <FormattedMessage id="resultCodeTip"/>
+                            {/* Your 16-digit Anti-Counterfeit code: */}
+                        </p>
                         <p id="resultCode">
                              {this.props.items.accode} </p>
                     </div>
@@ -70,5 +76,5 @@ class ResultCommpent extends React.Component {
 
 }
 
-export {ResultCommpent}
+export default injectIntl(ResultCommpent);
                     

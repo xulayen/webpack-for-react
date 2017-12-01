@@ -21,7 +21,11 @@ class PageVerifyCommpent extends React.Component {
 				gotoIndex:true,
 				willGo:""
 			});
-		}else if(this.state.willGo!==this.state.items.pathto){
+		}else if(this.state.willGo!==this.state.items.pathto && 
+			this.state.willGo.indexOf('invalid')> -1 &&
+			this.state.willGo.indexOf('expired')> -1 &&
+			this.state.willGo.indexOf('verified')> -1
+		){
 			this.setState({
 				gotoIndex:true,
 				willGo:this.state.items.pathto

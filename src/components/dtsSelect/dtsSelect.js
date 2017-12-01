@@ -5,6 +5,7 @@ import sure from '../../static/images/sure.png';
 import no from '../../static/images/no.png';
 import $ from 'jquery';
 import ListStore from '../../stores/ListStore.js';
+import {injectIntl,IntlProvider, FormattedMessage,FormattedHTMLMessage} from 'react-intl';
 
 class DtsSelectCommpent extends React.Component {
 
@@ -90,24 +91,35 @@ class DtsSelectCommpent extends React.Component {
 					
 					<div className="cor_replay">
 						<p>
-							Please check whether the product information below matches your purchase</p>
+							{/* Please check whether the product information below matches your purchase */}
+							<FormattedMessage id="dtsQuestion1"/>
+							</p>
 						<p className="none">
-							Does the above match your purchse?</p>
+							{/* Does the above match your purchse? */}
+							<FormattedMessage id="dtsQuestion2"/>
+							</p>
 						<div className="check_replay">
 							<p className="replaySure" onClick={this.selectSure.bind(this)} style={this.state.selectSure?{"background": "rgb(130, 188, 0)","color": "rgb(255, 255, 255)"}:{}}>
-								YES</p>
+								{/* YES */}
+								<FormattedMessage id="dtsYes"/>
+								</p>
 							<p className="replayNo"  onClick={this.selectNo.bind(this)} style={this.state.selectNo?{"background": "rgb(226, 35, 26)","color": "rgb(255, 255, 255)"}:{}}>
-								NO</p>
+								{/* NO */}
+								<FormattedMessage id="dtsNo"/>
+								</p>
 						</div>
 						<div className={this.state.selectSure?"resultYes visible":"none"}>
 							<img src={sure}/>
 							<p>
-								Thank you for purchasing a genuine Shell Lubricants product</p>
+								{/* Thank you for purchasing a genuine Shell Lubricants product */}
+								<FormattedMessage id="dtsAnswer1"/>
+								</p>
 						</div>
 						<div className={this.state.selectNo?"resultNo show":"none"}>
 							<img src={no}/>
 							<p>
-								<span>Product information is not correct, please be aware of inferior counterfeit product</span>
+								{/* <span>Product information is not correct, please be aware of inferior counterfeit product</span> */}
+								<FormattedMessage id="dtsAnswer2"/>
 								</p>
 						</div>
 					</div>

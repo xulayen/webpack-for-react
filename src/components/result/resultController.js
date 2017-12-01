@@ -1,6 +1,6 @@
 import React from'react';
 import ListStore from'../../stores/ListStore.js';
-import {ResultCommpent} from'./result.js';
+import ResultCommpent from'./result.js';
 
 class ResultController extends React.Component {
     constructor(props) {

@@ -6,25 +6,49 @@
  module.exports = {
    entry: {
     app: './src/index.js',
-    vendor:[]
+    vendor:['jquery','jquery_wechat_sdk']
    },
    plugins: [
+     /**
+      * 清空发布目录
+      */
       new CleanWebpackPlugin(['dist']),
+      /**
+       * 生成html的插件,引入css文件和js文件
+       */
       new HtmlWebpackPlugin({
         title: 'Shell Anti-Counterfeit System',
         viewport:'width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no',
         template:'./src/template/index.html'
       }),
       new webpack.HashedModuleIdsPlugin(),
+      /**
+       * 分离公共js到vendor中
+       */
       new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendor'
+        name: 'vendor',
+        minChunks: function(module, count) {
+          return (module.resource && 
+            /\.js$/.test(module.resource) && 
+            module.resource.indexOf(path.join(__dirname, './node_modules')) === 0)
+        }
       }),
+      /**
+       * 下面主要是将运行时代码提取到单独的manifest文件中，防止其影响vendor.js
+       */
       new webpack.optimize.CommonsChunkPlugin({
-        name: 'runtime'
+        name: 'runtime',
+        chunks: ['vendor']
       }),
+      /**
+       * 颗粒化
+       */
       new webpack.ProvidePlugin({
         join: ['lodash', 'join']
       }),
+      /**
+       * ExtractTextPlugin分离js中引入的css文件
+       */
       new ExtractTextPlugin({
         filename:  (getPath) => {
             return getPath('static/css/[name].[chunkhash].css'); //设置样式路劲
@@ -47,7 +71,7 @@
             use: ExtractTextPlugin.extract({
               fallback: "style-loader",
               use: ["css-loader"],
-              publicPath:'/'
+              publicPath:'../../'
             })
           },
           {
@@ -99,7 +123,7 @@
         ]
     },
    output: {
-     filename: '[name].[chunkhash].js',
+     filename: 'static/js/[name].[chunkhash].js',
      path: path.resolve(__dirname, 'dist')
    }
  };

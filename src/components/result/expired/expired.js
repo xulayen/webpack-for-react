@@ -4,6 +4,8 @@ import '../../../static/css/front.css';
 import {FooterCommpent} from '../../footer/foot.js';
 import {UnderBarCommpent} from '../../underbar/underbar.js';
 import {DtsSelectCommpent} from '../../dtsSelect/dtsSelect.js';
+import {DtsInfoCommpent} from '../../dtsInfo/dtsInfo.js';
+import {injectIntl,IntlProvider, FormattedMessage,FormattedHTMLMessage} from 'react-intl';
 
 class ExpiredCommpent extends React.Component {
 
@@ -55,37 +57,10 @@ class ExpiredCommpent extends React.Component {
                 </div>
                 
                 <div className="cnt1_left">
-                    <div className={!this.state.isShowSelectOption?"none":"result_message"}>
-                        <div className="message_left">
-                             <p>
-                                
-                                Pack size:
-                            </p>
-                            
-                            <p>
-                                
-                                Product name:
-                            </p>
-                            
-                            <p>
-                                
-                                Batch number:
-                            </p>
-                        </div>
-                        <div className="message_right">
-                            <p>
-                                {this.state.dts.PackSize}
-                            </p>
-                            
-                            <p>
-                                {this.state.dts.ProductName}
-                            </p>
-                            
-                            <p>
-                                {this.state.dts.BatchNumber}
-                            </p>
-                        </div>
-                    </div>
+                    <DtsInfoCommpent 
+                    isShowSelectOption={this.state.isShowSelectOption}
+                    dts={this.state.dts}
+                    />
                 </div>
                
                 <DtsSelectCommpent isShowSelectOption={this.state.isShowSelectOption}/>

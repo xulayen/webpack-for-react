@@ -11,6 +11,8 @@ import Global from '../../static/script/red.js';
 import functionUtil from '../../static/script/functionUtil.js';
 import ButtonActions from '../../actions/SubmitActions.js';
 import loading from '../../static/images/gif/loading.gif';
+import {IntlProvider, FormattedMessage} from 'react-intl';
+import intl from 'intl';
 
 class FormSliderCommpent extends React.Component {
 
@@ -30,14 +32,19 @@ class FormSliderCommpent extends React.Component {
     }
 
     componentDidMount() {
+
 		sliderInit();
 		selectOption();
+		//动态设置防伪码输入框的margin-top值
+		var ht = $(".cnt_left").height();
+		var inpu_margin = ht - $(".limitWidth").eq(0).height() - $(".limitWidth").eq(1).height() - 45;
+		$(".inpt").css("margin-top", inpu_margin + "px");
 		this.submit(this);
 	}
 	
 
     componentWillUnmount() {
-	
+
 	}
 
 	submit(_self){
@@ -141,17 +148,26 @@ class FormSliderCommpent extends React.Component {
 				</div>
 
 				<div className="cn_main">
-					<h2 className="title">WELCOME</h2>
+					<h2 className="title">
+						{/* WELCOME */}
+						<FormattedMessage id="welcome" />
+					</h2>
 					<div className="cnt">
 						<div className="cnt_left">
 							<p className="text">
-								Thank you for purchasing a Shell Lubricants Product.<br/>
-								Please use our Anti-Counterfeit system to verify its authenticity.
+								<FormattedMessage id="welcomeNotice1" />
+								<FormattedMessage id="welcomeNotice2" />
 							</p>
 							<div className="u_sle">
 								<p className="list_title">
-									<span>Select Country</span>
-									<span>Select Language</span>
+									<span>
+										{/* Select Country */}
+										<FormattedMessage id="selectCountry" />
+									</span>
+									<span>
+										{/* Select Language */}
+										<FormattedMessage id="selectLan" />
+									</span>
 								</p>
 								<div className="select_country">
 									<div className="country_left" >
@@ -187,12 +203,39 @@ class FormSliderCommpent extends React.Component {
 						</div>
 						
 						<div className="cnt_right">
-							<p className="limitWidth">Enter the 16-digit Anti-Counterfeit code:</p>
-							<p style={{fontWeight:"bold"}} className="limitWidth">PLEASE UNCOVER LABEL to find
-							   16 digit Anti-Counterfeit Code
+							<p className="limitWidth">
+								{/* Enter the 16-digit Anti-Counterfeit code: */}
+								<FormattedMessage id="tipInputDigitCode" />
 							</p>
-							<input type="text" id="txtCode" name="inpt" onChange={this.handleData.bind(this)} className="inpt notnull" placeholder="Scan QR code to skip manual input" nullmsg="Digital security cannot be empty" regex="/^\d{16}$/" logicmsg="Error! Please enter a valid digital. [please re input]"  maxLength="16"/>
-							<p className="err_tip"></p>
+							<p style={{fontWeight:"bold"}} className="limitWidth">
+							   {/*PLEASE UNCOVER LABEL to find 16 digit Anti-Counterfeit Code */}
+							   <FormattedMessage id="openLabelNotice" />
+							</p>
+							<FormattedMessage id="tipInputPlaceHolder" >
+							{(txt1)=>(
+									<FormattedMessage id="t0x00010208" >
+									{(txt2)=>(
+										<FormattedMessage id="t0x00010207" >
+										{(txt3)=>(
+											<input type="text" id="txtCode" name="inpt" 
+												onChange={this.handleData.bind(this)} 
+												className="inpt notnull" 
+												placeholder={txt1}
+												nullmsg={txt2}
+												regex="/^\d{16}$/" 
+												logicmsg={txt3}
+												maxLength="16"/>
+										)}
+										</FormattedMessage>
+									)}
+									</FormattedMessage>
+							)}
+							</FormattedMessage>
+							
+
+							<p className="err_tip _hidden">
+ 								 <FormattedMessage id="t0x00010207" />
+                        	</p>
 							<div className="gif">
 								<img src={lable} />
 							</div>
@@ -200,20 +243,42 @@ class FormSliderCommpent extends React.Component {
 						<div className="clear"></div>
 					</div>
 					<div className="cnt1">
-						<p>Real person confirmation</p>
+						<p>
+							&nbsp;
+						</p>
 						<div className="cnt1_left">
 							<div className="slide_cnt index-below-action">
 								<div id="slider" className="slider left">
 					                <div id="pageSlide">
-					                    <input id="captcha" className="valid" type="hidden" validmsg="Please move the slider" value="0"/>
+										<FormattedMessage id="t0x00010209" >
+										{(txt)=>(
+											<input id="captcha" className="valid" type="hidden" validmsg={txt} value="0"/>
+										)}
+										</FormattedMessage> 
 					                    <span id="label" className="label"></span>
-					                    <span id="lableTip" hasslider="Thank you!" noslider="Slide to confirm you are human!">Slide to confirm you are human!</span>
+
+										<FormattedMessage id="tipHasSlidered">
+											{(txt2)=>(
+											<FormattedMessage id="tipNoSlider">
+												{(txt)=>(
+													<span id="lableTip" hasslider={txt2} noslider={txt}>
+														{/* Slide to confirm you are human! */}
+														<FormattedMessage id="tipNoSlider" />
+													</span>
+												)}
+											</FormattedMessage> 
+											)}
+										</FormattedMessage> 
 					                </div>
 					            </div>
 							</div>
 						</div>
 						<div className="cnt1_right">
-							<input type="button" value="Submit" className="check  sub"/>
+							<FormattedMessage id="tipSubmit">
+								{(txt)=>(
+									<input type="button" value={txt} className="check  sub"/>
+								)}
+							</FormattedMessage> 
 						</div>
 						<div className="clear"></div>
 					</div>

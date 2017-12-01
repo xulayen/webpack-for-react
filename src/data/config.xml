@@ -199,7 +199,7 @@
                countryImg节点：当前国家图片 
             -->
             <countryImg>
-                http://www.ac.shell.com/uat/static/images/countryImg/china.png
+                http://www.ac.shell.com/static/images/countryImg/china.png
             </countryImg>
 
             <!--
@@ -382,7 +382,7 @@
                countryImg节点：当前国家图片 
             -->
             <countryImg>
-                http://www.ac.shell.com/uat/static/images/countryImg/Russian.png
+                http://www.ac.shell.com/static/images/countryImg/Russian.png
             </countryImg>
 
             <!--
@@ -553,7 +553,7 @@
                countryImg节点：当前国家图片 
             -->
             <countryImg>
-                http://www.ac.shell.com/uat/static/images/countryImg/Indonesia.png
+                http://www.ac.shell.com/static/images/countryImg/Indonesia.png
             </countryImg>
 
             <!--
@@ -2275,7 +2275,7 @@
                countryImg节点：当前国家图片 
             -->
             <countryImg>
-                http://www.ac.shell.com/uat/static/images/countryImg/Iraq.png
+                http://www.ac.shell.com/static/images/countryImg/Iraq.png
             </countryImg>
 
             <!--
@@ -2446,7 +2446,7 @@
                countryImg节点：当前国家图片 
             -->
             <countryImg>
-                http://www.ac.shell.com/uat/static/images/countryImg/SaudiaArabia.png
+                http://www.ac.shell.com/static/images/countryImg/SaudiaArabia.png
             </countryImg>
 
             <!--

@@ -424,6 +424,7 @@ select::-ms-expand { display: none; }
 .messageP{
 	overflow:hidden;
 	line-height:2em;
+	position:relative;
 }
 .messageP span:nth-of-type(1){
 	display:block;
@@ -437,6 +438,10 @@ select::-ms-expand { display: none; }
 	font-size:18px;
 	width:70%;
 	font-weight:bold;
+	top:50%;
+    transform:translateY(-50%);
+    position: absolute;
+    right:0;
 }
 .sub1{
 	display:block;
@@ -1572,37 +1577,37 @@ label{
 	}
 }
 
-.loading-mask {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 20000;
-    background-color: #000;
-    filter: alpha(opacity=30);
-    -moz-opacity: 0.30;
-    opacity: 0.30;
-    text-align: center;
-    overflow: hidden;
-	overflow-y: visible;
+.visible{
+	visibility:visible;
 }
 
-.loading {
-    width: 100px;
-    height: 100px;
-    position: fixed;
-    text-align: center;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
+ .loading
+{
+	width: 100px;
+	height: 100px;
+	position: fixed;
+	text-align: center;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto; /*50%为自身尺寸的一半*/
 	z-index: 20001;
 }
 
-.hidden
-{visibility:hidden;}
-.visible{
-	visibility:visible;
+.loading-mask
+{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 20000;
+	background-color: #000;
+	filter: alpha(opacity=30);
+	-moz-opacity: 0.30;
+	opacity: 0.30;
+	text-align: center;
+	overflow: hidden;
+	overflow-y: visible;
 }

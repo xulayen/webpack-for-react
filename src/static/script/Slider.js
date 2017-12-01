@@ -183,7 +183,7 @@ Slider.prototype.Move = function () {
     }
     $(".label").css("left", _self.index + "px");
 
-    if($("#captcha") && $("#lableTip")){
+    if(Boolean($("#captcha") && $("#lableTip"))){
         if (_self.index == (_self.max - num)) {
             //停止
             _self.swipestart = false;

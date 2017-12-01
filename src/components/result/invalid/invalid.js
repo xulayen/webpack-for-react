@@ -3,6 +3,7 @@ import {BrowserRouter,HashRouter, Route, Link} from 'react-router-dom';
 import '../../../static/css/index.css';
 import '../../../static/css/front.css';
 import {FooterCommpent} from '../../footer/foot.js';
+import {injectIntl,IntlProvider, FormattedMessage} from 'react-intl';
 
 class InvalidCommpent extends React.Component {
 
@@ -35,12 +36,16 @@ class InvalidCommpent extends React.Component {
                     <div className="result_label">
                         <p className="layer_clcik ">
                             <a>
-                                Understand label features
+                                {/* Understand label features */}
+                                <FormattedMessage id="understandLable"/>
                             </a>
                         </p>
                         
                         <p>
-                          <Link to="/feedback">Feedback</Link>
+                          <Link to="/feedback">
+                          {/* Feedback */}
+                          <FormattedMessage id="feedBack"/>
+                          </Link>
                         </p>
                         
                     </div>
@@ -50,7 +55,8 @@ class InvalidCommpent extends React.Component {
 					<div className="check_label">
                         <Link to="/">
                             <p className="sub1 sub3">
-                                Try again
+                                {/* Try again */}
+                                <FormattedMessage id="btnTry"/>
                             </p>
                         </Link>
 					</div>

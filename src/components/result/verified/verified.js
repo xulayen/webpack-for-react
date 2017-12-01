@@ -4,6 +4,8 @@ import '../../../static/css/front.css';
 import {FooterCommpent} from '../../footer/foot.js';
 import {UnderBarCommpent} from '../../underbar/underbar.js';
 import {DtsSelectCommpent} from '../../dtsSelect/dtsSelect.js';
+import {DtsInfoCommpent} from '../../dtsInfo/dtsInfo.js';
+import {injectIntl,IntlProvider, FormattedMessage,FormattedHTMLMessage} from 'react-intl';
 
 
 class VerifiedCommpent extends React.Component {
@@ -59,35 +61,10 @@ class VerifiedCommpent extends React.Component {
 
 
                 <div className="cnt1_left">
-                    <div className={!this.state.isShowSelectOption?"none":"result_message"}>
-                        <p className="messageP">
-                            
-                            <span>
-                                Pack size:</span> <span>
-                                    {this.state.dts.PackSize}
-                                </span>
-                            
-                        </p>
-                        <p className="messageP">
-                            
-                            <span>
-                                Product name:</span> <span>
-                                    {this.state.dts.ProductName}
-                                </span>
-                            
-                        </p>
-                        <p className="messageP">
-                            
-                        </p>
-                        <p className="messageP">
-                            
-                            <span>
-                                Batch number:</span> <span>
-                                    {this.state.dts.BatchNumber}
-                                </span>
-                            
-                        </p>
-                    </div>
+                    <DtsInfoCommpent 
+                    isShowSelectOption={this.state.isShowSelectOption}
+                    dts={this.state.dts}
+                    />
                 </div>
                 <DtsSelectCommpent isShowSelectOption={this.state.isShowSelectOption}/>
                 <div className="clear">

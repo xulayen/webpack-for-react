@@ -42,7 +42,7 @@ class FooterCommpent extends React.Component {
                     </Link>
                     <a href="#">
                         {/* Privacy Policy |  */}
-                        <FormattedMessage id="contactUs"/>
+                        <FormattedMessage id="privacyPolicy"/>
                     </a>
                     <a href="#">
                         {/* Terms & Conditions */}

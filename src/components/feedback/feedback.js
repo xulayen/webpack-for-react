@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../static/css/front.css';
 import '../../static/css/index.css';
-
+import {injectIntl,IntlProvider, FormattedMessage,FormattedHTMLMessage} from 'react-intl';
 import {FooterCommpent} from '../footer/foot.js';
 
 class FeedBackCommpent extends React.Component {
