@@ -22,6 +22,15 @@ server.listen(PORT, function(){
     console.log('App (dev) is now running on port '+PORT);
 });
 
+
+app.get('/',function(req, res,next){
+     res.send('root ~~~'); 
+});
+
+app.get('/index',function(req, res,next){
+     res.send('反向代理 nodejs root ~~~'); 
+});
+
 app.post('/fw', function(req, res,next) {
     let accode=req.body.accode || '6675697746308516';
     let ip='10.20.26.19';//Until.getClientIp(req);

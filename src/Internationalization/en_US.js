@@ -79,6 +79,7 @@ const en_US = {
     feedName:'<strong>Name:&nbsp;</strong>(Optional)',
     feedTel:'<strong>Tel:&nbsp;</strong>(Optional)',
     feedEmail:'<strong>Email:&nbsp;</strong>',
+    feedbackEmaiLogic:'Please enter valid phone address',
     feedEmailPlaceHolder:'name@domain.com',
     feedBack:'Feedback',
     feedBackPlaceHolder:'Example:I have bought one bottle of 4L Helix Ultra from Auto-parts city, which is located in Road No. 322, HuanStreet. The store contract number is 130-0000-0000. And found that the anti-counterfeit code does not exist. Can you help me? Or let me know the nearest Shell authorised store?',
