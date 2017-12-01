@@ -3,11 +3,17 @@ const merge = require('webpack-merge');
  const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
  var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
  const common = require('./webpack.common.js');
- var CompressionWebpackPlugin = require('compression-webpack-plugin') 
+ var CompressionWebpackPlugin = require('compression-webpack-plugin');
+ const CleanWebpackPlugin = require('clean-webpack-plugin');
+ const path = require('path');
 
  module.exports = merge(common, {
     devtool: 'source-map',
     plugins: [
+        /**
+         * 清空发布目录
+         */
+        new CleanWebpackPlugin(['./server/static']),
         /**
          * 压缩JS
          */
@@ -31,5 +37,9 @@ const merge = require('webpack-merge');
             threshold: 1024, //资源文件大于10240B=10kB时会被压缩
             minRatio: 0.8 //最小压缩比达到0.8时才会被压缩
         })
-    ]
+    ],
+    output: {
+      filename: 'static/js/[name].[chunkhash].js',
+      path: path.resolve(__dirname, './server')
+    }
 });

@@ -1,6 +1,5 @@
   const path = require('path');
   const webpack = require('webpack'); 
-  const CleanWebpackPlugin = require('clean-webpack-plugin');
   const HtmlWebpackPlugin = require('html-webpack-plugin');
   const ExtractTextPlugin = require("extract-text-webpack-plugin");
  module.exports = {
@@ -9,10 +8,6 @@
     vendor:['jquery','jquery_wechat_sdk']
    },
    plugins: [
-     /**
-      * 清空发布目录
-      */
-      new CleanWebpackPlugin(['dist']),
       /**
        * 生成html的插件,引入css文件和js文件
        */
@@ -121,9 +116,5 @@
           //   use: 'imports-loader?this=>window'
           // },
         ]
-    },
-   output: {
-     filename: 'static/js/[name].[chunkhash].js',
-     path: path.resolve(__dirname, 'dist')
-   }
+    }
  };
