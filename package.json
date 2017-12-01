@@ -22,6 +22,7 @@
     "compression-webpack-plugin": "^1.0.1",
     "css-loader": "^0.28.7",
     "csv-loader": "^2.1.1",
+    "ejs": "^2.5.7",
     "events": "^1.1.1",
     "express": "^4.16.2",
     "extract-text-webpack-plugin": "^3.0.2",
