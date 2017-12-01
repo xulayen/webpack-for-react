@@ -2,6 +2,7 @@
  const CleanWebpackPlugin = require('clean-webpack-plugin');
  const common = require('./webpack.common.js');
  const path=require('path');
+ const OpenBrowserPlugin = require('open-browser-webpack-plugin');
  
  module.exports = merge(common, {
    devtool: 'inline-source-map',
