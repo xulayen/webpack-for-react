@@ -21,3 +21,7 @@ npm run build
 ``` bash
 npm run server
 ```
+
+## 打包之后访问
+
+http://127.0.0.1:8011/
