@@ -17,6 +17,14 @@ var ListStore = assign({}, EventEmitter.prototype, {
       return _result;
     },
 
+    getCurrentCountry:function(){
+      var _result=localStorage.getItem("CurrentCountry");
+      if(!_result){
+        _result=navigator.language.split('-')[1];
+      }
+      return _result;
+    },
+
     resetReply: function (reply,systemcode,accode,pathto,queryid) {
       this.items.reply=reply;
       this.items.systemcode=systemcode;
@@ -29,6 +37,10 @@ var ListStore = assign({}, EventEmitter.prototype, {
 
     changeLan:function(lan){
       localStorage.setItem("CurrentLan",lan);
+    },
+
+    changeCountry:function(country){
+      localStorage.setItem("CurrentCountry",country);
     },
 
     emitChange: function () {

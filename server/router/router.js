@@ -2,6 +2,7 @@ var Until=require('../Util/until.js');
 var Config=require('../config/config.js');
 var sha1 = require('sha1');
 var soap = require('soap');
+var fs=require('fs');
 
 // routes/index.js
 module.exports = function (app) {
@@ -36,8 +37,7 @@ module.exports = function (app) {
         soap.createClient(Config.url, function(err, client) {
         client.Get_QRCodeIsTrue(args, function(err, result) {
                 console.log(result);
-                res.send(result); 
-                return next();
+                return res.send(result); 
             });
         });
     });
@@ -63,9 +63,30 @@ module.exports = function (app) {
         soap.createClient(Config.url, function(err, client) {
         client.SendAcVerifyInfo(args, function(err, result) {
                 console.log(result);
-                res.send(result); 
-                return next();
+                return res.send(result); 
             });
         });
     });
+
+
+    app.use(function(req, res, next) {
+        //判断是主动导向404页面，还是传来的前端路由。
+    　　 //如果是前端路由则如下处理
+        fs.readFile('./server/index.html','utf-8', function(err, data){
+            if(err){
+                console.log(err);
+                res.send('后台错误');
+                return next();
+            } else {
+                console.log(data);
+                res.writeHead(200, {
+                    'Content-type': 'text/html',
+                    'Connection':'keep-alive'
+                });
+                res.end(data);
+                return next();
+            }
+        })
+    });
+
 };

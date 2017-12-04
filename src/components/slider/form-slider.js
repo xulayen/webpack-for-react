@@ -13,6 +13,7 @@ import ButtonActions from '../../actions/SubmitActions.js';
 import loading from '../../static/images/gif/loading.gif';
 import {IntlProvider, FormattedMessage} from 'react-intl';
 import intl from 'intl';
+import ListStore from '../../stores/ListStore.js';
 
 class FormSliderCommpent extends React.Component {
 
@@ -23,11 +24,37 @@ class FormSliderCommpent extends React.Component {
 			languageList:languageList(),
 			txt_code:'',
 			pathto:'',
-			loading:false
+			loading:false,
+			currentCountry:'',
+			currentNationalflag:'',
+			currentLanguage:'',
 		}
     }
 
     componentWillMount() {
+		var _self=this;
+		let selectL=ListStore.getCurrentLan().toLowerCase();
+		_self.state.languageList.forEach(function(l){
+			if(l.$.value.split('|')[0]===selectL){
+				_self.setState({
+					currentLanguage:l.$.text
+				})
+			}
+		});
+
+		var selectC=ListStore.getCurrentCountry();
+		_self.state.countryList.forEach(function(c){
+			if(c.$.key===selectC.toUpperCase()){
+				_self.setState({
+					currentCountry:$.trim(c.country),
+					currentNationalflag:$.trim(c.countryImg)
+				})
+			}
+			console.log(c);
+			
+		});
+
+
 		countryList();
     }
 
@@ -132,6 +159,18 @@ class FormSliderCommpent extends React.Component {
 		ButtonActions.changeLan(lan);
 		window.location.reload();
 	};
+
+	changeCountry(e){
+		console.log(e)
+		ButtonActions.changeCountry(e.$.key);
+		this.setState({
+			currentNationalflag:$.trim(e.countryImg)
+		})
+		window.location.reload();
+	};
+
+
+
 	
 
 
@@ -172,13 +211,13 @@ class FormSliderCommpent extends React.Component {
 								<div className="select_country">
 									<div className="country_left" >
 										<div className="select_left" id="_country"></div>
-										<p className="country_img"><img src={CN} /></p>
-										<p className="country" id="count">China</p>
+										<p className="country_img"><img src={this.state.currentNationalflag} /></p>
+										<p className="country" id="count">{this.state.currentCountry}</p>
 										<input type="hidden" value="" id="currentCountry"/>
 									</div>
 									<div className="country_right">
 										<div className="select_left" id="_language"></div>
-										<p className="select_language">Mandarin</p>
+										<p className="select_language">{this.state.currentLanguage}</p>
 										<input type="hidden" value="" id="currentLanguage"/>
 									</div>
 								</div>
@@ -186,7 +225,7 @@ class FormSliderCommpent extends React.Component {
 							<div className="countryContainer none">
 								<ul className="select_flag" id="flags">
 									{this.state.countryList.map((ele)=>
-										<li key={ele.$.key}>
+										<li key={ele.$.key} onClick={this.changeCountry.bind(this,ele)}>
 											<img src={ele.countryImg} />
 											{ele.country}
 										</li>

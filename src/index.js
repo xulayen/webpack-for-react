@@ -97,7 +97,7 @@ const MenuRouter=()=>(
     locale={Inter.locale} 
     messages={Inter.chooseLocale()}
     >
-        <HashRouter basename="/">
+        <BrowserRouter basename="/">
         <div>
 
             {/* <Route render={(match,location)=>(
@@ -158,7 +158,7 @@ const MenuRouter=()=>(
             )}/>
 
         </div>
-        </HashRouter>
+        </BrowserRouter>
     </IntlProvider>
 );
 

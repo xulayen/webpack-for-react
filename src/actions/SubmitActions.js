@@ -21,7 +21,12 @@ var ButtonActions = {
     });
   },
 
-  
+  changeCountry: function (country) {
+    AppDispatcher.dispatch({
+      actionType: 'CHANGE_COUNTRY',
+      country: country
+    });
+  },
 
 };
 

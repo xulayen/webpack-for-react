@@ -25,7 +25,7 @@
                countryImg节点：当前国家图片 
             -->
             <countryImg>
-                ZA.png
+                http://www.ac.shell.com/static/images/countryImg/ZA.png
             </countryImg>
 
             <!--
@@ -535,7 +535,7 @@
             </promotion>
         </item>
 
-        <item key="ID" visited="true">
+        <item key="ID" visited="false">
             <!--
     language节点：当前语言
     -->
@@ -2257,7 +2257,7 @@
             </promotion>
         </item>
 
-        <item key="IQ" visited="true">
+        <item key="IQ" visited="false">
             <!--
 			language节点：当前语言
 			-->
@@ -2428,7 +2428,7 @@
             </promotion>
         </item>
 
-        <item key="KZ" visited="true">
+        <item key="KZ" visited="false">
             <!--
     language节点：当前语言
     -->
@@ -2614,7 +2614,7 @@
         <!--中国/中文 中国-->
         <language value="zh-cn" text="中文（简体）" state="1"></language>
         <!--俄罗斯/俄语 Pоссия-->
-        <language value="ru|ru-ru" text="Pусский" state="1"></language>
+        <language value="ru|ru-ru" text="Pусский" state="0"></language>
         <!--阿根廷/西班牙语 Argentina-->
         <language value="es-ar" text="Español(Argentina)" state="0"></language>
         <!--哥伦比亚/西班牙语 Colombia-->
@@ -2624,7 +2624,7 @@
         <!--泰国/泰语 ไทย-->
         <language value="th|th-th" text="ภาษาไทย" state="0"></language>
         <!--印度尼西亚/印度尼西亚语 Indonesia-->
-        <language value="id|id-id" text="Bahasa Indonesia" state="1"></language>
+        <language value="id|id-id" text="Bahasa Indonesia" state="0"></language>
         <!--越南/越南语 Vietnam-->
         <language value="vi-vn" text="Vietnamese" state="0"></language>
         <!--巴基斯坦/乌尔都语 اردو زبان-->
@@ -2634,7 +2634,7 @@
         <!--土耳其/土耳其语 Türkiye-->
         <language value="tr|tr-tr" text="Türk dili" state="0"></language>
         <!--阿拉伯/阿拉伯语 عربي-->
-        <language value="ar-sa" text="العربية" state="1"></language>
+        <language value="ar-sa" text="العربية" state="0"></language>
     </languages>
 
     <!--

@@ -12,6 +12,10 @@ AppDispatcher.register(function (action) {
       ListStore.changeLan(action.lan);
       ListStore.emitChange();
       break;
+    case 'CHANGE_COUNTRY':
+      ListStore.changeCountry(action.country);
+      ListStore.emitChange();
+      break;
     default:
     // no op
   }
