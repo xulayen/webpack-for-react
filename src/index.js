@@ -24,6 +24,17 @@ var div_content=document.createElement('div');
 div_content.id="content";
 document.body.appendChild(div_content);
 
+
+
+var AutoBrower=BrowserRouter;
+if(process.env.NODE_ENV==='production'){
+    console.info('production env use nodejs server,so use BrowserRouter to router');
+    AutoBrower=BrowserRouter;
+}else{
+    console.info('dev env use webpack-dev-server,so use HashRouter to router');
+    AutoBrower=HashRouter;
+}
+
 const getConfirmation = (message, callback) => {
   const allowTransition = window.confirm(message)
   callback(allowTransition)
@@ -97,7 +108,7 @@ const MenuRouter=()=>(
     locale={Inter.locale} 
     messages={Inter.chooseLocale()}
     >
-        <BrowserRouter basename="/">
+        <AutoBrower basename="/">
         <div>
 
             {/* <Route render={(match,location)=>(
@@ -158,7 +169,7 @@ const MenuRouter=()=>(
             )}/>
 
         </div>
-        </BrowserRouter>
+        </AutoBrower>
     </IntlProvider>
 );
 

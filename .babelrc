@@ -1,5 +1,19 @@
+// {
+//   "presets": [
+//     "react"
+//   ]
+// }
 {
   "presets": [
-    "react"
+    ["env", {
+      "targets": {
+        "browsers": ["last 2 versions", "safari >= 7" ,"chrome >=60"],
+         "node": "9.2",
+         "uglify":true,
+         "debug":true
+      }
+    }]
   ]
 }
+
+
