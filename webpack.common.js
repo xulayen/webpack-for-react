@@ -3,6 +3,7 @@
   const HtmlWebpackPlugin = require('html-webpack-plugin');
   const ExtractTextPlugin = require("extract-text-webpack-plugin");
   const NyanProgressPlugin = require('nyan-progress-webpack-plugin');
+
  module.exports = {
    entry: {
     app: './src/index.js',
@@ -53,7 +54,7 @@
         filename:  (getPath) => {
             return getPath('static/css/[name].[chunkhash].css'); //设置样式路劲
         },
-        allChunks: true  // 若要按需加载 CSS 则请注释掉该行
+        //allChunks: true  // 若要按需加载 CSS 则请注释掉该行
       }),
       new NyanProgressPlugin(), // 进度条
    ],

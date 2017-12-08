@@ -7,6 +7,7 @@ const merge = require('webpack-merge');
  const CleanWebpackPlugin = require('clean-webpack-plugin');
  const path = require('path');
  const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
  module.exports = merge(common, {
     devtool: 'source-map',
@@ -46,7 +47,22 @@ const merge = require('webpack-merge');
             minRatio: 0.8 //最小压缩比达到0.8时才会被压缩
         }),
         new webpack.BannerPlugin("作者：xulayen 模版地址：https://github.com/xulayen/webpack-for-react-template"),
-        new webpack.NoEmitOnErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin(),
+        new ImageminPlugin({
+            test: /\.(jpe?g|png|gif|svg)$/i,
+            pngquant: {
+                quality: '70',
+                optimizationLevel:9
+            },
+            jpegtran: {  
+                quality: '70',
+                progressive: true ,
+                optimizationLevel:9
+            },
+            gifsicle:{
+                optimizationLevel:9
+            }
+        })
     ],
     output: {
       filename: 'static/js/[name].[chunkhash].js',

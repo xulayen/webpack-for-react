@@ -32,6 +32,7 @@
     "html-webpack-plugin": "^2.30.1",
     "http": "0.0.0",
     "image-webpack-loader": "^3.4.2",
+    "imagemin-webpack-plugin": "^1.5.2",
     "imports-loader": "^0.7.1",
     "jquery_wechat_sdk": "^1.5.2",
     "jsx-loader": "^0.13.2",
