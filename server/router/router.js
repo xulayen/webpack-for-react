@@ -1,5 +1,5 @@
-var Until=require('../Util/until.js');
-var Config=require('../config/config.js');
+var Until=require('../lib/Util/until.js');
+var Config=require('../lib/config/config.js');
 var sha1 = require('sha1');
 var soap = require('soap');
 var fs=require('fs');
@@ -17,6 +17,7 @@ module.exports = function (app) {
     });
 
     app.post('/fw', function(req, res,next) {
+        req.session.user = "1111111111111111111";
         let accode=req.body.accode || '6675697746308516';
         let ip='10.20.26.19';//Until.getClientIp(req);
         let message='-1',result='-1',systemState='-1';
@@ -78,7 +79,6 @@ module.exports = function (app) {
                 res.send('后台错误');
                 return next();
             } else {
-                console.log(data);
                 res.writeHead(200, {
                     'Content-type': 'text/html',
                     'Connection':'keep-alive'
