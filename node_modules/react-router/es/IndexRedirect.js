@@ -1,21 +1,16 @@
-import React from 'react';
+import createReactClass from 'create-react-class';
+import { string, object } from 'prop-types';
 import warning from './routerWarning';
 import invariant from 'invariant';
 import Redirect from './Redirect';
 import { falsy } from './InternalPropTypes';
 
-var _React$PropTypes = React.PropTypes,
-    string = _React$PropTypes.string,
-    object = _React$PropTypes.object;
-
 /**
  * An <IndexRedirect> is used to redirect from an indexRoute.
  */
 /* eslint-disable react/require-render-return */
-
-var IndexRedirect = React.createClass({
+var IndexRedirect = createReactClass({
   displayName: 'IndexRedirect',
-
 
   statics: {
     createRouteFromReactElement: function createRouteFromReactElement(element, parentRoute) {

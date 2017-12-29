@@ -8,6 +8,12 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _createReactClass = require('create-react-class');
+
+var _createReactClass2 = _interopRequireDefault(_createReactClass);
+
+var _propTypes = require('prop-types');
+
 var _invariant = require('invariant');
 
 var _invariant2 = _interopRequireDefault(_invariant);
@@ -19,14 +25,6 @@ var _ContextUtils = require('./ContextUtils');
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
-
-var _React$PropTypes = _react2.default.PropTypes,
-    bool = _React$PropTypes.bool,
-    object = _React$PropTypes.object,
-    string = _React$PropTypes.string,
-    func = _React$PropTypes.func,
-    oneOfType = _React$PropTypes.oneOfType;
-
 
 function isLeftClickEvent(event) {
   return event.button === 0;
@@ -59,15 +57,9 @@ function resolveToLocation(to, router) {
  * You could use the following component to link to that route:
  *
  *   <Link to={`/posts/${post.id}`} />
- *
- * Links may pass along location state and/or query string parameters
- * in the state/query props, respectively.
- *
- *   <Link ... query={{ show: true }} state={{ the: 'state' }} />
  */
-var Link = _react2.default.createClass({
+var Link = (0, _createReactClass2.default)({
   displayName: 'Link',
-
 
   mixins: [(0, _ContextUtils.ContextSubscriber)('router')],
 
@@ -76,15 +68,12 @@ var Link = _react2.default.createClass({
   },
 
   propTypes: {
-    to: oneOfType([string, object, func]),
-    query: object,
-    hash: string,
-    state: object,
-    activeStyle: object,
-    activeClassName: string,
-    onlyActiveOnIndex: bool.isRequired,
-    onClick: func,
-    target: string
+    to: (0, _propTypes.oneOfType)([_propTypes.string, _propTypes.object, _propTypes.func]),
+    activeStyle: _propTypes.object,
+    activeClassName: _propTypes.string,
+    onlyActiveOnIndex: _propTypes.bool.isRequired,
+    onClick: _propTypes.func,
+    target: _propTypes.string
   },
 
   getDefaultProps: function getDefaultProps() {
@@ -128,7 +117,7 @@ var Link = _react2.default.createClass({
 
     if (router) {
       // If user does not specify a `to` prop, return an empty anchor tag.
-      if (to == null) {
+      if (!to) {
         return _react2.default.createElement('a', props);
       }
 

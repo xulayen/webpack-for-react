@@ -16,6 +16,8 @@ var _computeChangedRoutes3 = _interopRequireDefault(_computeChangedRoutes2);
 
 var _TransitionUtils = require('./TransitionUtils');
 
+var _TransitionUtils2 = _interopRequireDefault(_TransitionUtils);
+
 var _isActive2 = require('./isActive');
 
 var _isActive3 = _interopRequireDefault(_isActive2);
@@ -39,8 +41,15 @@ function hasAnyProperties(object) {
 function createTransitionManager(history, routes) {
   var state = {};
 
+  var _getTransitionUtils = (0, _TransitionUtils2.default)(),
+      runEnterHooks = _getTransitionUtils.runEnterHooks,
+      runChangeHooks = _getTransitionUtils.runChangeHooks,
+      runLeaveHooks = _getTransitionUtils.runLeaveHooks;
+
   // Signature should be (location, indexOnly), but needs to support (path,
   // query, indexOnly)
+
+
   function isActive(location, indexOnly) {
     location = history.createLocation(location);
 
@@ -72,7 +81,7 @@ function createTransitionManager(history, routes) {
         changeRoutes = _computeChangedRoutes.changeRoutes,
         enterRoutes = _computeChangedRoutes.enterRoutes;
 
-    (0, _TransitionUtils.runLeaveHooks)(leaveRoutes, state);
+    runLeaveHooks(leaveRoutes, state);
 
     // Tear down confirmation hooks for left routes
     leaveRoutes.filter(function (route) {
@@ -80,10 +89,10 @@ function createTransitionManager(history, routes) {
     }).forEach(removeListenBeforeHooksForRoute);
 
     // change and enter hooks are run in series
-    (0, _TransitionUtils.runChangeHooks)(changeRoutes, state, nextState, function (error, redirectInfo) {
+    runChangeHooks(changeRoutes, state, nextState, function (error, redirectInfo) {
       if (error || redirectInfo) return handleErrorOrRedirect(error, redirectInfo);
 
-      (0, _TransitionUtils.runEnterHooks)(enterRoutes, nextState, finishEnterHooks);
+      runEnterHooks(enterRoutes, nextState, finishEnterHooks);
     });
 
     function finishEnterHooks(error, redirectInfo) {

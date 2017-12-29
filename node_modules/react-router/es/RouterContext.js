@@ -4,24 +4,19 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
 import invariant from 'invariant';
 import React from 'react';
+import createReactClass from 'create-react-class';
+import { array, func, object } from 'prop-types';
 
 import getRouteParams from './getRouteParams';
 import { ContextProvider } from './ContextUtils';
 import { isReactChildren } from './RouteUtils';
 
-var _React$PropTypes = React.PropTypes,
-    array = _React$PropTypes.array,
-    func = _React$PropTypes.func,
-    object = _React$PropTypes.object;
-
 /**
  * A <RouterContext> renders the component tree for a given router state
  * and sets the history object and the current location in context.
  */
-
-var RouterContext = React.createClass({
+var RouterContext = createReactClass({
   displayName: 'RouterContext',
-
 
   mixins: [ContextProvider('router')],
 

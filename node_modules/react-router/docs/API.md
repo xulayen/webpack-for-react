@@ -1,4 +1,4 @@
-# API Reference
+# React Router 3 API Reference
 
 - [Components](#components)
   - [`<Router>`](#router)
@@ -159,7 +159,19 @@ Given a route like `<Route path="/users/:userId" />`:
 An `<IndexLink>` is like a [`<Link>`](#link), except it is only active when the current route is exactly the linked route. It is equivalent to `<Link>` with the `onlyActiveOnIndex` prop set.
 
 ### `withRouter(Component, [options])`
-A HoC (higher-order component) that wraps another component to provide `props.router`. Pass in your component and it will return the wrapped component.
+A HoC (higher-order component) that wraps another component to enhance its props with router props.
+
+```
+withRouterProps = {
+   ...componentProps,
+   router,
+   params,
+   location,
+   routes
+}
+```
+
+Pass in your component and it will return the wrapped component.
 
 You can explicit specify `router` as a prop to the wrapper component to override the router object from context.
 
@@ -176,7 +188,7 @@ const myInstance = wrapperInstance.getWrappedInstance()
 ```
 
 ### `<RouterContext>`
-A `<RouterContext>` renders the component tree for a given router state. Its used by `<Router>` but also useful for server rendering and integrating in brownfield development.
+A `<RouterContext>` renders the component tree for a given router state. It's used by `<Router>` but also useful for server rendering and integrating in brownfield development.
 
 It also provides a `router` object on [context](https://facebook.github.io/react/docs/context.html).
 
@@ -535,7 +547,7 @@ A route's component is rendered when that route matches the URL. The router will
 ### Injected Props
 
 #### `location`
-The current [location](https://github.com/mjackson/history/blob/v2.x/docs/Location.md).
+The current [location](https://github.com/ReactTraining/history/blob/v2/docs/Location.md).
 
 #### `params`
 The dynamic segments of the URL.
@@ -545,6 +557,9 @@ The route that rendered this component.
 
 #### `router`
 Contains methods relevant to routing. Most useful for imperatively transitioning around the application.
+
+#### `routes`
+The routes registered with the router.
 
 #### `routeParams`
 A subset of `this.props.params` that were directly specified in this component's route. For example, if the route's path is `users/:userId` and the URL is `/users/123/portfolios/345` then `this.props.routeParams` will be `{userId: '123'}`, and `this.props.params` will be `{userId: '123', portfolioId: '345'}`.
@@ -645,9 +660,9 @@ For more details, please see the [histories guide](/docs/guides/Histories.md).
 `useRouterHistory` is a `history` enhancer that configures a given `createHistory` factory to work with React Router. This allows using custom histories in addition to the bundled singleton histories.
 
 It also pre-enhances the history with the
-[useQueries](https://github.com/mjackson/history/blob/v2.x/docs/QuerySupport.md)
+[useQueries](https://github.com/ReactTraining/history/blob/v2/docs/QuerySupport.md)
 and
-[useBasename](https://github.com/mjackson/history/blob/v2.x/docs/BasenameSupport.md)
+[useBasename](https://github.com/ReactTraining/history/blob/v2/docs/BasenameSupport.md)
 enhancers from `history`
 
 #### Example

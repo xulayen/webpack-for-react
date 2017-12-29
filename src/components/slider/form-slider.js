@@ -283,7 +283,7 @@ class FormSliderCommpent extends React.Component {
 					</div>
 					<div className="cnt1">
 						<p>
-							&nbsp;
+							&nbsp; 
 						</p>
 						<div className="cnt1_left">
 							<div className="slide_cnt index-below-action">

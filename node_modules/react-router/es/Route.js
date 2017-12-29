@@ -1,11 +1,8 @@
-import React from 'react';
+import createReactClass from 'create-react-class';
+import { string, func } from 'prop-types';
 import invariant from 'invariant';
 import { createRouteFromReactElement } from './RouteUtils';
 import { component, components } from './InternalPropTypes';
-
-var _React$PropTypes = React.PropTypes,
-    string = _React$PropTypes.string,
-    func = _React$PropTypes.func;
 
 /**
  * A <Route> is used to declare which components are rendered to the
@@ -18,10 +15,8 @@ var _React$PropTypes = React.PropTypes,
  * rendered into the DOM, nested in the same order as in the tree.
  */
 /* eslint-disable react/require-render-return */
-
-var Route = React.createClass({
+var Route = createReactClass({
   displayName: 'Route',
-
 
   statics: {
     createRouteFromReactElement: createRouteFromReactElement

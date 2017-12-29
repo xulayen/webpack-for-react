@@ -3,26 +3,22 @@
 exports.__esModule = true;
 exports.locationShape = exports.routerShape = undefined;
 
-var _react = require('react');
+var _propTypes = require('prop-types');
 
-var func = _react.PropTypes.func,
-    object = _react.PropTypes.object,
-    shape = _react.PropTypes.shape,
-    string = _react.PropTypes.string;
-var routerShape = exports.routerShape = shape({
-  push: func.isRequired,
-  replace: func.isRequired,
-  go: func.isRequired,
-  goBack: func.isRequired,
-  goForward: func.isRequired,
-  setRouteLeaveHook: func.isRequired,
-  isActive: func.isRequired
+var routerShape = exports.routerShape = (0, _propTypes.shape)({
+  push: _propTypes.func.isRequired,
+  replace: _propTypes.func.isRequired,
+  go: _propTypes.func.isRequired,
+  goBack: _propTypes.func.isRequired,
+  goForward: _propTypes.func.isRequired,
+  setRouteLeaveHook: _propTypes.func.isRequired,
+  isActive: _propTypes.func.isRequired
 });
 
-var locationShape = exports.locationShape = shape({
-  pathname: string.isRequired,
-  search: string.isRequired,
-  state: object,
-  action: string.isRequired,
-  key: string
+var locationShape = exports.locationShape = (0, _propTypes.shape)({
+  pathname: _propTypes.string.isRequired,
+  search: _propTypes.string.isRequired,
+  state: _propTypes.object,
+  action: _propTypes.string.isRequired,
+  key: _propTypes.string
 });

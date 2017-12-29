@@ -4,29 +4,22 @@ exports.__esModule = true;
 exports.routes = exports.route = exports.components = exports.component = exports.history = undefined;
 exports.falsy = falsy;
 
-var _react = require('react');
+var _propTypes = require('prop-types');
 
-var func = _react.PropTypes.func,
-    object = _react.PropTypes.object,
-    arrayOf = _react.PropTypes.arrayOf,
-    oneOfType = _react.PropTypes.oneOfType,
-    element = _react.PropTypes.element,
-    shape = _react.PropTypes.shape,
-    string = _react.PropTypes.string;
 function falsy(props, propName, componentName) {
   if (props[propName]) return new Error('<' + componentName + '> should not have a "' + propName + '" prop');
 }
 
-var history = exports.history = shape({
-  listen: func.isRequired,
-  push: func.isRequired,
-  replace: func.isRequired,
-  go: func.isRequired,
-  goBack: func.isRequired,
-  goForward: func.isRequired
+var history = exports.history = (0, _propTypes.shape)({
+  listen: _propTypes.func.isRequired,
+  push: _propTypes.func.isRequired,
+  replace: _propTypes.func.isRequired,
+  go: _propTypes.func.isRequired,
+  goBack: _propTypes.func.isRequired,
+  goForward: _propTypes.func.isRequired
 });
 
-var component = exports.component = oneOfType([func, string]);
-var components = exports.components = oneOfType([component, object]);
-var route = exports.route = oneOfType([object, element]);
-var routes = exports.routes = oneOfType([route, arrayOf(route)]);
+var component = exports.component = (0, _propTypes.oneOfType)([_propTypes.func, _propTypes.string]);
+var components = exports.components = (0, _propTypes.oneOfType)([component, _propTypes.object]);
+var route = exports.route = (0, _propTypes.oneOfType)([_propTypes.object, _propTypes.element]);
+var routes = exports.routes = (0, _propTypes.oneOfType)([route, (0, _propTypes.arrayOf)(route)]);

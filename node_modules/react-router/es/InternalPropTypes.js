@@ -1,13 +1,4 @@
-import { PropTypes } from 'react';
-
-var func = PropTypes.func,
-    object = PropTypes.object,
-    arrayOf = PropTypes.arrayOf,
-    oneOfType = PropTypes.oneOfType,
-    element = PropTypes.element,
-    shape = PropTypes.shape,
-    string = PropTypes.string;
-
+import { func, object, arrayOf, oneOfType, element, shape, string } from 'prop-types';
 
 export function falsy(props, propName, componentName) {
   if (props[propName]) return new Error('<' + componentName + '> should not have a "' + propName + '" prop');

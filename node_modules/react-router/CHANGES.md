@@ -1,3 +1,41 @@
+## [v3.0.5](https://github.com/ReactTraining/react-router/compare/v3.0.4...v3.0.5)
+> Apr 10, 2017
+
+- Manually set displayName for components
+- Async hooks could be removed during simultaneous server requests (#4941 by @s-yadav)
+
+## [v3.0.4](https://github.com/ReactTraining/react-router/compare/v3.0.3...v3.0.4)
+> Apr 9, 2017
+
+- Fixes for React 15.5 deprecation warnings
+
+## [v3.0.3](https://github.com/ReactTraining/react-router/compare/v3.0.2...v3.0.3)
+> Mar 28, 2017
+
+- Fix webpack-related anonymous function issue (#4857 by @alisd23)
+- Fix usage with babel-plugin-transform-remove-prop-types (#4505 by @oliviertassinari)
+- Remove references to Link hash/query/state props (#4377 by @insin)
+
+## [v3.0.2](https://github.com/ReactTraining/react-router/compare/v3.0.1...v3.0.2)
+> Jan 18, 2017
+
+- Re-add module entry to package.json
+
+## [v3.0.1](https://github.com/ReactTraining/react-router/compare/v3.0.0...v3.0.1)
+> Jan 12, 2017
+
+- Pass transition hook's arguments correctly ([#4123] by @arkist)
+- Fix index routes inside async pathless routes ([#4147] by @taurose)
+- 'to' maybe undefined ([#4216] by @panzj)
+- Fix withRouter error when used without a Router ([#4295] by @dropfen)
+- Adding support for escaped parentheses in Route Paths ([#4202] by @sebastiandeutsch)
+
+[#4123]: https://github.com/ReactTraining/react-router/pull/4123
+[#4147]: https://github.com/ReactTraining/react-router/pull/4147
+[#4216]: https://github.com/ReactTraining/react-router/pull/4216
+[#4295]: https://github.com/ReactTraining/react-router/pull/4295
+[#4202]: https://github.com/ReactTraining/react-router/pull/4202
+
 ## [v3.0.0]
 > Oct 24, 2016
 

@@ -1,85 +1,62 @@
 var Until=require('../lib/Util/until.js');
 var Config=require('../lib/config/config.js');
+var log4js=require('../lib/log4js/logger.js');
+const auth = require('../lib/auth/auth.service.js');
+const config = require('../lib/config/config.js')
 var sha1 = require('sha1');
 var soap = require('soap');
 var fs=require('fs');
-
+const path=require('path');
+const token = "Bearer "+auth.signToken(config.session.secret);
+var edge = require('edge');
 // routes/index.js
 module.exports = function (app) {
 
-    app.get('/',function(req, res,next){
-        console.log(__dirname);
-        res.render('index.html');  
+
+    app.get('/c',function(){
+
     });
 
-    app.get('/index',function(req, res,next){
-        res.send('反向代理 nodejs root ~~~'); 
-    });
-
-    app.post('/fw', function(req, res,next) {
-        req.session.user = "1111111111111111111";
-        let accode=req.body.accode || '6675697746308516';
-        let ip='10.20.26.19';//Until.getClientIp(req);
-        let message='-1',result='-1',systemState='-1';
-        let args={
-            userID: Config.userID,
-            userPwd: Config.userPwd,
-            ip: ip,
-            acCode: accode,
-            language: Config.language,
-            channel: Config.channel,
-            channeltype: Config.channeltype,
-            country: Config.country,
-            sign: sha1(accode+Config.token).toUpperCase(),
-            message:"",
-            reply:"",
-            systemState:""
-        };
-        soap.createClient(Config.url, function(err, client) {
-        client.Get_QRCodeIsTrue(args, function(err, result) {
-                console.log(result);
-                return res.send(result); 
-            });
+    app.post('/gettoken',function(req, res,next){
+        res.writeHead(200,{
+            'authorization':token
         });
+        res.end(token);
+
+
+        
+    });
+
+    
+    app.post('/index',auth.isAuthenticated(),function(req, res,next){
+        return res.send("index api"); 
+    });
+
+
+    app.post('/fw',function(req, res,next) {
+        log4js.info("【action: /fw 】");
+        return res.send("fw api"); 
     });
 
 
     app.post('/SendAcVerifyInfo',function(req, res,next){
-        let accode=req.body.accode || '6675697746308516';
-        let queryid=req.body.queryid;
-        let feedback=req.body.feedback;
-        let ip='10.20.26.19';//Until.getClientIp(req);
-        let message='-1',systemState='-1';
-        let args={
-            userID: Config.userID,
-            userPwd: Config.userPwd,
-            ip: ip,
-            acCode: accode,
-            queryID: queryid,
-            feedBack: feedback,
-            sign: sha1(accode+Config.token).toUpperCase(),
-            reply: "",
-            systemState: ""
-        };
-        soap.createClient(Config.url, function(err, client) {
-        client.SendAcVerifyInfo(args, function(err, result) {
-                console.log(result);
-                return res.send(result); 
-            });
-        });
+        log4js.info("【action: /SendAcVerifyInfo 】");
+        return res.send("SendAcVerifyInfo api"); 
     });
 
 
     app.use(function(req, res, next) {
+
         //判断是主动导向404页面，还是传来的前端路由。
-    　　 //如果是前端路由则如下处理
-        fs.readFile('./server/index.html','utf-8', function(err, data){
+    　　 //如果是前端路由则如下处理'./server/index.html'
+    
+        fs.readFile(path.join(__dirname,'../index.html'),'utf-8', function(err, data){
             if(err){
                 console.log(err);
                 res.send('后台错误');
                 return next();
             } else {
-                res.writeHead(200, {
+                res.writeHead(200,{
                     'Content-type': 'text/html',
                     'Connection':'keep-alive'
                 });
